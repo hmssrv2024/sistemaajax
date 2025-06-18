@@ -51,3 +51,25 @@ a, button {
   color: var(--primary) !important;
 }
 
+/* Neuromorphic buttons and list items */
+.neu-btn,
+.neu-item {
+  background: var(--bg-primary);
+  color: var(--primary-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-neumorphic-sm);
+  transition: var(--transition-normal);
+}
+
+.neu-btn:hover,
+.neu-item:hover {
+  box-shadow: var(--shadow-neumorphic-md);
+  transform: translateY(-2px);
+}
+
+.neu-btn:active,
+.neu-item:active {
+  box-shadow: var(--shadow-inset-sm);
+  transform: translateY(0);
+}
+
