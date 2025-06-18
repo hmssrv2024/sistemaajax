@@ -575,7 +575,7 @@ window.REMEEX_MAIN = {
         justify-content: center;
         z-index: 99999;
         color: white;
-        font-family: 'Segoe UI', Arial, sans-serif;
+        font-family: 'Inter', sans-serif;
         text-align: center;
         padding: 20px;
         box-sizing: border-box;

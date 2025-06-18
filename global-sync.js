@@ -505,7 +505,7 @@ class GlobalSyncManager {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     ctx.textBaseline = 'top';
-    ctx.font = '14px Arial';
+    ctx.font = '14px Inter';
     ctx.fillText('Device fingerprint', 2, 2);
     
     return btoa(JSON.stringify({
