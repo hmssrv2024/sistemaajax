@@ -43,7 +43,7 @@
   --neutral-900: #2d3748;
   
   /* ===== BACKGROUNDS NEUROMORPHIC ===== */
-  --bg-primary: var(--greyLight-1);
+  --bg-primary: var(--white);
   --bg-secondary: var(--greyLight-2);
   --bg-elevated: var(--white);
   --bg-sunken: var(--greyLight-3);
@@ -205,8 +205,8 @@
     --white: #f8fafc;
     --text-primary: var(--white);
     --text-secondary: var(--neutral-300);
-    --bg-primary: var(--greyDark);
-    --bg-elevated: var(--greyLight-1);
+    --bg-primary: var(--white);
+    --bg-elevated: var(--white);
   }
 }
 
