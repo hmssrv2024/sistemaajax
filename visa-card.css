@@ -49,8 +49,8 @@
 
 /* Estilos base de la tarjeta */
 .visa-card {
-  color: var(--card-text-white);
-  background-color: rgb(42, 41, 45);
+  color: var(--primary-dark);
+  background-color: var(--bg-card);
   border-radius: var(--card-border-radius);
   height: var(--card-height);
   width: var(--card-width);
