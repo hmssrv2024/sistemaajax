@@ -22,7 +22,7 @@
   background: var(--card-gradient);
   border-radius: var(--radius-lg);
   padding: 1.25rem;
-  color: white;
+  color: var(--primary-dark);
   box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
@@ -81,7 +81,7 @@
   height: 32px;
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: var(--primary-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,7 +181,7 @@
   font-weight: 600;
   font-size: 0.8rem;
   background: rgba(255,255,255,0.15);
-  color: white;
+  color: var(--primary-dark);
   cursor: pointer;
   transition: all 0.3s var(--animation-bounce);
   backdrop-filter: blur(5px);
@@ -235,7 +235,7 @@
   box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
-  color: white;
+  color: var(--primary-dark);
 }
 
 .virtual-card::after {
@@ -352,7 +352,7 @@
     0 2px 8px rgba(0, 0, 0, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.05);
-  color: white;
+  color: var(--primary-dark);
   padding: 1.5rem;
 }
 
@@ -717,12 +717,12 @@
 
 .card-front {
   background: var(--card-gradient);
-  color: white;
+  color: var(--primary-dark);
 }
 
 .card-back {
   background: var(--card-gradient);
-  color: white;
+  color: var(--primary-dark);
   transform: rotateY(180deg);
 }
 
@@ -794,7 +794,7 @@
   height: 40px;
   border-radius: var(--radius-full);
   background: var(--primary);
-  color: white;
+  color: var(--primary-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -829,7 +829,7 @@
 
 .saved-card-pay-btn {
   background: var(--primary);
-  color: white;
+  color: var(--primary-dark);
   border: none;
   border-radius: var(--radius-md);
   padding: 0.8rem 1rem;

@@ -1,0 +1,23 @@
+:root {
+  --primary: #1a1f71;
+  --primary-light: #2a43b0;
+  --primary-dark: #101853;
+
+  /* Base backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f7;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
+
+  /* Text colors */
+  --text-primary: var(--primary-dark);
+  --text-secondary: var(--primary);
+  --text-link: var(--primary);
+
+  /* Neutral overrides */
+  --neutral-800: #1a2f7a;
+  --neutral-900: #101853;
+
+  /* Card styling */
+  --card-gradient: linear-gradient(135deg, #fefefe 0%, #e7ecff 100%);
+}
