@@ -1,0 +1,2548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>REMEEX Visa Banking - Plataforma Financiera Global</title>
+  <link rel="icon" href="https://w7.pngwing.com/pngs/400/28/png-transparent-credit-card-computer-icons-visa-electron-bank-curio-blue-text-rectangle-thumbnail.png" type="image/png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/authentication.css">
+  <link rel="stylesheet" href="css/wizard.css">
+  <link rel="stylesheet" href="css/visa-card.css">
+  <link rel="stylesheet" href="css/evolution.css">
+  <link rel="stylesheet" href="css/payments.css">
+  <link rel="stylesheet" href="css/modals.css">
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="css/transactions.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- New CSS Modules -->
+  <link rel="stylesheet" href="css/spinner.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/countries.css">
+  
+  <!-- External Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/v-mask@2.3.0/dist/v-mask.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/gsap.min.js"></script>
+</head>
+
+<body>
+  <!-- Global Loading Spinner -->
+  <div class="global-spinner" id="global-spinner">
+    <div class="orb"></div>
+    <div class="spinner-text">Iniciando REMEEX...</div>
+  </div>
+
+  <!-- Ultra Realistic Buttons Section -->
+  <section class="ultra-buttons-section" id="ultra-buttons-section" class="is-hidden">
+    <div class="ultra-buttons-container">
+      <h1 class="ultra-buttons-title">Botones de Acción Ultra Realistas</h1>
+      
+      <div class="buttons-grid">
+        <!-- Botón de Registrarme -->
+        <button class="ultra-btn register-btn" data-action="register">
+          <div class="button-outer">
+            <div class="button-inner">
+              <span>Registrarme</span>
+              <div class="press-echo"></div>
+            </div>
+          </div>
+        </button>
+        
+        <!-- Botón de Iniciar Sesión -->
+        <button class="ultra-btn login-btn" data-action="login">
+          <div class="button-outer">
+            <div class="button-inner">
+              <span>Iniciar sesión</span>
+              <div class="press-echo"></div>
+            </div>
+          </div>
+        </button>
+        
+        <!-- Botón de Crear cuenta -->
+        <button class="ultra-btn create-btn" data-action="create">
+          <div class="button-outer">
+            <div class="button-inner">
+              <span>Crear cuenta</span>
+              <div class="press-echo"></div>
+            </div>
+          </div>
+        </button>
+        
+        <!-- Botón de Continuar -->
+        <button class="ultra-btn continue-btn" data-action="continue">
+          <div class="button-outer">
+            <div class="button-inner">
+              <span>Continuar</span>
+              <div class="press-echo"></div>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visa Countries Section -->
+  <section class="visa-countries-section" id="visa-countries-section" class="is-hidden">
+    <div class="container">
+      <div class="countries-header">
+        <h1 class="countries-title">
+          <i class="fab fa-cc-visa"></i>
+          Países donde opera Visa por región
+        </h1>
+        <p class="countries-subtitle">Cobertura global de VISA en más de 200 países y territorios</p>
+      </div>
+      
+      <div class="regions-grid">
+        <!-- América del Norte -->
+        <div class="region-card" data-region="north-america">
+          <div class="region-header">
+            <div class="region-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h2 class="region-title">América del Norte</h2>
+            <div class="region-count">3 países</div>
+          </div>
+          <div class="region-content">
+            <ul class="countries-list">
+              <li class="country-item">
+                <img src="https://flagcdn.com/ca.svg" alt="Canadá" class="country-flag">
+                <span class="country-name">Canadá</span>
+                <span class="country-code">(+1)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/us.svg" alt="Estados Unidos" class="country-flag">
+                <span class="country-name">Estados Unidos</span>
+                <span class="country-code">(+1)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/mx.svg" alt="México" class="country-flag">
+                <span class="country-name">México</span>
+                <span class="country-code">(+52)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- América Central y Caribe -->
+        <div class="region-card" data-region="central-america">
+          <div class="region-header">
+            <div class="region-icon">
+              <i class="fas fa-island-tropical"></i>
+            </div>
+            <h2 class="region-title">América Central y Caribe</h2>
+            <div class="region-count">12 países</div>
+          </div>
+          <div class="region-content">
+            <ul class="countries-list">
+              <li class="country-item">
+                <img src="https://flagcdn.com/bz.svg" alt="Belice" class="country-flag">
+                <span class="country-name">Belice</span>
+                <span class="country-code">(+501)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/cr.svg" alt="Costa Rica" class="country-flag">
+                <span class="country-name">Costa Rica</span>
+                <span class="country-code">(+506)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/cu.svg" alt="Cuba" class="country-flag">
+                <span class="country-name">Cuba</span>
+                <span class="country-code">(+53)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/sv.svg" alt="El Salvador" class="country-flag">
+                <span class="country-name">El Salvador</span>
+                <span class="country-code">(+503)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/gt.svg" alt="Guatemala" class="country-flag">
+                <span class="country-name">Guatemala</span>
+                <span class="country-code">(+502)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ht.svg" alt="Haití" class="country-flag">
+                <span class="country-name">Haití</span>
+                <span class="country-code">(+509)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/hn.svg" alt="Honduras" class="country-flag">
+                <span class="country-name">Honduras</span>
+                <span class="country-code">(+504)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/jm.svg" alt="Jamaica" class="country-flag">
+                <span class="country-name">Jamaica</span>
+                <span class="country-code">(+1-876)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ni.svg" alt="Nicaragua" class="country-flag">
+                <span class="country-name">Nicaragua</span>
+                <span class="country-code">(+505)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/pa.svg" alt="Panamá" class="country-flag">
+                <span class="country-name">Panamá</span>
+                <span class="country-code">(+507)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/do.svg" alt="República Dominicana" class="country-flag">
+                <span class="country-name">República Dominicana</span>
+                <span class="country-code">(+1-809)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/tt.svg" alt="Trinidad y Tobago" class="country-flag">
+                <span class="country-name">Trinidad y Tobago</span>
+                <span class="country-code">(+1-868)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- América del Sur -->
+        <div class="region-card" data-region="south-america">
+          <div class="region-header">
+            <div class="region-icon">
+              <i class="fas fa-mountain"></i>
+            </div>
+            <h2 class="region-title">América del Sur</h2>
+            <div class="region-count">12 países</div>
+          </div>
+          <div class="region-content">
+            <ul class="countries-list">
+              <li class="country-item">
+                <img src="https://flagcdn.com/ar.svg" alt="Argentina" class="country-flag">
+                <span class="country-name">Argentina</span>
+                <span class="country-code">(+54)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/bo.svg" alt="Bolivia" class="country-flag">
+                <span class="country-name">Bolivia</span>
+                <span class="country-code">(+591)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/br.svg" alt="Brasil" class="country-flag">
+                <span class="country-name">Brasil</span>
+                <span class="country-code">(+55)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/cl.svg" alt="Chile" class="country-flag">
+                <span class="country-name">Chile</span>
+                <span class="country-code">(+56)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/co.svg" alt="Colombia" class="country-flag">
+                <span class="country-name">Colombia</span>
+                <span class="country-code">(+57)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ec.svg" alt="Ecuador" class="country-flag">
+                <span class="country-name">Ecuador</span>
+                <span class="country-code">(+593)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/gy.svg" alt="Guyana" class="country-flag">
+                <span class="country-name">Guyana</span>
+                <span class="country-code">(+592)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/py.svg" alt="Paraguay" class="country-flag">
+                <span class="country-name">Paraguay</span>
+                <span class="country-code">(+595)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/pe.svg" alt="Perú" class="country-flag">
+                <span class="country-name">Perú</span>
+                <span class="country-code">(+51)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/sr.svg" alt="Surinam" class="country-flag">
+                <span class="country-name">Surinam</span>
+                <span class="country-code">(+597)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/uy.svg" alt="Uruguay" class="country-flag">
+                <span class="country-name">Uruguay</span>
+                <span class="country-code">(+598)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ve.svg" alt="Venezuela" class="country-flag">
+                <span class="country-name">Venezuela</span>
+                <span class="country-code">(+58)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Europa Occidental -->
+        <div class="region-card" data-region="western-europe">
+          <div class="region-header">
+            <div class="region-icon">
+              <i class="fas fa-landmark"></i>
+            </div>
+            <h2 class="region-title">Europa Occidental</h2>
+            <div class="region-count">12 países</div>
+          </div>
+          <div class="region-content">
+            <ul class="countries-list">
+              <li class="country-item">
+                <img src="https://flagcdn.com/de.svg" alt="Alemania" class="country-flag">
+                <span class="country-name">Alemania</span>
+                <span class="country-code">(+49)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/at.svg" alt="Austria" class="country-flag">
+                <span class="country-name">Austria</span>
+                <span class="country-code">(+43)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/be.svg" alt="Bélgica" class="country-flag">
+                <span class="country-name">Bélgica</span>
+                <span class="country-code">(+32)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/es.svg" alt="España" class="country-flag">
+                <span class="country-name">España</span>
+                <span class="country-code">(+34)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/fr.svg" alt="Francia" class="country-flag">
+                <span class="country-name">Francia</span>
+                <span class="country-code">(+33)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ie.svg" alt="Irlanda" class="country-flag">
+                <span class="country-name">Irlanda</span>
+                <span class="country-code">(+353)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/it.svg" alt="Italia" class="country-flag">
+                <span class="country-name">Italia</span>
+                <span class="country-code">(+39)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/lu.svg" alt="Luxemburgo" class="country-flag">
+                <span class="country-name">Luxemburgo</span>
+                <span class="country-code">(+352)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/nl.svg" alt="Países Bajos" class="country-flag">
+                <span class="country-name">Países Bajos</span>
+                <span class="country-code">(+31)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/pt.svg" alt="Portugal" class="country-flag">
+                <span class="country-name">Portugal</span>
+                <span class="country-code">(+351)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/gb.svg" alt="Reino Unido" class="country-flag">
+                <span class="country-name">Reino Unido</span>
+                <span class="country-code">(+44)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ch.svg" alt="Suiza" class="country-flag">
+                <span class="country-name">Suiza</span>
+                <span class="country-code">(+41)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Europa del Este -->
+        <div class="region-card" data-region="eastern-europe">
+          <div class="region-header">
+            <div class="region-icon">
+              <i class="fas fa-church"></i>
+            </div>
+            <h2 class="region-title">Europa del Este</h2>
+            <div class="region-count">13 países</div>
+          </div>
+          <div class="region-content">
+            <ul class="countries-list">
+              <li class="country-item">
+                <img src="https://flagcdn.com/bg.svg" alt="Bulgaria" class="country-flag">
+                <span class="country-name">Bulgaria</span>
+                <span class="country-code">(+359)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/hr.svg" alt="Croacia" class="country-flag">
+                <span class="country-name">Croacia</span>
+                <span class="country-code">(+385)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/sk.svg" alt="Eslovaquia" class="country-flag">
+                <span class="country-name">Eslovaquia</span>
+                <span class="country-code">(+421)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/si.svg" alt="Eslovenia" class="country-flag">
+                <span class="country-name">Eslovenia</span>
+                <span class="country-code">(+386)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ee.svg" alt="Estonia" class="country-flag">
+                <span class="country-name">Estonia</span>
+                <span class="country-code">(+372)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/hu.svg" alt="Hungría" class="country-flag">
+                <span class="country-name">Hungría</span>
+                <span class="country-code">(+36)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/lv.svg" alt="Letonia" class="country-flag">
+                <span class="country-name">Letonia</span>
+                <span class="country-code">(+371)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/lt.svg" alt="Lituania" class="country-flag">
+                <span class="country-name">Lituania</span>
+                <span class="country-code">(+370)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/pl.svg" alt="Polonia" class="country-flag">
+                <span class="country-name">Polonia</span>
+                <span class="country-code">(+48)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/cz.svg" alt="República Checa" class="country-flag">
+                <span class="country-name">República Checa</span>
+                <span class="country-code">(+420)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ro.svg" alt="Rumania" class="country-flag">
+                <span class="country-name">Rumania</span>
+                <span class="country-code">(+40)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ru.svg" alt="Rusia" class="country-flag">
+                <span class="country-name">Rusia</span>
+                <span class="country-code">(+7)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ua.svg" alt="Ucrania" class="country-flag">
+                <span class="country-name">Ucrania</span>
+                <span class="country-code">(+380)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Asia -->
+        <div class="region-card" data-region="asia">
+          <div class="region-header">
+            <div class="region-icon">
+              <i class="fas fa-torii-gate"></i>
+            </div>
+            <h2 class="region-title">Asia</h2>
+            <div class="region-count">16 países</div>
+          </div>
+          <div class="region-content">
+            <ul class="countries-list">
+              <li class="country-item">
+                <img src="https://flagcdn.com/sa.svg" alt="Arabia Saudita" class="country-flag">
+                <span class="country-name">Arabia Saudita</span>
+                <span class="country-code">(+966)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/cn.svg" alt="China" class="country-flag">
+                <span class="country-name">China</span>
+                <span class="country-code">(+86)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/kr.svg" alt="Corea del Sur" class="country-flag">
+                <span class="country-name">Corea del Sur</span>
+                <span class="country-code">(+82)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ae.svg" alt="Emiratos Árabes Unidos" class="country-flag">
+                <span class="country-name">Emiratos Árabes Unidos</span>
+                <span class="country-code">(+971)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ph.svg" alt="Filipinas" class="country-flag">
+                <span class="country-name">Filipinas</span>
+                <span class="country-code">(+63)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/hk.svg" alt="Hong Kong" class="country-flag">
+                <span class="country-name">Hong Kong</span>
+                <span class="country-code">(+852)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/in.svg" alt="India" class="country-flag">
+                <span class="country-name">India</span>
+                <span class="country-code">(+91)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/id.svg" alt="Indonesia" class="country-flag">
+                <span class="country-name">Indonesia</span>
+                <span class="country-code">(+62)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/il.svg" alt="Israel" class="country-flag">
+                <span class="country-name">Israel</span>
+                <span class="country-code">(+972)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/jp.svg" alt="Japón" class="country-flag">
+                <span class="country-name">Japón</span>
+                <span class="country-code">(+81)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/my.svg" alt="Malasia" class="country-flag">
+                <span class="country-name">Malasia</span>
+                <span class="country-code">(+60)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/sg.svg" alt="Singapur" class="country-flag">
+                <span class="country-name">Singapur</span>
+                <span class="country-code">(+65)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/th.svg" alt="Tailandia" class="country-flag">
+                <span class="country-name">Tailandia</span>
+                <span class="country-code">(+66)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/tw.svg" alt="Taiwán" class="country-flag">
+                <span class="country-name">Taiwán</span>
+                <span class="country-code">(+886)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/tr.svg" alt="Turquía" class="country-flag">
+                <span class="country-name">Turquía</span>
+                <span class="country-code">(+90)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/vn.svg" alt="Vietnam" class="country-flag">
+                <span class="country-name">Vietnam</span>
+                <span class="country-code">(+84)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- África -->
+        <div class="region-card" data-region="africa">
+          <div class="region-header">
+            <div class="region-icon">
+              <i class="fas fa-safari"></i>
+            </div>
+            <h2 class="region-title">África</h2>
+            <div class="region-count">8 países</div>
+          </div>
+          <div class="region-content">
+            <ul class="countries-list">
+              <li class="country-item">
+                <img src="https://flagcdn.com/dz.svg" alt="Argelia" class="country-flag">
+                <span class="country-name">Argelia</span>
+                <span class="country-code">(+213)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/eg.svg" alt="Egipto" class="country-flag">
+                <span class="country-name">Egipto</span>
+                <span class="country-code">(+20)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ke.svg" alt="Kenia" class="country-flag">
+                <span class="country-name">Kenia</span>
+                <span class="country-code">(+254)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ma.svg" alt="Marruecos" class="country-flag">
+                <span class="country-name">Marruecos</span>
+                <span class="country-code">(+212)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/ng.svg" alt="Nigeria" class="country-flag">
+                <span class="country-name">Nigeria</span>
+                <span class="country-code">(+234)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/za.svg" alt="Sudáfrica" class="country-flag">
+                <span class="country-name">Sudáfrica</span>
+                <span class="country-code">(+27)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/tz.svg" alt="Tanzania" class="country-flag">
+                <span class="country-name">Tanzania</span>
+                <span class="country-code">(+255)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/tn.svg" alt="Túnez" class="country-flag">
+                <span class="country-name">Túnez</span>
+                <span class="country-code">(+216)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Oceanía -->
+        <div class="region-card" data-region="oceania">
+          <div class="region-header">
+            <div class="region-icon">
+              <i class="fas fa-water"></i>
+            </div>
+            <h2 class="region-title">Oceanía</h2>
+            <div class="region-count">4 países</div>
+          </div>
+          <div class="region-content">
+            <ul class="countries-list">
+              <li class="country-item">
+                <img src="https://flagcdn.com/au.svg" alt="Australia" class="country-flag">
+                <span class="country-name">Australia</span>
+                <span class="country-code">(+61)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/fj.svg" alt="Fiyi" class="country-flag">
+                <span class="country-name">Fiyi</span>
+                <span class="country-code">(+679)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/nz.svg" alt="Nueva Zelanda" class="country-flag">
+                <span class="country-name">Nueva Zelanda</span>
+                <span class="country-code">(+64)</span>
+              </li>
+              <li class="country-item">
+                <img src="https://flagcdn.com/pg.svg" alt="Papúa Nueva Guinea" class="country-flag">
+                <span class="country-name">Papúa Nueva Guinea</span>
+                <span class="country-code">(+675)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="countries-footer">
+        <div class="coverage-stats">
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Países y Territorios</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Regiones Globales</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3.8B</div>
+            <div class="stat-label">Tarjetas en Circulación</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="login-container" id="login-container">
+    
+    <!-- WIZARD DE REGISTRO MULTI-PASO -->
+    <section class="wizard-registration-card" id="wizard-registration-card">
+      <header class="login-logo">
+        <div class="login-logo-container">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnBzNdjl6bNp-nIdaiHVENczJhwlJNA7ocsyiOObMmzbu8at0dY5yGcZ9cLxLF39qI6gwNfqBxlkTDC0txVULEwQVwGkeEzN0Jq9MRTRagA48mh18UqTlR4WhsXOLAEZugUyhqJHB19xJgnkpe-S5VOWFgzpKFwctv3XP9XhH41vNTvq0ZS-nik58Qhr-O/s320/remeex.png" alt="REMEEX">
+        </div>
+      </header>
+
+      <!-- Progress Indicator -->
+      <div class="wizard-progress">
+        <div class="wizard-progress-bar">
+          <div class="wizard-progress-fill" id="wizard-progress-fill"></div>
+        </div>
+        <div class="wizard-step-indicators">
+          <div class="wizard-step active" data-step="1">
+            <i class="fas fa-user"></i>
+            <span>Datos</span>
+          </div>
+          <div class="wizard-step" data-step="2">
+            <i class="fas fa-shield-alt"></i>
+            <span>Seguridad</span>
+          </div>
+          <div class="wizard-step" data-step="3">
+            <i class="fas fa-credit-card"></i>
+            <span>Tarjeta</span>
+          </div>
+          <div class="wizard-step" data-step="4">
+            <i class="fas fa-university"></i>
+            <span>Zelle</span>
+          </div>
+          <div class="wizard-step" data-step="5">
+            <i class="fas fa-check"></i>
+            <span>Verificar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASO 1: Información Personal -->
+      <div class="wizard-step-content active" id="wizard-step-1">
+        <div class="login-heading">
+          <h1 class="login-title">Crear Cuenta REMEEX</h1>
+          <p class="login-subtitle">Complete sus datos para comenzar</p>
+        </div>
+        
+        <div class="security-badge">
+          <div class="security-badge-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="security-badge-content">
+            <div class="security-badge-title">Registro Seguro</div>
+            <div class="security-badge-text">Sus datos están protegidos con cifrado de nivel bancario</div>
+          </div>
+        </div>
+        
+        <form id="wizard-form-step-1">
+          <div class="form-group">
+            <label class="form-label" for="wizard-name">Nombre Completo y Apellido</label>
+            <input type="text" class="form-control" id="wizard-name" placeholder="Ej: Juan Carlos Pérez López" aria-describedby="wizard-name-error">
+            <div class="error-message" id="wizard-name-error">Por favor, introduce tu nombre completo y apellidos.</div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="wizard-email">Correo Electrónico</label>
+            <input type="email" class="form-control" id="wizard-email" placeholder="ejemplo@correo.com" aria-describedby="wizard-email-error">
+            <div class="error-message" id="wizard-email-error">Por favor, introduce un correo electrónico válido.</div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="wizard-password">Crear Contraseña</label>
+            <div class="password-input-container">
+              <input type="password" class="form-control" id="wizard-password" placeholder="Crea una contraseña segura" aria-describedby="wizard-password-error">
+              <button type="button" class="password-toggle" id="wizard-password-toggle">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="password-strength" id="wizard-password-strength">
+              <div class="password-strength-meter">
+                <div class="password-strength-fill" id="wizard-password-strength-fill"></div>
+              </div>
+              <div class="password-strength-text" id="wizard-password-strength-text">Introduce una contraseña</div>
+            </div>
+            <div class="error-message" id="wizard-password-error">La contraseña debe cumplir todos los requisitos.</div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="wizard-confirm-password">Ratificar Contraseña</label>
+            <div class="password-input-container">
+              <input type="password" class="form-control" id="wizard-confirm-password" placeholder="Repite tu contraseña" aria-describedby="wizard-confirm-password-error">
+              <button type="button" class="password-toggle" id="wizard-confirm-password-toggle">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="error-message" id="wizard-confirm-password-error">Las contraseñas no coinciden.</div>
+          </div>
+          
+          <button type="button" class="btn btn-primary wizard-continue-btn" id="wizard-continue-1">
+            <i class="fas fa-arrow-right"></i> Continuar
+          </button>
+        </form>
+      </div>
+
+      <!-- PASO 2: Pregunta de Seguridad y País -->
+      <div class="wizard-step-content" id="wizard-step-2">
+        <div class="login-heading">
+          <h1 class="login-title">Configuración de Seguridad</h1>
+          <p class="login-subtitle">Seleccione su pregunta de seguridad y país</p>
+        </div>
+        
+        <form id="wizard-form-step-2">
+          <div class="form-group">
+            <label class="form-label">Pregunta de Seguridad</label>
+            <div class="security-question-options">
+              <div class="security-question-option">
+                <input type="radio" id="security-question-1" name="security-question" value="birthplace-grandfather">
+                <label for="security-question-1">
+                  <div class="question-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="question-text">
+                    <div class="question-title">Lugar de nacimiento de mi abuelo</div>
+                    <div class="question-description">Ciudad o país donde nació su abuelo paterno</div>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="security-question-option">
+                <input type="radio" id="security-question-2" name="security-question" value="mother-favorite-color">
+                <label for="security-question-2">
+                  <div class="question-icon">
+                    <i class="fas fa-palette"></i>
+                  </div>
+                  <div class="question-text">
+                    <div class="question-title">El color favorito de mi madre</div>
+                    <div class="question-description">Color preferido de su madre</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="security-answer">Respuesta</label>
+            <input type="text" class="form-control" id="security-answer" placeholder="Escriba su respuesta" aria-describedby="security-answer-error">
+            <div class="error-message" id="security-answer-error">Por favor, proporcione una respuesta.</div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="wizard-country">País de Residencia</label>
+            <select class="form-control" id="wizard-country" aria-describedby="wizard-country-error">
+              <option value="">Seleccione su país</option>
+              <option value="venezuela">Venezuela</option>
+              <option value="colombia">Colombia</option>
+              <option value="peru">Perú</option>
+              <option value="ecuador">Ecuador</option>
+              <option value="panama">Panamá</option>
+              <option value="españa">España</option>
+              <option value="argentina">Argentina</option>
+              <option value="chile">Chile</option>
+              <option value="mexico">México</option>
+              <option value="otros">Otros</option>
+            </select>
+            <div class="error-message" id="wizard-country-error">Por favor, seleccione su país.</div>
+          </div>
+
+          <div class="currency-notification" id="currency-notification" class="is-hidden">
+            <div class="currency-notification-icon">
+              <i class="fas fa-coins"></i>
+            </div>
+            <div class="currency-notification-content">
+              <div class="currency-notification-title">Moneda Configurada</div>
+              <div class="currency-notification-text">Su moneda por defecto será <strong>Dólares (USD)</strong> y <strong>Bolívares (Bs)</strong></div>
+            </div>
+          </div>
+          
+          <div class="wizard-nav-buttons">
+            <button type="button" class="btn btn-outline wizard-back-btn" id="wizard-back-2">
+              <i class="fas fa-arrow-left"></i> Atrás
+            </button>
+            <button type="button" class="btn btn-primary wizard-continue-btn" id="wizard-continue-2">
+              <i class="fas fa-arrow-right"></i> Continuar
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- PASO 3: Personalización de Tarjeta -->
+      <div class="wizard-step-content" id="wizard-step-3">
+        <div class="login-heading">
+          <h1 class="login-title">Tu Tarjeta Virtual VISA</h1>
+          <p class="login-subtitle">Personaliza tu tarjeta de crédito virtual</p>
+        </div>
+        
+        <div class="virtual-card-creator">
+          <div class="virtual-card-preview" id="virtual-card-preview">
+            <div class="visa-card interactive" id="virtual-card">
+              <div class="visa-card__top">
+                <span class="card-type">Virtual</span>
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiASST8U1GA_fD6sqNKJpsqoOcnsp-fiFEgEz_JZU9ac2czvMFvDuYX1LUvC030mdqIGp6VbxqSYYVvmh6D5_duOTKFlxSdyjURh04-Dmi-Hc6ArZ_f_P7cc87af35w4FJkhDqm-h_u90uVoOrhPxXrUPhLF_ozwsrP4Wnvlbs5EFlf4fSunvwMDugQqtBp/w320-h217/remeexzelle.png" 
+                     alt="RemeExzelle Logo" class="visa-card__logo">
+              </div>
+              <div class="visa-card__bottom">
+                <div class="visa-card__holder">
+                  <p>Cardholder</p>
+                  <p id="virtual-card-holder">NOMBRE APELLIDO</p>
+                </div>
+                <img src="https://assets.codepen.io/14762/visa-virtual.svg" 
+                     alt="Visa Logo" class="visa-card__visa-logo">
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-customization">
+            <div class="form-group">
+              <label class="form-label">Estilo de Tarjeta</label>
+              <div class="card-style-options">
+                <div class="card-style-option active" data-style="default">
+                  <div class="style-preview gradient-blue"></div>
+                  <span>Azul Clásico</span>
+                </div>
+                <div class="card-style-option" data-style="theme-mint">
+                  <div class="style-preview gradient-mint"></div>
+                  <span>Verde Mint</span>
+                </div>
+                <div class="card-style-option" data-style="theme-yellow">
+                  <div class="style-preview gradient-yellow"></div>
+                  <span>Dorado</span>
+                </div>
+                <div class="card-style-option" data-style="theme-pink">
+                  <div class="style-preview gradient-pink"></div>
+                  <span>Rosa</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Nombre en la Tarjeta</label>
+              <div class="name-options" id="name-options">
+                <!-- Las opciones se generarán dinámicamente -->
+              </div>
+            </div>
+          </div>
+          
+          <div class="wizard-nav-buttons">
+            <button type="button" class="btn btn-outline wizard-back-btn" id="wizard-back-3">
+              <i class="fas fa-arrow-left"></i> Atrás
+            </button>
+            <button type="button" class="btn btn-primary wizard-continue-btn" id="wizard-continue-3">
+              <i class="fas fa-arrow-right"></i> Continuar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASO 4: Configuración Zelle -->
+      <div class="wizard-step-content" id="wizard-step-4">
+        <div class="login-heading">
+          <h1 class="login-title">¡Increíble! Configuremos tu Zelle</h1>
+          <p class="login-subtitle">Ahora puedes recibir Zelle sin salir de Venezuela</p>
+        </div>
+        
+        <div class="zelle-benefits">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-globe-americas"></i>
+            </div>
+            <div class="benefit-content">
+              <div class="benefit-title">Compras Internacionales</div>
+              <div class="benefit-description">Usa tu tarjeta para compras por internet en Venezuela y el mundo</div>
+            </div>
+          </div>
+          
+          <div class="benefit-card featured">
+            <div class="benefit-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="benefit-content">
+              <div class="benefit-title">¡NOVEDAD! Recibe Zelle</div>
+              <div class="benefit-description">Ahora puedes usar tu tarjeta para recibir transferencias Zelle sin necesidad de ir a Estados Unidos</div>
+            </div>
+          </div>
+          
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-university"></i>
+            </div>
+            <div class="benefit-content">
+              <div class="benefit-title">Sin Cuenta en USA</div>
+              <div class="benefit-description">Accede a Zelle gracias a VISA y tu tarjeta virtual, sin necesidad de tener cuenta en Estados Unidos</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="zelle-configuration">
+          <div class="zelle-header">
+            <h3>Configuración de tu cuenta Zelle</h3>
+            <p>Confirma que estos datos son correctos para recibir y enviar dinero</p>
+          </div>
+          
+          <div class="zelle-data-confirmation">
+            <div class="zelle-data-item">
+              <div class="zelle-data-label">Nombre para Zelle:</div>
+              <div class="zelle-data-value" id="zelle-name-display">Nombre Completo</div>
+            </div>
+            <div class="zelle-data-item">
+              <div class="zelle-data-label">Email para Zelle:</div>
+              <div class="zelle-data-value" id="zelle-email-display">correo@ejemplo.com</div>
+            </div>
+          </div>
+          
+          <div class="zelle-limits">
+            <div class="limits-header">
+              <i class="fas fa-info-circle"></i>
+              <span>Límites para no residentes de Estados Unidos</span>
+            </div>
+            <div class="limits-grid">
+              <div class="limit-item">
+                <div class="limit-value">$500</div>
+                <div class="limit-label">Límite mensual<br>(enviar y recibir)</div>
+              </div>
+              <div class="limit-item">
+                <div class="limit-value">$3,000</div>
+                <div class="limit-label">Límite anual<br>(máximo)</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="additional-benefits">
+            <h4>Beneficios adicionales incluidos:</h4>
+            <div class="additional-benefits-list">
+              <div class="additional-benefit">
+                <i class="fas fa-exchange-alt"></i>
+                <span>Transferencias internacionales</span>
+              </div>
+              <div class="additional-benefit">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Envío de remesas</span>
+              </div>
+              <div class="additional-benefit">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span>Pagos de servicios</span>
+              </div>
+              <div class="additional-benefit">
+                <i class="fas fa-percent"></i>
+                <span>Descuentos en conciertos</span>
+              </div>
+              <div class="additional-benefit">
+                <i class="fas fa-shield-alt"></i>
+                <span>Seguros de viaje</span>
+              </div>
+              <div class="additional-benefit">
+                <i class="fas fa-gift"></i>
+                <span>Beneficios exclusivos</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="wizard-nav-buttons">
+            <button type="button" class="btn btn-outline wizard-back-btn" id="wizard-back-4">
+              <i class="fas fa-arrow-left"></i> Atrás
+            </button>
+            <button type="button" class="btn btn-primary wizard-continue-btn" id="wizard-continue-4">
+              <i class="fas fa-arrow-right"></i> Crear mi cuenta Zelle
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASO 5: Verificación de Código -->
+      <div class="wizard-step-content" id="wizard-step-5">
+        <div class="login-heading">
+          <h1 class="login-title">Verificación Final</h1>
+          <p class="login-subtitle">Ingrese el código de 20 dígitos enviado a su correo</p>
+        </div>
+        
+        <div class="email-sent-notification">
+          <div class="email-sent-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="email-sent-content">
+            <div class="email-sent-title">Código Enviado</div>
+            <div class="email-sent-text">Hemos enviado un código de verificación de 20 dígitos a <strong id="verification-email-display">correo@ejemplo.com</strong></div>
+          </div>
+        </div>
+        
+        <form id="wizard-form-step-5">
+          <div class="form-group">
+            <label class="form-label" for="verification-code">Código de Verificación (20 dígitos)</label>
+            <input type="text" class="form-control verification-code-input" id="verification-code" placeholder="Ingrese el código de 20 dígitos" maxlength="20" aria-describedby="verification-code-error">
+            <div class="error-message" id="verification-code-error">Por favor, ingrese el código de 20 dígitos.</div>
+          </div>
+          
+          <div class="verification-tips">
+            <div class="verification-tip">
+              <i class="fas fa-lightbulb"></i>
+              <span>Revise su bandeja de entrada y carpeta de spam</span>
+            </div>
+            <div class="verification-tip">
+              <i class="fas fa-clock"></i>
+              <span>El código expira en 24 horas</span>
+            </div>
+          </div>
+          
+          <div class="wizard-nav-buttons">
+            <button type="button" class="btn btn-outline wizard-back-btn" id="wizard-back-5">
+              <i class="fas fa-arrow-left"></i> Atrás
+            </button>
+            <button type="button" class="btn btn-primary wizard-complete-btn" id="wizard-complete">
+              <i class="fas fa-check"></i> Completar Registro
+            </button>
+          </div>
+          
+          <div class="resend-code-section">
+            ¿No recibió el código? <a href="#" id="resend-verification-code">Reenviar código</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- LOGIN PERSONALIZADO EXISTENTE (ACTUALIZADO) -->
+    <section class="login-card" id="login-card" class="is-hidden">
+      <header class="login-logo">
+        <div class="login-logo-container">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnBzNdjl6bNp-nIdaiHVENczJhwlJNA7ocsyiOObMmzbu8at0dY5yGcZ9cLxLF39qI6gwNfqBxlkTDC0txVULEwQVwGkeEzN0Jq9MRTRagA48mh18UqTlR4WhsXOLAEZugUyhqJHB19xJgnkpe-S5VOWFgzpKFwctv3XP9XhH41vNTvq0ZS-nik58Qhr-O/s320/remeex.png" alt="REMEEX">
+        </div>
+      </header>
+      
+      <div class="login-heading">
+        <div class="greeting-container">
+          <h1 class="login-title" id="personalized-greeting">¡Hola!</h1>
+          <p class="login-subtitle" id="login-subtitle">Deslice para acceder a su cuenta</p>
+        </div>
+      </div>
+    
+      <!-- Vista previa de cuenta personalizada -->
+      <div class="account-preview-card" id="account-preview">
+        <div class="personalized-credit-card" id="personalized-credit-card">
+          <div class="visa-card" id="user-saved-card">
+            <div class="visa-card__top">
+              <span class="card-type">Virtual</span>
+              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiASST8U1GA_fD6sqNKJpsqoOcnsp-fiFEgEz_JZU9ac2czvMFvDuYX1LUvC030mdqIGp6VbxqSYYVvmh6D5_duOTKFlxSdyjURh04-Dmi-Hc6ArZ_f_P7cc87af35w4FJkhDqm-h_u90uVoOrhPxXrUPhLF_ozwsrP4Wnvlbs5EFlf4fSunvwMDugQqtBp/w320-h217/remeexzelle.png" 
+                   alt="RemeExzelle Logo" class="visa-card__logo">
+            </div>
+            <div class="visa-card__bottom">
+              <div class="visa-card__holder">
+                <p>Cardholder</p>
+                <p id="preview-name-realistic">USUARIO</p>
+              </div>
+              <img src="https://assets.codepen.io/14762/visa-virtual.svg" 
+                   alt="Visa Logo" class="visa-card__visa-logo">
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-external-info">
+          <div class="balance-display-main">
+            <div class="balance-currency-flag">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Venezuela.svg" alt="VE">
+            </div>
+            <div class="balance-amount-realistic" id="preview-balance-main">Bs 0,00</div>
+            <div class="balance-label-discrete">Saldo Disponible</div>
+          </div>
+          
+          <div class="external-info-row">
+            <div class="external-info-item">
+              <div class="info-icon usd">
+                <img src="https://flagcdn.com/us.svg" alt="USD">
+              </div>
+              <div class="info-content">
+                <span class="info-value" id="preview-usd-external">$0.00</span>
+                <span class="info-label">Dólares</span>
+              </div>
+            </div>
+            
+            <div class="external-info-item">
+              <div class="info-icon eur">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="EUR">
+              </div>
+              <div class="info-content">
+                <span class="info-value" id="preview-eur-external">€0.00</span>
+                <span class="info-label">Euros</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="external-info-secondary">
+            <div class="exchange-rate-compact">
+              <i class="fas fa-exchange-alt"></i>
+              <span id="preview-rate-external">1 USD = 36.85 Bs</span>
+            </div>
+            <div class="last-update-compact">
+              <i class="far fa-clock"></i>
+              <span id="preview-time-external">Actualizado hace 2 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="security-badge">
+        <div class="security-badge-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="security-badge-content">
+          <div class="security-badge-title">Acceso Seguro</div>
+          <div class="security-badge-text">Sus datos están guardados en este dispositivo</div>
+        </div>
+      </div>
+      
+      <!-- Datos de usuario (no editables pero visibles) -->
+      <form id="login-form">
+        <div class="user-data-display">
+          <div class="user-data-item">
+            <label class="form-label">Nombre</label>
+            <div class="user-data-value" id="login-name-display">Nombre Usuario</div>
+          </div>
+          
+          <div class="user-data-item">
+            <label class="form-label">Email</label>
+            <div class="user-data-value" id="login-email-display">email@ejemplo.com</div>
+          </div>
+        </div>
+        
+        <!-- Campos editables -->
+        <div class="form-group">
+          <label class="form-label" for="login-password">Contraseña</label>
+          <div class="password-input-container">
+            <input type="password" class="form-control editable-field" id="login-password" placeholder="Haz clic para editar tu contraseña" aria-describedby="password-error">
+            <button type="button" class="password-toggle" id="login-password-toggle">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+          <div class="error-message" id="password-error">Contraseña incorrecta.</div>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="login-code">Código de Verificación (20 dígitos)</label>
+          <input type="password" class="form-control editable-field" id="login-code" placeholder="Haz clic para editar tu código de 20 dígitos" aria-describedby="code-error">
+          <div class="error-message" id="code-error">El código debe tener 20 dígitos.</div>
+        </div>
+        
+        <!-- Slide to unlock mejorado -->
+        <div class="slide-to-unlock-container">
+          <div class="slide-to-unlock" id="slide-to-unlock">
+            <div class="slide-track">
+              <div class="slide-button" id="slide-button">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+              <div class="slide-text" id="slide-text">
+                <i class="fas fa-mobile-alt slide-icon"></i>
+                Desliza para desbloquear como tu teléfono
+              </div>
+              <div class="slide-success" id="slide-success">
+                <i class="fas fa-check"></i>
+                ¡Acceso concedido!
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="users-online-elegant" id="users-online-login">
+          <div class="online-pulse-indicator"></div>
+          <span class="online-count" id="preview-users-count">124</span>
+          <span class="online-label">usuarios conectados ahora</span>
+        </div>
+
+        <button type="button" class="btn btn-outline forgot-password-btn" id="forgot-password-btn">
+          <i class="fas fa-question-circle"></i> ¿Olvidaste tu clave?
+        </button>
+      </form>
+      
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="https://wa.me/+17373018059" class="btn btn-outline" target="_blank" style="display: inline-flex; margin: 0 auto;">
+          <i class="fab fa-whatsapp"></i> Contactar Soporte
+        </a>
+      </div>
+    </section>
+
+    <!-- Modal de registro completado -->
+    <div class="modal-overlay" id="registration-complete-modal">
+      <div class="modal" style="max-width: 500px;">
+        <div class="success-celebration">
+          <div class="celebration-icon">
+            <i class="fas fa-party-horn"></i>
+          </div>
+          <div class="confetti-animation"></div>
+        </div>
+        
+        <div class="modal-title">¡Felicidades! Tu cuenta ha sido creada con éxito</div>
+        
+        <div class="account-summary">
+          <div class="summary-item">
+            <div class="summary-icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-title">Tarjeta Virtual VISA</div>
+              <div class="summary-description">Lista para usar en compras online</div>
+            </div>
+          </div>
+          
+          <div class="summary-item">
+            <div class="summary-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-title">Cuenta Zelle Activada</div>
+              <div class="summary-description">Recibe transferencias desde Estados Unidos</div>
+            </div>
+          </div>
+          
+          <div class="summary-item">
+            <div class="summary-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-title">Datos Seguros</div>
+              <div class="summary-description">Información protegida en este dispositivo</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="security-notice">
+          <div class="security-notice-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="security-notice-content">
+            <div class="security-notice-title">Importante: Conserve sus datos por seguridad</div>
+            <div class="security-notice-text">Sus datos de acceso están guardados de forma segura en este dispositivo. Asegúrese de recordar su contraseña y código de verificación.</div>
+          </div>
+        </div>
+        
+        <button class="btn btn-primary" id="complete-registration-btn">
+          <i class="fas fa-rocket"></i> ¡Comenzar a usar REMEEX!
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <header class="app-header" id="app-header" class="is-hidden">
+    <div class="header-brand">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnBzNdjl6bNp-nIdaiHVENczJhwlJNA7ocsyiOObMmzbu8at0dY5yGcZ9cLxLF39qI6gwNfqBxlkTDC0txVULEwQVwGkeEzN0Jq9MRTRagA48mh18UqTlR4WhsXOLAEZugUyhqJHB19xJgnkpe-S5VOWFgzpKFwctv3XP9XhH41vNTvq0ZS-nik58Qhr-O/s320/remeex.png" alt="REMEEX">
+    </div>
+    
+    <div class="header-actions">
+      <div class="users-online-badge">
+        <div class="pulse-dot"></div>
+        <span id="users-online-count">124 usuarios conectados</span>
+      </div>
+      
+      <button class="header-action-btn" id="notification-btn" aria-label="Notificaciones">
+        <i class="fas fa-bell"></i>
+        <span class="notification-badge">3</span>
+      </button>
+      
+      <button class="header-action-btn logout-header-btn" id="logout-header-btn" aria-label="Cerrar Sesión">
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-container" id="dashboard-container" class="is-hidden">
+    <div class="dashboard-content">
+      
+      <section id="home-section">
+        
+        <div class="balance-card">
+          <div class="card-decoration"></div>
+          <div class="card-decoration"></div>
+          <div class="balance-content">
+            <div class="balance-header">
+              <div class="balance-label">
+                <i class="fas fa-shield-alt"></i>
+                <span id="balance-label-name">Saldo Disponible</span>
+              </div>
+              <div class="header-avatar" id="header-avatar">JP</div>
+            </div>
+            
+            <div class="balance-amount" id="dashboard-balance">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Venezuela.svg" class="currency-flag" id="main-currency-flag" alt="Bandera de Venezuela">
+              <span id="main-currency-symbol">Bs</span>
+              <span id="main-balance-value">0,00</span>
+            </div>
+            
+            <div class="balance-equivalents">
+              <div class="balance-equivalent">
+                <img src="https://flagcdn.com/us.svg" class="currency-flag" alt="Bandera de EEUU">
+                <span id="usd-equivalent">≈ $0.00</span>
+              </div>
+              <div class="balance-equivalent">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" class="currency-flag" alt="Bandera de la Unión Europea">
+                <span id="eur-equivalent">≈ €0.00</span>
+              </div>
+            </div>
+            
+            <div class="exchange-rate" id="exchange-rate">
+              <i class="fas fa-exchange-alt"></i> <span id="exchange-rate-display">Tasa: 1 USD = 36.85 Bs | 1 USD = 0.92 EUR</span>
+            </div>
+            
+            <div class="balance-date" id="balance-date">Domingo, 4 de Mayo de 2025</div>
+            
+            <div class="pending-transaction-badge" id="pending-transaction-badge" class="is-hidden">
+              <i class="fas fa-clock"></i>
+              <div>
+                <div style="font-weight: 600; margin-bottom: 0.125rem;">Transacción pendiente</div>
+                <div id="pending-transaction-amount">$0.00 en proceso de verificación</div>
+              </div>
+            </div>
+            
+            <div class="balance-actions">
+              <button class="balance-btn" id="recharge-btn">
+                <i class="fas fa-plus-circle"></i> Recargar Saldo
+              </button>
+              <button class="balance-btn" id="send-btn">
+                <i class="fas fa-upload"></i> Retirar Dinero
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="security-notice-banner" id="security-device-notice">
+          <div class="security-notice-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="security-notice-content">
+            <div class="security-notice-title">Acceso Exclusivo a este Dispositivo</div>
+            <div class="security-notice-text">Por su seguridad, su saldo y transacciones solo están disponibles en este dispositivo donde ha iniciado sesión.</div>
+          </div>
+        </div>
+        
+        <div id="evolution-status-container">
+          </div>
+        
+        <div class="card">
+          <div class="section-title" style="margin-bottom: 0.5rem;">
+            <i class="fas fa-history"></i> Transacciones Recientes
+            <a href="#" id="view-all-transactions">Ver todas</a>
+          </div>
+          
+          <div class="transaction-list" id="recent-transactions">
+            </div>
+        </div>
+        
+      </section>
+    </div>
+  </div>
+
+  <nav class="bottom-nav" id="bottom-nav" class="is-hidden">
+    <div class="nav-item" data-section="services">
+      <div class="nav-icon"><i class="fas fa-list-alt"></i></div>
+      <div class="nav-label">Servicios</div>
+    </div>
+    
+    <div class="nav-item" data-section="cards">
+      <div class="nav-icon"><i class="fas fa-credit-card"></i></div>
+      <div class="nav-label">Tarjetas</div>
+    </div>
+    
+    <div class="nav-item active" data-section="home">
+      <div class="nav-icon"><i class="fas fa-home"></i></div>
+      <div class="nav-label">Inicio</div>
+    </div>
+    
+    <div class="nav-item" data-section="customer-service">
+      <div class="nav-icon"><i class="fas fa-headset"></i></div>
+      <div class="nav-label">Atención</div>
+    </div>
+
+    <div class="nav-item" data-section="settings">
+      <div class="nav-icon"><i class="fas fa-cog"></i></div>
+      <div class="nav-label">Ajustes</div>
+    </div>
+  </nav>
+
+  <div class="service-overlay" id="service-overlay">
+    <div class="service-container">
+      <div class="service-header">
+        <div class="service-title">Servicios</div>
+        <div class="service-close" id="service-close"><i class="fas fa-times"></i></div>
+      </div>
+      <div class="service-grid">
+        <div class="service-item" id="service-bills">
+          <div class="service-icon bills">
+            <i class="fas fa-file-invoice"></i>
+          </div>
+          <div class="service-name">Pago de Servicios</div>
+          <div class="service-description">Luz, agua, teléfono</div>
+        </div>
+        
+        <div class="service-item" id="service-dollar">
+          <div class="service-icon dollar">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <div class="service-name">Cuenta en Dólares</div>
+          <div class="service-description">Apertura inmediata</div>
+        </div>
+        
+        <div class="service-item" id="service-zelle">
+          <div class="service-icon zelle">
+            <i class="fas fa-university"></i>
+          </div>
+          <div class="service-name">Activar Zelle</div>
+          <div class="service-description">Pagos internacionales</div>
+        </div>
+        
+        <div class="service-item" id="service-exchange">
+          <div class="service-icon exchange">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+          <div class="service-name">Cambio de Divisas</div>
+          <div class="service-description">Mejores tasas</div>
+        </div>
+        
+        <div class="service-item" id="service-reviews">
+          <div class="service-icon reviews">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="service-name">Opiniones</div>
+          <div class="service-description">Experiencias de usuarios</div>
+        </div>
+        
+        <div class="service-item" id="service-chat">
+          <div class="service-icon chat">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="service-name">Chat en Vivo</div>
+          <div class="service-description">Soporte 24/7</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards-overlay" id="cards-overlay">
+    <div class="card-container">
+      <div class="card-header">
+        <div class="card-title">Tarjeta Virtual VISA</div>
+        <div class="card-close" id="card-close"><i class="fas fa-times"></i></div>
+      </div>
+      
+      <div class="virtual-card">
+        <div class="visa-card" id="cards-overlay-visa-card">
+          <div class="visa-card__top">
+            <span class="card-type">Virtual</span>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiASST8U1GA_fD6sqNKJpsqoOcnsp-fiFEgEz_JZU9ac2czvMFvDuYX1LUvC030mdqIGp6VbxqSYYVvmh6D5_duOTKFlxSdyjURh04-Dmi-Hc6ArZ_f_P7cc87af35w4FJkhDqm-h_u90uVoOrhPxXrUPhLF_ozwsrP4Wnvlbs5EFlf4fSunvwMDugQqtBp/w320-h217/remeexzelle.png" 
+               alt="RemeExzelle Logo" class="visa-card__logo">
+          </div>
+          <div class="visa-card__bottom">
+            <div class="visa-card__holder">
+              <p>Cardholder</p>
+              <p>•••• •••• •••• ••••</p>
+            </div>
+            <img src="https://assets.codepen.io/14762/visa-virtual.svg" 
+                 alt="Visa Logo" class="visa-card__visa-logo">
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-apps">
+        <div class="card-app"><i class="fab fa-amazon"></i></div>
+        <div class="card-app"><i class="fab fa-apple"></i></div>
+        <div class="card-app"><i class="fab fa-paypal"></i></div>
+        <div class="card-app"><i class="fab fa-spotify"></i></div>
+        <div class="card-app"><i class="fab fa-google-play"></i></div>
+        <div class="card-app"><i class="fab fa-netflix"></i></div>
+      </div>
+      
+      <div class="card-text">
+        Para obtener su tarjeta virtual VISA y poder realizar compras en línea de forma segura, necesita verificar su identidad. Una vez verificado, podrá generar tarjetas virtuales para usar en Amazon, PayPal, Binance, Zinli y otras plataformas.
+      </div>
+      
+      <button class="btn btn-primary" id="verify-for-card">
+        <i class="fas fa-id-card"></i> Verificar mi Identidad
+      </button>
+    </div>
+  </div>
+
+  <div class="customer-service-overlay" id="customer-service-overlay">
+    <div class="customer-service-container">
+      <div class="customer-service-header">
+        <div class="customer-service-title">Atención al Cliente</div>
+        <div class="customer-service-close" id="customer-service-close"><i class="fas fa-times"></i></div>
+      </div>
+      
+      <div class="customer-service-subtitle">
+        Estamos aquí para ayudarte las 24 horas del día
+      </div>
+      
+      <div class="contact-options">
+        <a href="https://wa.me/+17373018059" class="contact-option" target="_blank">
+          <div class="contact-icon whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="contact-content">
+            <div class="contact-title">WhatsApp</div>
+            <div class="contact-description">Atención 24/7 vía chat</div>
+          </div>
+        </a>
+        
+        <a href="mailto:contactcenter@visa.com" class="contact-option">
+          <div class="contact-icon email">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-content">
+            <div class="contact-title">Correo Electrónico</div>
+            <div class="contact-description">contactcenter@visa.com</div>
+          </div>
+        </a>
+
+        <a href="fororemeex.html" class="contact-option">
+          <div class="contact-icon chat">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="contact-content">
+            <div class="contact-title">Chat con Usuarios</div>
+            <div class="contact-description">Conéctate con la comunidad</div>
+          </div>
+        </a>
+      
+        <a href="opinionesremeex.html" class="contact-option">
+          <div class="contact-icon reviews">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="contact-content">
+            <div class="contact-title">Opiniones</div>
+            <div class="contact-description">Experiencias de usuarios</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="settings-overlay" id="settings-overlay">
+    <div class="settings-container">
+      <div class="settings-header">
+        <div class="settings-title">Configuración</div>
+        <div class="settings-close" id="settings-close"><i class="fas fa-times"></i></div>
+      </div>
+      
+      <div class="card" style="margin-bottom: 1rem;">
+        <div class="section-title" style="margin-bottom: 1rem;">
+          <i class="fas fa-user"></i> Información de Cuenta
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="settings-name">Nombre Completo</label>
+          <input type="text" class="form-control" id="settings-name" disabled>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="settings-email">Correo Electrónico</label>
+          <input type="email" class="form-control" id="settings-email" disabled>
+        </div>
+      </div>
+      
+      <div class="card" style="margin-bottom: 1rem;">
+        <div class="section-title" style="margin-bottom: 1rem;">
+          <i class="fas fa-bell"></i> Notificaciones
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div>Notificaciones por correo</div>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div>Notificaciones por SMS</div>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div>Alertas de seguridad</div>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" style="margin-bottom: 1rem;">
+        <div class="section-title" style="margin-bottom: 1rem;">
+          <i class="fas fa-shield-alt"></i> Seguridad
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div>Autenticación de dos factores</div>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div>Notificaciones de inicio de sesión</div>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        
+        <button class="btn btn-primary" id="verify-identity-btn">
+          <i class="fas fa-id-card"></i> Verificar mi Identidad
+        </button>
+      </div>
+
+      <div class="card" style="margin-bottom: 1rem;">
+        <div class="section-title" style="margin-bottom: 1rem;">
+          <i class="fas fa-cogs"></i> Gestión de Cuenta
+        </div>
+        
+        <div class="settings-buttons">
+          <button class="settings-nav-btn" id="verification-nav-btn">
+            <div class="settings-nav-icon verification">
+              <i class="fas fa-id-card"></i>
+            </div>
+            <div class="settings-nav-content">
+              <div class="settings-nav-title">Verificación</div>
+              <div class="settings-nav-description">Verificar identidad y documentos</div>
+            </div>
+          </button>
+          
+          <button class="settings-nav-btn" id="activation-nav-btn">
+            <div class="settings-nav-icon activation">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="settings-nav-content">
+              <div class="settings-nav-title">Activación</div>
+              <div class="settings-nav-description">Activar servicios y funciones</div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="logout-btn" style="margin-top: 1rem;">
+        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+      </button>
+    </div>
+  </div>
+
+  <div class="recharge-container" id="recharge-container">
+    <div class="section-title" style="margin-bottom: 1.5rem; display: flex; align-items: center;">
+      <i class="fas fa-arrow-left" id="recharge-back" style="cursor: pointer; margin-right: 1rem;"></i>
+      <span>Recargar Saldo</span>
+    </div>
+    
+    <div class="security-badge" style="margin-bottom: 1.5rem;">
+      <div class="security-badge-icon">
+        <i class="fas fa-lock"></i>
+      </div>
+      <div class="security-badge-content">
+        <div class="security-badge-title">Transacción Segura</div>
+        <div class="security-badge-text">Todos los pagos están protegidos con cifrado SSL</div>
+      </div>
+    </div>
+
+    <div class="payment-method-tabs">
+      <div class="payment-method-tab active" data-target="card-payment">Tarjeta de Crédito</div>
+      <div class="payment-method-tab" data-target="bank-payment">Transferencia Bancaria</div>
+      <div class="payment-method-tab" data-target="mobile-payment">Pago Móvil</div>
+    </div>
+
+    <div class="payment-method-content active" id="card-payment">
+      <div class="card">
+        <div style="margin-bottom: 1.25rem; text-align: center;">
+          <div style="font-size: 0.8rem; color: var(--neutral-600); margin-bottom: 0.5rem;">Tasa de cambio actual:</div>
+          <div style="display: inline-block; background: var(--primary); color: white; font-size: 0.8rem; font-weight: 600; padding: 0.5rem 0.75rem; border-radius: var(--radius-md);">
+            <span id="card-exchange-rate-display">1 USD = 133.34 Bs | 1 USD = 0.94 EUR</span>
+          </div>
+        </div>
+
+        <div class="saved-card-container" id="saved-card-container">
+          <div class="saved-card">
+            <div class="saved-card-icon">
+              <i class="fab fa-cc-visa"></i>
+            </div>
+            <div class="saved-card-details">
+              <div class="saved-card-number">•••• •••• •••• 3009</div>
+              <div class="saved-card-type">VISA</div>
+            </div>
+            <div class="saved-card-use">
+              <input type="checkbox" id="use-saved-card" class="saved-card-checkbox" checked>
+              <label for="use-saved-card">Usar esta tarjeta</label>
+</div>
+</div>
+<button class="saved-card-pay-btn" id="saved-card-pay-btn" disabled>
+<i class="fas fa-credit-card"></i> Seleccione un monto
+</button>
+</div> <div class="section-title" style="margin-bottom: 0.5rem; font-size: 0.9rem;">
+      <i class="fas fa-money-bill"></i> Seleccione un Monto
+    </div>
+    
+    <select class="amount-select" id="card-amount-select">
+      <option value="" selected disabled>-- Seleccione un monto --</option>
+      <option value="500" data-bs="66670" data-eur="470">$500 ≈ Bs 66.670,00 ≈ €470,00</option>
+      <option value="1000" data-bs="133340" data-eur="940">$1.000 ≈ Bs 133.340,00 ≈ €940,00</option>
+      <option value="1500" data-bs="200010" data-eur="1410">$1.500 ≈ Bs 200.010,00 ≈ €1.410,00</option>
+      <option value="2000" data-bs="266680" data-eur="1880">$2.000 ≈ Bs 266.680,00 ≈ €1.880,00</option>
+      <option value="3000" data-bs="400020" data-eur="2820">$3.000 ≈ Bs 400.020,00 ≈ €2.820,00</option>
+      <option value="4000" data-bs="533360" data-eur="3760">$4.000 ≈ Bs 533.360,00 ≈ €3.760,00</option>
+      <option value="5000" data-bs="666700" data-eur="4700">$5.000 ≈ Bs 666.700,00 ≈ €4.700,00</option>
+      <option value="6000" data-bs="800040" data-eur="5640">$6.000 ≈ Bs 800.040,00 ≈ €5.640,00</option>
+      <option value="7000" data-bs="933380" data-eur="6580">$7.000 ≈ Bs 933.380,00 ≈ €6.580,00</option>
+      <option value="8000" data-bs="1066720" data-eur="7520">$8.000 ≈ Bs 1.066.720,00 ≈ €7.520,00</option>
+    </select>
+  </div>
+  
+  <div class="card" id="card-form-container" style="margin-top: 1.5rem;">
+    <div class="section-title" style="margin-bottom: 1rem;">
+      <i class="fas fa-credit-card"></i> Detalles de la Tarjeta
+    </div>
+    
+    <div class="card-preview" id="card-preview">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-logo">
+            <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" class="card-chip" alt="Chip de tarjeta">
+            <img id="card-brand-logo" src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/visa.png" class="card-brand" alt="Logo de Visa">
+          </div>
+          
+          <div class="card-number" id="card-number-display">•••• •••• •••• ••••</div>
+          
+          <div class="card-details">
+            <div class="card-holder">
+              <div style="opacity: 0.7; font-size: 0.7rem; margin-bottom: 4px;">Titular</div>
+              <div id="card-holder-display">••••••• •••••••</div>
+            </div>
+            
+            <div class="card-expiry">
+              <div style="text-align: right;">
+                <div style="opacity: 0.7; font-size: 0.7rem; margin-bottom: 4px;">Expira</div>
+                <div><span id="card-month-display">••</span>/<span id="card-year-display">••</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-back">
+          <div class="card-stripe"></div>
+          <div style="padding: 0 1.25rem;">
+            <div style="font-size: 0.7rem; margin-bottom: 0.5rem;">CVV</div>
+            <div class="card-cvv" id="card-cvv-display">•••</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card-form">
+      <div class="form-group">
+        <label class="form-label" for="cardName">Titular de la Tarjeta</label>
+        <input type="text" class="form-control" id="cardName" placeholder="Nombre como aparece en la tarjeta" aria-describedby="card-name-error">
+        <div class="error-message" id="card-name-error">Por favor, introduce el nombre del titular.</div>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label" for="cardNumber">Número de Tarjeta</label>
+        <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" aria-describedby="card-number-error">
+        <div class="error-message" id="card-number-error">Número de tarjeta no válido.</div>
+      </div>
+      
+      <div class="card-row">
+        <div class="card-col">
+          <label class="form-label">Fecha de Expiración</label>
+          <div style="display: flex; gap: 0.5rem;">
+            <select class="form-control" id="cardMonth" aria-describedby="card-date-error">
+              <option value="" disabled selected>Mes</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            
+            <select class="form-control" id="cardYear" aria-describedby="card-date-error">
+              <option value="" disabled selected>Año</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+            </select>
+          </div>
+          <div class="error-message" id="card-date-error">Por favor, selecciona una fecha válida.</div>
+        </div>
+        
+        <div class="card-col" style="max-width: 120px;">
+          <label class="form-label" for="cardCvv">CVV</label>
+          <input type="password" class="form-control" id="cardCvv" placeholder="•••" maxlength="3" aria-describedby="card-cvv-error">
+          <div class="error-message" id="card-cvv-error">CVV inválido.</div>
+        </div>
+      </div>
+      
+      <div style="display: flex; align-items: center; margin-top: 1rem;">
+        <input type="checkbox" id="save-card" style="margin-right: 0.5rem;">
+        <label for="save-card" style="font-size: 0.85rem; color: var(--neutral-700);">Guardar esta tarjeta para futuras recargas</label>
+      </div>
+      
+      <button class="btn btn-primary" id="submit-payment" disabled style="margin-top: 1.5rem;">
+        <i class="fas fa-credit-card"></i> Seleccione un monto
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="payment-method-content" id="bank-payment">
+  <div class="card">
+    <div style="margin-bottom: 1.25rem; text-align: center;">
+      <div style="font-size: 0.8rem; color: var(--neutral-600); margin-bottom: 0.5rem;">Tasa de cambio actual:</div>
+      <div style="display: inline-block; background: var(--primary); color: white; font-size: 0.8rem; font-weight: 600; padding: 0.5rem 0.75rem; border-radius: var(--radius-md);">
+        <span id="bank-exchange-rate-display">1 USD = 133.34 Bs | 1 USD = 0.94 EUR</span>
+      </div>
+    </div>
+    
+    <div class="section-title" style="margin-bottom: 0.5rem;">
+      <i class="fas fa-money-bill"></i> Seleccione un Monto
+    </div>
+    
+    <select class="amount-select" id="bank-amount-select">
+      <option value="" selected disabled>-- Seleccione un monto --</option>
+      <option value="25" data-bs="3334" data-eur="23.5">$25 ≈ Bs 3.334,00 ≈ €23,50</option>
+      <option value="30" data-bs="4000" data-eur="28.2">$30 ≈ Bs 4.000,00 ≈ €28,20</option>
+      <option value="40" data-bs="5334" data-eur="37.6">$40 ≈ Bs 5.334,00 ≈ €37,60</option>
+      <option value="50" data-bs="6667" data-eur="47">$50 ≈ Bs 6.667,00 ≈ €47,00</option>
+      <option value="100" data-bs="13334" data-eur="94">$100 ≈ Bs 13.334,00 ≈ €94,00</option>
+      <option value="200" data-bs="26668" data-eur="188">$200 ≈ Bs 26.668,00 ≈ €188,00</option>
+      <option value="250" data-bs="33335" data-eur="235">$250 ≈ Bs 33.335,00 ≈ €235,00</option>
+      <option value="400" data-bs="53336" data-eur="376">$400 ≈ Bs 53.336,00 ≈ €376,00</option>
+      <option value="500" data-bs="66670" data-eur="470">$500 ≈ Bs 66.670,00 ≈ €470,00</option>
+    </select>
+    
+    <div class="section-title" style="margin-top: 1.5rem; margin-bottom: 1rem;">
+      <i class="fas fa-university"></i> Datos Bancarios
+    </div>
+    
+    <div class="bank-details">
+      <div class="bank-detail-row">
+        <div class="bank-detail-label">Banco:</div>
+        <div class="bank-detail-value">
+          Banco Venezolano de Crédito
+          <div class="copy-btn" data-copy="Banco Venezolano de Crédito"><i class="far fa-copy"></i></div>
+        </div>
+      </div>
+      
+      <div class="bank-detail-row">
+        <div class="bank-detail-label">Titular:</div>
+        <div class="bank-detail-value">
+          Global VISA Venezuela
+          <div class="copy-btn" data-copy="Global VISA Venezuela"><i class="far fa-copy"></i></div>
+        </div>
+      </div>
+      
+      <div class="bank-detail-row">
+        <div class="bank-detail-label">RIF:</div>
+        <div class="bank-detail-value">
+          J407502646
+          <div class="copy-btn" data-copy="J407502646"><i class="far fa-copy"></i></div>
+        </div>
+      </div>
+      
+      <div class="bank-detail-row">
+        <div class="bank-detail-label">Cuenta Corriente:</div>
+        <div class="bank-detail-value">
+          Disponible al activar su cuenta
+          <div class="copy-btn" data-copy="No disponible"><i class="far fa-copy"></i></div>
+        </div>
+      </div>
+      
+      <div class="bank-detail-row">
+        <div class="bank-detail-label">Concepto:</div>
+        <div class="bank-detail-value">
+          4454651
+          <div class="copy-btn" data-copy="4454651"><i class="far fa-copy"></i></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bank-warning">
+      <div class="bank-warning-title">
+        <i class="fas fa-exclamation-triangle"></i> Importante
+      </div>
+      <div class="bank-warning-content">
+        Asegúrese de realizar la transferencia <strong>únicamente</strong> al Banco Venezolano de Crédito. No confundir con Banco Nacional de Crédito ni Banco de Venezuela. Una vez realizada la transferencia, complete el formulario a continuación.
+      </div>
+    </div>
+    
+    <div class="section-title" style="margin-top: 1.5rem; margin-bottom: 1rem;">
+      <i class="fas fa-upload"></i> Comprobante de Pago
+    </div>
+    
+    <div class="receipt-upload" id="receipt-upload">
+      <i class="fas fa-cloud-upload-alt"></i>
+      <div class="receipt-upload-title">Subir Comprobante</div>
+      <div class="receipt-upload-subtitle">Haga clic aquí para cargar su comprobante de pago<br>Formatos aceptados: JPG, PNG, PDF (máx. 5MB)</div>
+      <input type="file" id="receipt-file" accept="image/jpeg,image/png,application/pdf" class="is-hidden">
+    </div>
+    
+    <div class="receipt-preview" id="receipt-preview">
+      <div class="receipt-preview-container">
+        <div class="receipt-preview-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <div class="receipt-preview-content">
+          <div class="receipt-preview-name" id="receipt-filename">comprobante.jpg</div>
+          <div class="receipt-preview-size" id="receipt-filesize">120 KB</div>
+        </div>
+        <div class="receipt-preview-actions">
+          <div class="copy-btn" id="receipt-remove"><i class="fas fa-trash"></i></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group reference-number">
+      <label class="form-label" for="reference-number">Número de Referencia</label>
+      <input type="text" class="form-control" id="reference-number" placeholder="Ingrese el número de referencia de la transferencia" aria-describedby="reference-error">
+      <div class="error-message" id="reference-error">Por favor, ingrese un número de referencia válido.</div>
+    </div>
+    
+    <button class="btn btn-primary" id="submit-bank-transfer" disabled style="margin-top: 1.5rem;">
+      <i class="fas fa-paper-plane"></i> Seleccione un monto
+    </button>
+  </div>
+</div>
+
+<div class="payment-method-content" id="mobile-payment">
+  <div class="card">
+    <div style="margin-bottom: 1.25rem; text-align: center;">
+      <div style="font-size: 0.8rem; color: var(--neutral-600); margin-bottom: 0.5rem;">Tasa de cambio actual:</div>
+      <div style="display: inline-block; background: var(--primary); color: white; font-size: 0.8rem; font-weight: 600; padding: 0.5rem 0.75rem; border-radius: var(--radius-md);">
+        <span id="mobile-exchange-rate-display">1 USD = 133.34 Bs | 1 USD = 0.94 EUR</span>
+      </div>
+    </div>
+    
+    <div class="mobile-payment-success" id="mobile-payment-success" style="display: flex; align-items: flex-start; gap: 0.8rem;">
+      <div class="mobile-payment-success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div class="mobile-payment-success-content">
+        <div class="mobile-payment-success-title">¡Felicidades! Tus datos para recargar tu cuenta de Remeex VISA.</div>
+        <div class="mobile-payment-success-text">Haz tu primera recarga por 25 USD para culminar tu verificación! Ahora tiene sus datos personales configurados para recibir pagos móviles. Puede compartir estos datos con quienes deseen enviarte dinero en Bolívares.</div>
+      </div>
+    </div>
+    
+    <div class="section-title" style="margin-bottom: 0.5rem;">
+      <i class="fas fa-money-bill"></i> Seleccione un Monto
+    </div>
+    
+    <select class="amount-select" id="mobile-amount-select">
+      <option value="" selected disabled>-- Seleccione un monto --</option>
+      <option value="25" data-bs="3334" data-eur="23.5">$25 ≈ Bs 3.334,00 ≈ €23,50</option>
+      <option value="30" data-bs="4000" data-eur="28.2">$30 ≈ Bs 4.000,00 ≈ €28,20</option>
+      <option value="40" data-bs="5334" data-eur="37.6">$40 ≈ Bs 5.334,00 ≈ €37,60</option>
+      <option value="50" data-bs="6667" data-eur="47">$50 ≈ Bs 6.667,00 ≈ €47,00</option>
+      <option value="100" data-bs="13334" data-eur="94">$100 ≈ Bs 13.334,00 ≈ €94,00</option>
+      <option value="200" data-bs="26668" data-eur="188">$200 ≈ Bs 26.668,00 ≈ €188,00</option>
+      <option value="250" data-bs="33335" data-eur="235">$250 ≈ Bs 33.335,00 ≈ €235,00</option>
+      <option value="400" data-bs="53336" data-eur="376">$400 ≈ Bs 53.336,00 ≈ €376,00</option>
+      <option value="500" data-bs="66670" data-eur="470">$500 ≈ Bs 66.670,00 ≈ €470,00</option>
+    </select>
+    
+    <div class="section-title" style="margin-top: 1.5rem; margin-bottom: 1rem;">
+      <i class="fas fa-mobile-alt"></i> Datos de Pago Móvil (Acreditación Inmediata)
+    </div>
+    
+    <div class="bank-details">
+      <div class="bank-detail-row">
+        <div class="bank-detail-label">Banco:</div>
+        <div class="bank-detail-value">
+          Banco Venezolano de Crédito (0104)
+          <div class="copy-btn" data-copy="Banco Venezolano de Crédito (0104)"><i class="far fa-copy"></i></div>
+        </div>
+      </div>
+      
+      <div class="bank-detail-row">
+        <div class="bank-detail-label">Titular:</div>
+        <div class="bank-detail-value" id="mobile-payment-name">
+          <span id="mobile-payment-name-value">Verificación Pendiente</span>
+          <div class="copy-btn" data-copy="Verificación Pendiente"><i class="far fa-copy"></i></div>
+        </div>
+      </div>
+
+      <div class="bank-detail-row">
+        <div class="bank-detail-label">RIF/Cédula:</div>
+        <div class="bank-detail-value" id="mobile-payment-rif">
+          <span id="mobile-payment-rif-value">Verificación Pendiente</span>
+          <div class="copy-btn" data-copy="Verificación Pendiente"><i class="far fa-copy"></i></div>
+        </div>
+      </div>
+      
+      <div class="bank-detail-row">
+        <div class="bank-detail-label">Teléfono:</div>
+        <div class="bank-detail-value" id="mobile-payment-phone">
+          <span id="mobile-payment-phone-value">Verificación Pendiente</span>
+          <div class="copy-btn" data-copy="Verificación Pendiente"><i class="far fa-copy"></i></div>
+        </div>
+      </div>
+      
+      <div class="bank-detail-row">
+        <div class="bank-detail-label">Concepto:</div>
+        <div class="bank-detail-value">
+          4454651
+          <div class="copy-btn" data-copy="4454651"><i class="far fa-copy"></i></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="support-needed-container" id="support-needed-container">
+      <div class="support-needed-header">
+        <div class="support-needed-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <div>
+          <div class="support-needed-title">Soporte adicional requerido</div>
+          <div class="support-needed-subtitle">Para completar esta transacción</div>
+        </div>
+      </div>
+      <div class="support-needed-content">
+        Para validar este pago móvil necesitamos confirmar algunos datos de seguridad adicionales. Nuestro equipo está disponible 24/7 para asistirle y procesar su solicitud en menos de 5 minutos.
+      </div>
+      <a href="https://wa.me/+17373018059" class="whatsapp-support-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i> Contactar Soporte por WhatsApp
+      </a>
+    </div>
+    
+    <div class="bank-warning">
+      <div class="bank-warning-title">
+        <i class="fas fa-exclamation-triangle"></i> Importante
+      </div>
+      <div class="bank-warning-content">
+        Asegúrese de realizar el pago móvil a través del <strong>Banco Venezolano de Crédito (0104)</strong> y no a otro banco. Una vez realizado el pago, complete el formulario a continuación.
+      </div>
+    </div>
+    
+    <div class="section-title" style="margin-top: 1.5rem; margin-bottom: 1rem;">
+      <i class="fas fa-upload"></i> Comprobante de Pago
+    </div>
+    
+    <div class="receipt-upload" id="mobile-receipt-upload">
+      <i class="fas fa-cloud-upload-alt"></i>
+      <div class="receipt-upload-title">Subir Comprobante</div>
+      <div class="receipt-upload-subtitle">Haga clic aquí para cargar una captura de su pago móvil<br>Formatos aceptados: JPG, PNG, PDF (máx. 5MB)</div>
+      <input type="file" id="mobile-receipt-file" accept="image/jpeg,image/png,application/pdf" class="is-hidden">
+    </div>
+    
+    <div class="receipt-preview" id="mobile-receipt-preview">
+      <div class="receipt-preview-container">
+        <div class="receipt-preview-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <div class="receipt-preview-content">
+          <div class="receipt-preview-name" id="mobile-receipt-filename">comprobante.jpg</div>
+          <div class="receipt-preview-size" id="mobile-receipt-filesize">120 KB</div>
+        </div>
+        <div class="receipt-preview-actions">
+          <div class="copy-btn" id="mobile-receipt-remove"><i class="fas fa-trash"></i></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group reference-number">
+      <label class="form-label" for="mobile-reference-number">Número de Referencia</label>
+      <input type="text" class="form-control" id="mobile-reference-number" placeholder="Ingrese el número de referencia del pago móvil" aria-describedby="mobile-reference-error">
+      <div class="error-message" id="mobile-reference-error">Por favor, ingrese un número de referencia válido.</div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="mobile-concept">Concepto Utilizado</label>
+      <input type="text" class="form-control" id="mobile-concept" placeholder="Ingrese el concepto que escribió en el pago móvil" aria-describedby="mobile-concept-error">
+      <div class="error-message" id="mobile-concept-error">Por favor, ingrese el concepto que utilizó en el pago móvil.</div>
+    </div>
+    
+    <button class="btn btn-primary" id="submit-mobile-payment" disabled style="margin-top: 1.5rem;">
+      <i class="fas fa-paper-plane"></i> Seleccione un monto
+    </button>
+  </div>
+</div> </div>
+  <div class="modal-overlay" id="otp-modal-overlay">
+    <div class="modal">
+      <div class="modal-title">Verificación de Seguridad</div>
+      <div class="modal-subtitle">Enviamos un código a tu teléfono asociado a tu tarjeta <span id="masked-phone">+44 75** ****13</span></div><div class="otp-container">
+    <input type="text" class="otp-input" id="otp-1" maxlength="1" data-next="otp-2" aria-label="OTP dígito 1">
+    <input type="text" class="otp-input" id="otp-2" maxlength="1" data-next="otp-3" data-prev="otp-1" aria-label="OTP dígito 2">
+    <input type="text" class="otp-input" id="otp-3" maxlength="1" data-next="otp-4" data-prev="otp-2" aria-label="OTP dígito 3">
+    <input type="text" class="otp-input" id="otp-4" maxlength="1" data-next="otp-5" data-prev="otp-3" aria-label="OTP dígito 4">
+    <input type="text" class="otp-input" id="otp-5" maxlength="1" data-next="otp-6" data-prev="otp-4" aria-label="OTP dígito 5">
+    <input type="text" class="otp-input" id="otp-6" maxlength="1" data-prev="otp-5" aria-label="OTP dígito 6">
+  </div>
+  
+  <div class="error-message" id="otp-error" style="text-align: center; display: none;">Código incorrecto. Intente nuevamente.</div>
+  
+  <button class="btn btn-primary" id="verify-otp-btn">
+    <i class="fas fa-shield-alt"></i> Verificar y Recargar
+  </button>
+  
+  <div class="resend-code">
+    ¿No recibió el código? <a href="#" id="resend-code">Reenviar</a>
+  </div>
+</div> </div>
+  <div class="feature-blocked-modal" id="feature-blocked-modal">
+    <div class="feature-blocked-card">
+      <div class="feature-blocked-icon">
+        <i class="fas fa-lock"></i>
+      </div>
+      <div class="feature-blocked-title">Verificación Requerida</div>
+      <div class="feature-blocked-message">
+        Esta función requiere verificación de identidad para su activación. Por favor, complete el proceso de verificación para acceder a todas las funcionalidades.
+      </div>
+      <div class="feature-blocked-actions">
+        <button class="btn btn-primary" id="go-verify-now">
+          <i class="fas fa-id-card"></i> Verificar Ahora
+        </button>
+        <button class="btn btn-outline" id="feature-blocked-close">
+          <i class="fas fa-times"></i> Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="external-verification-modal" id="external-verification-modal">
+    <div class="external-verification-card">
+      <button class="external-verification-close" id="external-verification-close">
+        <i class="fas fa-times"></i>
+      </button> <div class="external-verification-icon">
+    <i class="fas fa-user-check"></i>
+  </div>
+  
+  <div class="external-verification-title">Verificación Externa Requerida</div>
+  
+  <div class="external-verification-message">
+    Para acceder a esta función, debe completar el proceso de verificación en nuestra página especializada. Una vez completado, esta opción estará disponible automáticamente.
+  </div>
+  
+  <div class="external-verification-actions">
+    <a href="verificacion.html" class="btn btn-primary">
+      <i class="fas fa-external-link-alt"></i> Ir a Verificación
+    </a>
+    <button class="btn btn-outline" id="external-verification-cancel"><i class="fas fa-times"></i> Cancelar
+    </button>
+  </div>
+</div> </div>
+  <div class="modal-overlay" id="verification-modal">
+    <div class="modal" style="max-width: 380px;">
+      <div class="modal-title">Verificación de Identidad</div>
+      <div class="modal-subtitle">Para garantizar la seguridad de su cuenta y permitir transacciones de mayor monto, necesitamos verificar su identidad.</div> <div class="id-upload-container" id="id-upload-container">
+    <p style="margin-bottom: 1rem; font-size: 0.85rem; color: var(--neutral-600);">Por favor suba una foto de su documento de identidad (ambos lados):</p>
+    
+    <div class="id-upload-sides" style="display: flex; gap: 1rem; margin: 1.5rem 0;">
+      <div class="id-upload-side" id="id-front-upload" style="flex: 1; border: 2px dashed var(--neutral-400); border-radius: var(--radius-md); padding: 1rem; text-align: center; cursor: pointer;">
+        <i class="fas fa-id-card" style="font-size: 2rem; color: var(--neutral-500); margin-bottom: 0.75rem;"></i>
+        <div class="id-upload-title" style="font-weight: 600; font-size: 0.9rem; color: var(--neutral-800); margin-bottom: 0.4rem;">Parte Frontal</div>
+        <div class="id-upload-subtitle" style="font-size: 0.75rem; color: var(--neutral-600);">Cédula o Pasaporte</div>
+        <input type="file" id="id-front-file" accept="image/jpeg,image/png" class="is-hidden">
+      </div>
+      
+      <div class="id-upload-side" id="id-back-upload" style="flex: 1; border: 2px dashed var(--neutral-400); border-radius: var(--radius-md); padding: 1rem; text-align: center; cursor: pointer;">
+        <i class="fas fa-id-card" style="font-size: 2rem; color: var(--neutral-500); margin-bottom: 0.75rem;"></i>
+        <div class="id-upload-title" style="font-weight: 600; font-size: 0.9rem; color: var(--neutral-800); margin-bottom: 0.4rem;">Parte Trasera</div>
+        <div class="id-upload-subtitle" style="font-size: 0.75rem; color: var(--neutral-600);">Cédula o Pasaporte</div>
+        <input type="file" id="id-back-file" accept="image/jpeg,image/png" class="is-hidden">
+      </div>
+    </div>
+    
+    <div id="id-front-preview" style="display: none; margin-top: 1rem;">
+      <div class="id-preview" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.8rem; background: var(--neutral-200); border-radius: var(--radius-md);">
+        <div class="id-preview-icon" style="width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+          <i class="fas fa-id-card"></i>
+        </div>
+        <div class="id-preview-content" style="flex: 1; min-width: 0;">
+          <div class="id-preview-name" id="id-front-filename" style="font-weight: 600; font-size: 0.8rem; margin-bottom: 0.2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">frente-cedula.jpg</div>
+          <div class="id-preview-size" id="id-front-filesize" style="font-size: 0.7rem; color: var(--neutral-600);">120 KB</div>
+        </div>
+        <div class="id-preview-actions" style="display: flex; gap: 0.5rem;">
+          <div class="copy-btn" id="id-front-remove"><i class="fas fa-trash"></i></div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="id-back-preview" style="display: none; margin-top: 0.5rem;">
+      <div class="id-preview" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.8rem; background: var(--neutral-200); border-radius: var(--radius-md);">
+        <div class="id-preview-icon" style="width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+          <i class="fas fa-id-card"></i>
+        </div>
+        <div class="id-preview-content" style="flex: 1; min-width: 0;">
+          <div class="id-preview-name" id="id-back-filename" style="font-weight: 600; font-size: 0.8rem; margin-bottom: 0.2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">reverso-cedula.jpg</div>
+          <div class="id-preview-size" id="id-back-filesize" style="font-size: 0.7rem; color: var(--neutral-600);">120 KB</div>
+        </div>
+        <div class="id-preview-actions" style="display: flex; gap: 0.5rem;">
+          <div class="copy-btn" id="id-back-remove"><i class="fas fa-trash"></i></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group" style="margin-top: 1.5rem;">
+      <label class="form-label" for="id-number">Número de Cédula</label>
+      <input type="text" class="form-control" id="id-number" placeholder="Ej: V12345678" aria-describedby="id-number-error">
+      <div class="error-message" id="id-number-error">Por favor ingrese su número de cédula en formato V12345678.</div>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label" for="id-phone">Número de Teléfono</label>
+      <input type="text" class="form-control" id="id-phone" placeholder="Ej: 04121234567" aria-describedby="id-phone-error">
+      <div class="error-message" id="id-phone-error">Por favor ingrese su número de teléfono en formato 04121234567.</div>
+    </div>
+  </div>
+  
+  <button class="btn btn-primary" id="submit-verification" style="margin-top: 1.5rem;">
+    <i class="fas fa-shield-alt"></i> Enviar para Verificación
+  </button>
+  
+  <button class="btn btn-outline" id="verify-later" style="margin-top: 1rem; width: 100%;">
+    <i class="fas fa-clock"></i> Verificar más tarde
+  </button>
+</div> </div>
+  <div class="modal-overlay" id="transfer-processing-modal">
+    <div class="modal">
+      <div class="modal-title">¡Recibimos su Comprobante!</div>
+      <div class="modal-subtitle">Estamos verificando su pago. Este proceso suele tardar entre 5-10 minutos en horario laboral.</div> <div style="text-align: center; margin: 1.5rem 0;">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnBzNdjl6bNp-nIdaiHVENczJhwlJNA7ocsyiOObMmzbu8at0dY5yGcZ9cLxLF39qI6gwNfqBxlkTDC0txVULEwQVwGkeEzN0Jq9MRTRagA48mh18UqTlR4WhsXOLAEZugUyhqJHB19xJgnkpe-S5VOWFgzpKFwctv3XP9XhH41vNTvq0ZS-nik58Qhr-O/s320/remeex.png" alt="REMEEX" style="height: 45px; width: auto; margin-bottom: 1.25rem;">
+    
+    <div style="font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;" id="transfer-amount">$500.00</div>
+    <div style="font-size: 0.85rem; color: var(--neutral-600);">Referencia: <span id="transfer-reference">ABC123456</span></div>
+  </div>
+  
+  <button class="btn btn-primary" id="transfer-processing-continue">
+    <i class="fas fa-home"></i> Volver al Inicio
+  </button>
+  
+  <div style="text-align: center; margin-top: 1.25rem; font-size: 0.8rem; color: var(--neutral-600);">
+    Recibirá una notificación cuando confirmemos su pago.<br>
+    <a href="https://wa.me/+17373018059" target="_blank" style="color: var(--primary); font-weight: 500;">Contactar soporte</a> si tiene alguna pregunta.
+  </div>
+</div> </div>
+  <div class="loading-overlay" id="loading-overlay" aria-label="Cargando">
+    <div class="spinner"></div>
+    <div class="loading-text" id="loading-text">Procesando su solicitud...</div>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </div>
+  <div class="success-container" id="success-container" aria-label="Transacción exitosa">
+    <div class="success-card">
+      <div class="success-checkmark">
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="success-title">¡Recarga Exitosa!</div>
+      <div class="success-amount" id="success-amount">$0.00</div>
+      <div class="success-message">Su saldo ha sido actualizado correctamente</div>
+      <div class="success-actions">
+        <button class="btn btn-primary" id="success-continue">
+          <i class="fas fa-home"></i> Ir al Inicio
+        </button>
+        <button class="btn btn-outline" id="success-transfer">
+          <i class="fas fa-upload"></i> Retirar Dinero
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="inactivity-modal" id="inactivity-modal">
+    <div class="inactivity-card">
+      <div class="inactivity-icon">
+        <i class="fas fa-clock"></i>
+      </div>
+      <div class="inactivity-title">Sesión a punto de expirar</div>
+      <div class="inactivity-message">
+        Por su seguridad, la sesión se cerrará automáticamente debido a inactividad.
+      </div>
+      <div class="inactivity-timer" id="inactivity-timer">30</div>
+      <div class="inactivity-actions">
+        <button class="btn btn-primary" id="inactivity-continue">
+          <i class="fas fa-redo"></i> Continuar sesión
+        </button>
+        <button class="btn btn-outline" id="inactivity-logout">
+          <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="welcome-modal" id="welcome-modal">
+    <div class="welcome-card">
+      <div class="welcome-header">
+        <div class="welcome-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <div class="welcome-title-container">
+          <h2 class="welcome-title">¡Bienvenido a REMEEX!</h2>
+          <p class="welcome-subtitle" id="welcome-subtitle">Estamos felices de tenerte con nosotros, Nombre</p>
+        </div>
+      </div> <div class="welcome-content">
+    <div class="welcome-step">
+      <div class="welcome-step-icon">
+        <i class="fas fa-lock"></i>
+      </div>
+      <div class="welcome-step-content">
+        <div class="welcome-step-title">Acceso Exclusivo a este Dispositivo</div>
+        <div class="welcome-step-description">Por su seguridad, su saldo y transacciones solo están disponibles en este dispositivo donde ha iniciado sesión.</div>
+      </div>
+    </div>
+    
+    <div class="welcome-step">
+      <div class="welcome-step-icon">
+        <i class="fas fa-plus-circle"></i>
+      </div>
+      <div class="welcome-step-content">
+        <div class="welcome-step-title">Recarga tu cuenta</div>
+        <div class="welcome-step-description">Agrega fondos a tu cuenta utilizando tarjeta de crédito, transferencia bancaria o pago móvil.</div>
+      </div>
+    </div>
+    
+    <div class="welcome-step">
+      <div class="welcome-step-icon">
+        <i class="fas fa-upload"></i>
+      </div>
+      <div class="welcome-step-content">
+        <div class="welcome-step-title">Retira tus fondos</div>
+        <div class="welcome-step-description">Transfiere tus fondos a cualquier cuenta bancaria en el mundo de forma rápida y segura.</div>
+      </div>
+    </div>
+    
+    <div class="welcome-step">
+      <div class="welcome-step-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <div class="welcome-step-content">
+        <div class="welcome-step-title">Verifica tu identidad</div>
+        <div class="welcome-step-description">Completa la verificación para aumentar tus límites y acceder a todas las funcionalidades.</div>
+      </div>
+    </div>
+  </div>
+  
+  <button class="btn btn-primary" id="welcome-continue">
+    <i class="fas fa-rocket"></i> Comenzar
+  </button>
+</div> </div>
+  <div class="document-validation-screen" id="document-validation-screen" class="is-hidden">
+    <div class="validation-card">
+      <button class="validation-close" id="validation-close">
+        <i class="fas fa-times"></i>
+      </button> <div class="validation-header">
+    <div class="validation-icon">
+      <div class="validation-spinner"></div>
+    </div>
+    <h2 class="validation-title">Validando Documentos</h2>
+    <p class="validation-subtitle">Estamos procesando y verificando su información. Este proceso puede tardar unos momentos...</p>
+  </div>
+  
+  <div class="validation-progress">
+    <div class="validation-progress-bar" id="document-validation-progress"></div>
+  </div>
+
+  <div class="validation-steps">
+    <div class="validation-step" id="doc-step-1">
+      <div class="validation-step-icon">
+        <i class="fas fa-id-card"></i>
+      </div>
+      <div class="validation-step-content">
+        <div class="validation-step-title">Verificando Información Personal</div>
+        <div class="validation-step-subtitle">Procesando datos de identidad</div>
+      </div>
+    </div>
+    
+    <div class="validation-step" id="doc-step-2">
+      <div class="validation-step-icon">
+        <i class="fas fa-university"></i>
+      </div>
+      <div class="validation-step-content">
+        <div class="validation-step-title">Validando Datos Bancarios</div>
+        <div class="validation-step-subtitle">Verificando información financiera</div>
+      </div>
+    </div>
+    
+    <div class="validation-step" id="doc-step-3">
+      <div class="validation-step-icon">
+        <i class="fas fa-user-check"></i>
+      </div>
+      <div class="validation-step-content">
+        <div class="validation-step-title">Procesando Biometría</div>
+        <div class="validation-step-subtitle">Analizando verificación facial</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="validation-actions">
+    <button class="btn btn-outline" id="back-to-dashboard">
+      <i class="fas fa-home"></i> Volver al Panel
+    </button>
+    <button class="btn btn-primary" id="check-verification-status" class="is-hidden">
+      <i class="fas fa-search"></i> Verificar mi Estatus
+    </button>
+    <a href="https://wa.me/+17373018059" class="btn btn-outline" target="_blank">
+      <i class="fab fa-whatsapp"></i> Contactar Soporte
+    </a>
+  </div>
+</div> </div>
+  <div class="toast-container" id="toast-container"></div>
+  <div id="tawkto-container" class="tawkto-container"></div>
+  <script type="text/javascript">
+    function loadTawkTo() {
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      
+      Tawk_API.onLoad = function(){
+        document.getElementById('tawkto-container').style.display = 'block';
+        console.log('Tawk.to cargado correctamente');
+      };
+      
+      try {
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/67cca8c614b1ee191063c36a/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s1.setAttribute('importance', 'high');
+        s0.parentNode.insertBefore(s1,s0);
+        
+        setTimeout(function() {
+          const tawktoFrame = document.querySelector('iframe[title*="chat"]');
+          if (!tawktoFrame) {
+            console.log('Reintentando cargar Tawk.to...');
+            loadTawkTo();
+          }
+        }, 5000);
+      } catch (e) {
+        console.error('Error al cargar Tawk.to:', e);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadTawkTo);
+    } else {
+      loadTawkTo();
+    }
+
+    function ensureTawkToVisibility() {
+      const checkInterval = setInterval(function() {
+        const tawktoFrame = document.querySelector('iframe[title*="chat"]');
+        const tawktoContainer = document.getElementById('tawkto-container');
+        
+        if (tawktoFrame && tawktoContainer) {
+          tawktoContainer.style.display = 'block';
+          tawktoContainer.style.visibility = 'visible';
+          tawktoContainer.style.zIndex = '9999';
+          
+          tawktoFrame.style.display = 'block';
+          tawktoFrame.style.visibility = 'visible';
+          tawktoFrame.style.zIndex = '9999';
+          
+          clearInterval(checkInterval);
+          setInterval(function() {
+            if (tawktoFrame.style.display !== 'block') {
+              tawktoFrame.style.display = 'block';
+              tawktoFrame.style.visibility = 'visible';
+            }
+          }, 3000);
+        }
+      }, 1000);
+    }
+
+    setTimeout(ensureTawkToVisibility, 2000);
+  </script>
+<!-- Scripts -->
+<script src="js/config.js"></script>
+<script src="js/globals.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/persistence.js"></script>
+<script src="js/wizard-registration.js"></script>
+<script src="js/visa-card.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/events.js"></script>
+<script src="js/payments.js"></script>
+<script src="js/evolution.js"></script>
+<script src="js/inactivity.js"></script>
+<script src="js/cross-page.js"></script>
+<script src="js/document-analysis.js"></script>
+<!-- New JS Modules -->
+<script src="js/spinner.js"></script>
+<script src="js/buttons.js"></script>
+<script src="js/countries.js"></script>
+<!-- Main.js SIEMPRE al final -->
+<script src="js/main.js"></script>
+</body>
+</html>

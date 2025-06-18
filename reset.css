@@ -1,0 +1,65 @@
+/* ============================================================================
+   RESET NEUROMORPHIC MODERNO
+   ============================================================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ===== NEUROMORPHIC BASE ===== */
+.neumorphic {
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-neumorphic-sm);
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+}
+
+.neumorphic:hover {
+  box-shadow: var(--shadow-neumorphic-md);
+  transform: translateY(-2px);
+}
+
+.neumorphic:active {
+  box-shadow: var(--shadow-inset-sm);
+  transform: translateY(0);
+}
+
+/* ===== SCROLLBAR NEUROMORPHIC ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-neumorphic-xs);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-primary-light);
+}

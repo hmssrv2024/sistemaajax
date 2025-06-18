@@ -1,0 +1,128 @@
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.global-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: oklch(12.9% 0.042 264.695);
+  display: grid;
+  place-items: center;
+  z-index: 99999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.global-spinner.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  display: grid;
+  grid-template-areas: "stack";
+  inline-size: min(80vmin, 100%);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.orb::before,
+.orb::after {
+  content: "";
+  display: block;
+  grid-area: stack;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: translateZ(0);
+}
+
+.orb::before {
+  background: conic-gradient(
+      from calc(var(--angle) * 2) at 25% 70%,
+      oklch(58.8% 0.158 241.966),
+      transparent 20% 80%,
+      oklch(58.8% 0.158 241.966)
+    ),
+    conic-gradient(
+      from calc(var(--angle) * 2) at 45% 75%,
+      oklch(85.2% 0.199 91.936),
+      transparent 30% 60%,
+      oklch(85.2% 0.199 91.936)
+    ),
+    conic-gradient(
+      from calc(var(--angle) * -3) at 80% 20%,
+      oklch(44.4% 0.177 26.899),
+      transparent 40% 60%,
+      oklch(44.4% 0.177 26.899)
+    ),
+    conic-gradient(
+      from calc(var(--angle) * 2) at 15% 5%,
+      oklch(85.2% 0.199 91.936),
+      transparent 10% 90%,
+      oklch(85.2% 0.199 91.936)
+    ),
+    conic-gradient(
+      from calc(var(--angle) * 1) at 20% 80%,
+      oklch(44.4% 0.177 26.899),
+      transparent 10% 90%,
+      oklch(44.4% 0.177 26.899)
+    ),
+    conic-gradient(
+      from calc(var(--angle) * -2) at 85% 10%,
+      oklch(58.8% 0.158 241.966),
+      transparent 20% 80%,
+      oklch(58.8% 0.158 241.966)
+    );
+  box-shadow: inset oklch(12.9% 0.042 264.695) 0 0 5vmin 1vmin;
+  filter: blur(3vmin) contrast(5);
+  animation: rotate 20s linear infinite;
+}
+
+.orb::after {
+  --dot: 1.5px;
+  background-image: radial-gradient(
+    circle at center,
+    oklch(12.9% 0.042 264.695) var(--dot),
+    transparent var(--dot)
+  );
+  background-size: calc(var(--dot) * 2) calc(var(--dot) * 2);
+  mask-image: radial-gradient(black 25%, transparent 75%);
+  backdrop-filter: blur(8vmin) contrast(10);
+  mix-blend-mode: overlay;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.spinner-text {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: oklch(85.2% 0.199 91.936);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .orb {
+    inline-size: min(60vmin, 150px);
+  }
+  
+  .spinner-text {
+    font-size: 1rem;
+  }
+}

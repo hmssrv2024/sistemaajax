@@ -1,0 +1,447 @@
+/*
+============================================================================
+SISTEMA DE DISEÑO - MONET MOBILE APP
+============================================================================
+Versión: 2.0
+Última actualización: 2025
+Descripción: Sistema completo de estilos para la aplicación móvil Monet
+
+Estructura:
+1. Variables globales y reset
+2. Componentes base
+3. Layout y navegación
+4. Formularios y controles
+5. Componentes específicos de la app
+6. Sistema evolutivo
+7. Notificaciones
+8. Animaciones
+9. Responsive design
+10. Utilidades
+
+Convenciones:
+- BEM methodology para nombres de clases
+- Custom properties para temas
+- Mobile-first responsive design
+- Accesibilidad integrada
+- Performance optimizado
+============================================================================
+*/
+
+/* ============================================================================
+   IMPORTS PRINCIPALES
+   ============================================================================ */
+@import url('base/variables.css');
+@import url('base/reset.css');
+@import url('base/typography.css');
+
+/* ============================================================================
+   COMPONENTES BASE
+   ============================================================================ */
+@import url('components/buttons.css');
+@import url('components/cards.css');
+@import url('components/forms.css');
+@import url('components/modals.css');
+
+/* ============================================================================
+   LAYOUT Y NAVEGACIÓN
+   ============================================================================ */
+@import url('layout/navigation.css');
+@import url('layout/containers.css');
+
+/* ============================================================================
+   CARACTERÍSTICAS ESPECÍFICAS DE LA APP
+   ============================================================================ */
+@import url('modules/balance-display.css');
+@import url('modules/services.css');
+@import url('modules/recharge.css');
+@import url('modules/evolution-system.css');
+@import url('modules/notifications.css');
+
+/* ============================================================================
+   SISTEMA DE ANIMACIONES
+   ============================================================================ */
+@import url('modules/animations.css');
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+@import url('modules/responsive.css');
+
+/* ============================================================================
+   UTILIDADES
+   ============================================================================ */
+@import url('modules/utilities.css');
+
+/* ============================================================================
+   ESTILOS GLOBALES Y OVERRIDES
+   ============================================================================ */
+
+/* Estilos base del body */
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  overflow-x: hidden;
+}
+
+/* Contenedor principal de la aplicación */
+.app {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Estados globales de la aplicación */
+.app.loading {
+  pointer-events: none;
+}
+
+.app.offline::before {
+  content: 'Sin conexión a internet';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--warning);
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  z-index: 10000;
+}
+
+.app.offline .app-container {
+  padding-top: calc(60px + 2rem);
+}
+
+/* Mejoras de performance */
+* {
+  box-sizing: border-box;
+}
+
+img, 
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Scroll suave para la aplicación */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selección de texto personalizada */
+::selection {
+  background-color: rgba(26, 31, 113, 0.2);
+  color: var(--primary-dark);
+}
+
+::-moz-selection {
+  background-color: rgba(26, 31, 113, 0.2);
+  color: var(--primary-dark);
+}
+
+/* Scrollbar personalizado para toda la app */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-200);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-400);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-500);
+}
+
+/* Focus outline personalizado */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Transiciones suaves para cambios de tema */
+* {
+  transition: background-color var(--transition-base), 
+              border-color var(--transition-base),
+              color var(--transition-base);
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+  .btn,
+  .action-btn,
+  .card {
+    border-width: 2px;
+  }
+}
+
+/* Modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+  .app {
+    color-scheme: dark;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print,
+  .top-nav,
+  .bottom-nav,
+  .floating-action,
+  .overlay,
+  .modal {
+    display: none !important;
+  }
+  
+  .app-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}
+
+/* Estados de carga global */
+.app-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+
+.app-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--neutral-200);
+  border-top: 3px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* PWA específico */
+.app.standalone {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Mejoras para pantallas táctiles */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+  
+  .btn,
+  .action-btn,
+  .nav-item {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Optimizaciones de rendimiento */
+.app-container,
+.modal,
+.overlay {
+  contain: layout style paint;
+}
+
+.card,
+.btn,
+.action-btn {
+  contain: layout paint;
+}
+
+/* Fallbacks para navegadores más antiguos */
+@supports not (backdrop-filter: blur(10px)) {
+  .glass,
+  .glass-dark {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .modal-overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@supports not (gap: 1rem) {
+  .services-grid {
+    display: block;
+  }
+  
+  .service-card {
+    margin: 0.5rem;
+    display: inline-block;
+    width: calc(33.333% - 1rem);
+  }
+}
+
+/* Estados de error globales */
+.app-error {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 2rem;
+  z-index: 9998;
+}
+
+.app-error-icon {
+  font-size: 4rem;
+  color: var(--danger);
+  margin-bottom: 1rem;
+}
+
+.app-error-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neutral-900);
+  margin-bottom: 0.5rem;
+}
+
+.app-error-message {
+  color: var(--neutral-600);
+  margin-bottom: 2rem;
+}
+
+.app-error-action {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.app-error-action:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Indicadores de progreso globales */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--primary);
+  z-index: 10001;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(26, 31, 113, 0.5);
+}
+
+/* Tooltips globales */
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--neutral-900);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+  bottom: calc(100% + 0.5rem);
+}
+
+/* Mejoras finales */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Micro-interacciones finales */
+.clickable {
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.clickable:active {
+  transform: scale(0.98);
+}
+
+/* Optimización de fuentes */
+.font-display-swap {
+  font-display: swap;
+}
+
+/* Contenido crítico above the fold */
+.above-fold {
+  will-change: transform;
+  contain: layout paint;
+}
+
+/* Final cleanup */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+============================================================================
+FIN DEL SISTEMA DE DISEÑO MONET
+============================================================================
+*/

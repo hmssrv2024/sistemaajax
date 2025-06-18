@@ -1,0 +1,439 @@
+/* ============================================================================
+   FORMULARIOS
+   ============================================================================ */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--neutral-700);
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  height: 44px;
+  padding: 0 1rem;
+  border: 1px solid var(--neutral-400);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: var(--neutral-900);
+  background: var(--neutral-100);
+  transition: var(--transition-base);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26, 31, 113, 0.15);
+}
+
+.form-control[readonly] {
+  background-color: var(--neutral-200);
+  border-color: var(--neutral-300);
+  color: var(--neutral-700);
+  cursor: default;
+}
+
+.form-control[readonly]:focus {
+  box-shadow: none;
+  border-color: var(--neutral-300);
+}
+
+/* Contraseñas */
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-container input {
+  padding-right: 2.5rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--neutral-600);
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: var(--transition-base);
+}
+
+.password-toggle:hover {
+  color: var(--primary);
+}
+
+/* Indicador de fuerza de contraseña */
+.password-strength {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.password-strength-meter {
+  width: 100%;
+  height: 4px;
+  background-color: var(--neutral-300);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.password-strength-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
+  background: var(--neutral-400);
+}
+
+.password-strength-fill.weak {
+  width: 25%;
+  background: var(--danger);
+}
+
+.password-strength-fill.fair {
+  width: 50%;
+  background: var(--warning);
+}
+
+.password-strength-fill.good {
+  width: 75%;
+  background: var(--info);
+}
+
+.password-strength-fill.strong {
+  width: 100%;
+  background: var(--success);
+}
+
+.password-strength-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--neutral-600);
+}
+
+.password-strength-text.weak {
+  color: var(--danger);
+}
+
+.password-strength-text.fair {
+  color: var(--warning);
+}
+
+.password-strength-text.good {
+  color: var(--info);
+}
+
+.password-strength-text.strong {
+  color: var(--success);
+}
+
+/* Requisitos de contraseña */
+.password-requirements {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.requirement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--neutral-600);
+  transition: var(--transition-base);
+}
+
+.requirement i {
+  width: 12px;
+  font-size: 0.7rem;
+  color: var(--danger);
+  transition: var(--transition-base);
+}
+
+.requirement.met {
+  color: var(--success);
+}
+
+.requirement.met i {
+  color: var(--success);
+}
+
+.requirement.met i:before {
+  content: "\f00c";
+}
+
+/* Checkboxes */
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.custom-checkbox {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.checkbox-label {
+  font-size: 0.8rem;
+  color: var(--neutral-700);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.checkbox-label a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+/* Mensajes de error */
+.error-message {
+  font-size: 0.7rem;
+  color: var(--danger);
+  margin-top: 0.5rem;
+  display: none;
+}
+
+/* ============================================================================
+   BOTONES
+   ============================================================================ */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s var(--animation-bounce);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled,
+.btn-primary.loading {
+  background: var(--neutral-500);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: rgba(26, 31, 113, 0.05);
+  transform: translateY(-3px);
+}
+
+.btn i {
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Estados de carga para botones */
+.btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.btn.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.btn.loading i {
+  opacity: 0;
+}
+
+/* Botón especial para contraseña olvidada */
+.forgot-password-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: #ff6b6b;
+  transition: all 0.3s ease;
+}
+
+.forgot-password-btn:hover {
+  background: rgba(255, 107, 107, 0.1);
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+  transform: translateY(-2px);
+}
+
+.forgot-password-btn i {
+  margin-right: 0.5rem;
+}
+
+/* Botón de editar credenciales */
+.edit-credentials-btn {
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  height: 40px;
+}
+
+/* ============================================================================
+   TOGGLE SWITCH PERSONALIZADO
+   ============================================================================ */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--neutral-400);
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* ============================================================================
+   ENTRADA OTP
+   ============================================================================ */
+.otp-container {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  justify-content: center;
+}
+
+.otp-input {
+  width: 40px;
+  height: 48px;
+  border: 1px solid var(--neutral-400);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+}
+
+.otp-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26, 31, 113, 0.15);
+}
+
+.resend-code {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--neutral-600);
+}
+
+.resend-code a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ============================================================================
+   SELECTS Y INPUTS ESPECIALES
+   ============================================================================ */
+.amount-select {
+  width: 100%;
+  height: 44px;
+  padding: 0 1rem;
+  border: 1px solid var(--neutral-400);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: var(--neutral-900);
+  background: var(--neutral-100);
+  margin-bottom: 1.5rem;
+}
+
+.amount-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26, 31, 113, 0.15);
+}

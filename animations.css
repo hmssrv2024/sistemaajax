@@ -1,0 +1,737 @@
+/* ============================================================================
+   ANIMACIONES CORE DEL SISTEMA
+   ============================================================================ */
+
+/* Animaciones básicas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* ============================================================================
+   ANIMACIONES DE LOADING Y SPINNERS
+   ============================================================================ */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes modernSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes validationSpin {
+  0% {
+    transform: rotate(0deg);
+    border-top-color: var(--primary);
+  }
+  25% {
+    border-top-color: var(--secondary);
+  }
+  50% {
+    transform: rotate(180deg);
+    border-top-color: var(--success);
+  }
+  75% {
+    border-top-color: var(--warning);
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top-color: var(--primary);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ============================================================================
+   ANIMACIONES DEL SISTEMA EVOLUTIVO
+   ============================================================================ */
+@keyframes evolutionGradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes evolutionSweep {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes verificationPulse {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(255, 193, 7, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 12px 40px rgba(255, 193, 7, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes processingWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes readyGlow {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.5);
+  }
+}
+
+@keyframes verificationBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+@keyframes bankingSuccess {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 48px rgba(34, 197, 94, 0.6);
+  }
+}
+
+@keyframes iconBorderSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes iconRotate {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes benefitIconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes messageShine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes reminderPulse {
+  0%, 100% {
+    background: rgba(255, 193, 7, 0.1);
+  }
+  50% {
+    background: rgba(255, 193, 7, 0.15);
+  }
+}
+
+@keyframes gentleGlow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.1);
+  }
+}
+
+/* ============================================================================
+   ANIMACIONES DE PROGRESO
+   ============================================================================ */
+@keyframes progressGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px currentColor);
+  }
+}
+
+@keyframes progressPulse {
+  0%, 100% {
+    stroke-width: 3;
+  }
+  50% {
+    stroke-width: 4;
+  }
+}
+
+@keyframes progressFlow {
+  0% {
+    stroke-dasharray: 0 157;
+  }
+  50% {
+    stroke-dasharray: 78.5 78.5;
+  }
+  100% {
+    stroke-dasharray: 157 0;
+  }
+}
+
+@keyframes progressSuccess {
+  0%, 100% {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 8px var(--success));
+  }
+  50% {
+    stroke-width: 4;
+    filter: drop-shadow(0 0 16px var(--success));
+  }
+}
+
+/* ============================================================================
+   ANIMACIONES DE STATUS E ICONOS
+   ============================================================================ */
+@keyframes checkmarkPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(74, 222, 128, 0.5));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(74, 222, 128, 0.8));
+  }
+}
+
+@keyframes warningPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.5));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.8));
+  }
+}
+
+@keyframes checkmarkScale {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes successPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes checkRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes successCheck {
+  0% {
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+/* ============================================================================
+   ANIMACIONES DE BOTONES Y INTERACCIONES
+   ============================================================================ */
+@keyframes slideIconPulse {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes shakeError {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes buttonHover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ============================================================================
+   ANIMACIONES DE TARJETAS Y CONTENEDORES
+   ============================================================================ */
+@keyframes cardHover {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: var(--shadow-sm);
+  }
+  100% {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+@keyframes bankCardShine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes floatUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 43% {
+    transform: translateY(-30px);
+  }
+  70% {
+    transform: translateY(-15px);
+  }
+  90% {
+    transform: translateY(-4px);
+  }
+}
+
+/* ============================================================================
+   ANIMACIONES DE NAVEGACIÓN
+   ============================================================================ */
+@keyframes navItemActive {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bottomNavSlide {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes topNavSlide {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================================
+   ANIMACIONES DE FORMULARIOS
+   ============================================================================ */
+@keyframes inputFocus {
+  0% {
+    border-color: var(--border-color);
+    box-shadow: none;
+  }
+  100% {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26, 31, 113, 0.1);
+  }
+}
+
+@keyframes labelFloat {
+  0% {
+    transform: translateY(0);
+    font-size: 1rem;
+    color: var(--neutral-600);
+  }
+  100% {
+    transform: translateY(-1.5rem);
+    font-size: 0.8rem;
+    color: var(--primary);
+  }
+}
+
+@keyframes formError {
+  0%, 100% {
+    border-color: var(--danger);
+  }
+  50% {
+    border-color: #ff6b6b;
+  }
+}
+
+/* ============================================================================
+   ANIMACIONES DE ESTADO Y FEEDBACK
+   ============================================================================ */
+@keyframes loadingDots {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes loadingBars {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes skeleton {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* ============================================================================
+   ANIMACIONES DE EFECTOS ESPECIALES
+   ============================================================================ */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes neon {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor;
+  }
+  50% {
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+}
+
+/* ============================================================================
+   UTILIDADES DE ANIMACIÓN
+   ============================================================================ */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.5s ease forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s ease infinite;
+}
+
+.animate-float {
+  animation: floatUp 3s ease-in-out infinite;
+}
+
+/* Delays para animaciones secuenciales */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Duraciones personalizadas */
+.duration-fast { animation-duration: 0.2s; }
+.duration-normal { animation-duration: 0.3s; }
+.duration-slow { animation-duration: 0.5s; }
+.duration-slower { animation-duration: 1s; }
+
+/* Estados de animación */
+.paused { animation-play-state: paused; }
+.running { animation-play-state: running; }
+
+/* Animaciones de entrada y salida */
+.enter-active {
+  animation: slideInUp 0.3s ease;
+}
+
+.leave-active {
+  animation: fadeOut 0.3s ease;
+}
+
+/* Media queries para reducir animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

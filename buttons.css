@@ -1,0 +1,240 @@
+.ultra-buttons-section {
+  min-height: 100vh;
+  background: rgba(225, 225, 225, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+}
+
+.ultra-buttons-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-align: center;
+  font-weight: 700;
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.ultra-btn {
+  all: unset;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: relative;
+  border-radius: 999vw;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: -0.15em -0.15em 0.15em -0.075em rgba(5, 5, 5, 0.25),
+              0.0375em 0.0375em 0.0675em 0 rgba(5, 5, 5, 0.1);
+  perspective: 800px;
+  transition: transform 0.2s ease;
+}
+
+.ultra-btn::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: calc(100% + 0.3em);
+  height: calc(100% + 0.3em);
+  top: -0.15em;
+  left: -0.15em;
+  border-radius: inherit;
+  background: linear-gradient(-135deg,
+              rgba(5, 5, 5, 0.5),
+              transparent 20%,
+              transparent 100%);
+  filter: blur(0.0125em);
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+}
+
+.button-outer {
+  position: relative;
+  z-index: 1;
+  border-radius: inherit;
+  transition: box-shadow 300ms ease, transform 150ms ease;
+  will-change: box-shadow, transform;
+  box-shadow: 0 0.08em 0.08em -0.01em rgba(5, 5, 5, 1),
+              0 0.02em 0.02em -0.01em rgba(5, 5, 5, 0.5),
+              0.2em 0.4em 0.15em -0.01em rgba(5, 5, 5, 0.25);
+}
+
+.ultra-btn:hover .button-outer {
+  box-shadow: 0 0 0 0 rgba(5, 5, 5, 1), 
+              0 0 0 0 rgba(5, 5, 5, 0.5),
+              0 0 0 0 rgba(5, 5, 5, 0.25);
+}
+
+.button-inner {
+  --inset: 0.035em;
+  position: relative;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 0.7em 1.5em;
+  background-image: linear-gradient(135deg,
+                    rgba(230, 230, 230, 1),
+                    rgba(180, 180, 180, 1));
+  transition: box-shadow 300ms ease, clip-path 250ms ease,
+              background-image 250ms ease, transform 250ms ease, filter 100ms ease;
+  will-change: box-shadow, clip-path, background-image, transform, filter;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0 round 999vw);
+  box-shadow: 0 0 0 0 inset rgba(5, 5, 5, 0.1),
+              -0.08em -0.08em 0.08em 0 inset rgba(5, 5, 5, 0.25),
+              0 0 0 0 inset rgba(5, 5, 5, 0.1),
+              0 0 0.05em 0.25em inset rgba(255, 255, 255, 0.25),
+              0.04em 0.08em 0.12em 0 inset rgba(255, 255, 255, 1),
+              0.15em 0.15em 0.15em inset rgba(255, 255, 255, 0.25),
+              -0.1em -0.3em 0.3em 0.15em inset rgba(5, 5, 5, 0.25);
+  transform-style: preserve-3d;
+}
+
+.button-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.2) 30%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  opacity: 0.15;
+  transition: opacity 300ms ease;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.ultra-btn:hover .button-inner::before {
+  opacity: 0.25;
+}
+
+.ultra-btn:hover .button-inner {
+  clip-path: inset(clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) round 999vw);
+  box-shadow: 0.12em 0.18em 0.06em 0 inset rgba(5, 5, 5, 0.75),
+              -0.035em -0.04em 0.06em 0.03em inset rgba(5, 5, 5, 0.5),
+              0.3em 0.3em 0.25em 0 inset rgba(5, 5, 5, 0.5),
+              0 0 0.05em 0.5em inset rgba(255, 255, 255, 0.15),
+              0 0 0 0 inset rgba(255, 255, 255, 1),
+              0.15em 0.15em 0.15em inset rgba(255, 255, 255, 0.25),
+              -0.09em -0.15em 0.25em 0.12em inset rgba(5, 5, 5, 0.25);
+}
+
+.ultra-btn.pressed .button-inner {
+  transform: var(--press-transform, scale(0.92));
+  transform-origin: var(--press-origin, center);
+  clip-path: inset(clamp(2px, 0.125em, 4px) clamp(2px, 0.125em, 4px) clamp(2px, 0.125em, 4px) clamp(2px, 0.125em, 4px) round 999vw);
+  box-shadow: 0.18em 0.22em 0.1em 0 inset rgba(5, 5, 5, 0.85),
+              -0.04em -0.05em 0.07em 0.04em inset rgba(5, 5, 5, 0.6),
+              0.35em 0.35em 0.3em 0 inset rgba(5, 5, 5, 0.6),
+              0 0 0.08em 0.6em inset rgba(255, 255, 255, 0.2),
+              0 0 0 0 inset rgba(255, 255, 255, 1),
+              0.16em 0.16em 0.16em inset rgba(255, 255, 255, 0.2),
+              -0.1em -0.16em 0.25em 0.14em inset rgba(5, 5, 5, 0.35);
+  transition: all 80ms ease;
+  filter: brightness(0.95);
+}
+
+.ultra-btn.pressed .button-outer {
+  transform: translateY(0.1em) translateZ(-0.05em);
+  box-shadow: 0 0.04em 0.04em -0.01em rgba(5, 5, 5, 1),
+              0 0.01em 0.01em -0.01em rgba(5, 5, 5, 0.5),
+              0.1em 0.2em 0.1em -0.01em rgba(5, 5, 5, 0.25);
+  transition: all 80ms ease;
+}
+
+.ultra-btn.active .button-inner {
+  filter: brightness(1.2) saturate(1.2);
+  transition: all 300ms ease;
+}
+
+.button-inner span {
+  position: relative;
+  z-index: 4;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(135deg,
+                    rgba(25, 25, 25, 1),
+                    rgba(75, 75, 75, 1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: transform 250ms ease;
+  display: block;
+  will-change: transform;
+  text-shadow: rgba(0, 0, 0, 0.1) 0 0 0.1em;
+  -webkit-user-select: none; 
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ultra-btn:hover .button-inner span {
+  transform: scale(0.975);
+}
+
+.ultra-btn.pressed .button-inner span {
+  transform: scale(0.95);
+}
+
+.press-echo {
+  position: absolute;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at var(--echo-x) var(--echo-y), 
+              rgba(255,255,255,0.5) 0%, 
+              rgba(255,255,255,0) 50%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes echo {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(1.5); }
+}
+
+/* Color variants */
+.register-btn .button-inner, .create-btn .button-inner {
+  background-image: linear-gradient(135deg,
+                    rgba(230, 240, 255, 1),
+                    rgba(180, 200, 240, 1));
+}
+
+.login-btn .button-inner {
+  background-image: linear-gradient(135deg,
+                    rgba(230, 230, 230, 1),
+                    rgba(180, 180, 180, 1));
+}
+
+.continue-btn .button-inner {
+  background-image: linear-gradient(135deg,
+                    rgba(225, 240, 225, 1),
+                    rgba(180, 210, 180, 1));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .buttons-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 300px;
+  }
+  
+  .ultra-buttons-title {
+    font-size: 2rem;
+  }
+}

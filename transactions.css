@@ -1,0 +1,180 @@
+/* ============================================================================
+   SISTEMA DE TRANSACCIONES
+   ============================================================================ */
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--neutral-100);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.transaction-item:hover {
+  background: var(--neutral-200);
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.transaction-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.transaction-icon.deposit {
+  background: var(--success);
+  color: white;
+}
+
+.transaction-icon.withdraw {
+  background: var(--danger);
+  color: white;
+}
+
+.transaction-icon.transfer {
+  background: var(--primary-light);
+  color: white;
+}
+
+.transaction-icon.pending {
+  background: var(--warning);
+  color: white;
+}
+
+.transaction-icon.rejected {
+  background: var(--danger);
+  color: white;
+}
+
+.transaction-icon.processing {
+  background: var(--info);
+  color: white;
+}
+
+.transaction-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-title {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--neutral-900);
+  margin-bottom: 0.125rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.transaction-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+
+.transaction-badge.pending {
+  background: rgba(255, 173, 51, 0.15);
+  color: var(--warning);
+}
+
+.transaction-badge.processing {
+  background: rgba(0, 149, 255, 0.15);
+  color: var(--info);
+}
+
+.transaction-badge.rejected {
+  background: rgba(255, 77, 77, 0.15);
+  color: var(--danger);
+}
+
+.transaction-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--neutral-600);
+}
+
+.transaction-date {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.transaction-date i {
+  font-size: 0.7rem;
+}
+
+.transaction-category {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.transaction-category i {
+  font-size: 0.7rem;
+}
+
+.transaction-amounts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.transaction-amount {
+  font-weight: 600;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.transaction-amount.deposit {
+  color: var(--success);
+}
+
+.transaction-amount.withdraw {
+  color: var(--danger);
+}
+
+.transaction-amount.pending {
+  color: var(--warning);
+}
+
+.transaction-amount.rejected {
+  color: var(--danger);
+}
+
+.transaction-amount.processing {
+  color: var(--info);
+}
+
+.transaction-balance-after {
+  font-size: 0.7rem;
+  color: var(--neutral-500);
+  white-space: nowrap;
+}

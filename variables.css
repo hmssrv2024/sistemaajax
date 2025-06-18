@@ -1,0 +1,229 @@
+/* ============================================================================
+   SISTEMA NEUROMORPHIC VISA - VARIABLES CORE REORGANIZADO
+   ============================================================================ */
+:root {
+  /* ===== PALETA PRINCIPAL NEUROMORPHIC ===== */
+  --primary-light: #8abdff;
+  --primary: #3f31bd;
+  --primary-dark: #03326e;
+  
+  --white: #FFFFFF;
+  --greyLight-1: #E4EBF5;
+  --greyLight-2: #c8d0e7;
+  --greyLight-3: #bec8e4;
+  --greyDark: #9baacf;
+  
+  /* ===== COLORES SEMÁNTICOS ===== */
+  --success: #22c55e;
+  --success-light: #4ade80;
+  --success-dark: #16a34a;
+  
+  --warning: #f59e0b;
+  --warning-light: #fbbf24;
+  --warning-dark: #d97706;
+  
+  --danger: #ef4444;
+  --danger-light: #f87171;
+  --danger-dark: #dc2626;
+  
+  --info: var(--primary-light);
+  --info-light: #93c5fd;
+  --info-dark: var(--primary);
+  
+  /* ===== NEUTROS REFINADOS ===== */
+  --neutral-50: #fafbfc;
+  --neutral-100: var(--white);
+  --neutral-200: var(--greyLight-1);
+  --neutral-300: var(--greyLight-2);
+  --neutral-400: var(--greyLight-3);
+  --neutral-500: var(--greyDark);
+  --neutral-600: #8292b3;
+  --neutral-700: #6b7ba0;
+  --neutral-800: #4a5578;
+  --neutral-900: #2d3748;
+  
+  /* ===== BACKGROUNDS NEUROMORPHIC ===== */
+  --bg-primary: var(--greyLight-1);
+  --bg-secondary: var(--greyLight-2);
+  --bg-elevated: var(--white);
+  --bg-sunken: var(--greyLight-3);
+  --bg-card: var(--white);
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+  
+  /* ===== TEXTO ===== */
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-700);
+  --text-muted: var(--neutral-500);
+  --text-inverse: var(--white);
+  --text-link: var(--primary);
+  
+  /* ===== SOMBRAS NEUROMORPHIC PERFECTAS ===== */
+  --shadow-neumorphic-xs: 
+    2px 2px 4px rgba(155, 170, 207, 0.4),
+    -2px -2px 4px rgba(255, 255, 255, 0.8);
+    
+  --shadow-neumorphic-sm: 
+    4px 4px 8px rgba(155, 170, 207, 0.3),
+    -4px -4px 8px rgba(255, 255, 255, 0.9);
+    
+  --shadow-neumorphic-md: 
+    6px 6px 12px rgba(155, 170, 207, 0.25),
+    -6px -6px 12px rgba(255, 255, 255, 0.8);
+    
+  --shadow-neumorphic-lg: 
+    8px 8px 16px rgba(155, 170, 207, 0.2),
+    -8px -8px 16px rgba(255, 255, 255, 0.7);
+    
+  --shadow-neumorphic-xl: 
+    12px 12px 24px rgba(155, 170, 207, 0.15),
+    -12px -12px 24px rgba(255, 255, 255, 0.6);
+  
+  /* ===== SOMBRAS INTERNAS NEUROMORPHIC ===== */
+  --shadow-inset-xs: 
+    inset 2px 2px 4px rgba(155, 170, 207, 0.3),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+    
+  --shadow-inset-sm: 
+    inset 3px 3px 6px rgba(155, 170, 207, 0.25),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.7);
+    
+  --shadow-inset-md: 
+    inset 4px 4px 8px rgba(155, 170, 207, 0.2),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.6);
+    
+  --shadow-inset-lg: 
+    inset 6px 6px 12px rgba(155, 170, 207, 0.15),
+    inset -6px -6px 12px rgba(255, 255, 255, 0.5);
+  
+  /* ===== SOMBRAS TRADICIONALES (FALLBACK) ===== */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+  
+  /* ===== GRADIENTES NEUROMORPHIC ===== */
+  --gradient-neumorphic: linear-gradient(145deg, var(--greyLight-1), var(--greyLight-2));
+  --gradient-neumorphic-reverse: linear-gradient(145deg, var(--greyLight-2), var(--greyLight-1));
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  --gradient-primary-light: linear-gradient(135deg, var(--primary-light), var(--primary));
+  --gradient-card: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  --gradient-success: linear-gradient(135deg, var(--success), var(--success-dark));
+  --gradient-warning: linear-gradient(135deg, var(--warning), var(--warning-dark));
+  --gradient-danger: linear-gradient(135deg, var(--danger), var(--danger-dark));
+  
+  /* ===== BORDES Y RADIOS ===== */
+  --border-color: var(--neutral-300);
+  --border-color-light: var(--neutral-200);
+  --border-color-dark: var(--neutral-400);
+  
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+  
+  /* ===== TRANSICIONES SUAVES ===== */
+  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* ===== ESPACIADO CONSISTENTE ===== */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-xl: 1.5rem;
+  --space-2xl: 2rem;
+  --space-3xl: 3rem;
+  --space-4xl: 4rem;
+  
+  /* ===== TIPOGRAFÍA ===== */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  
+  /* ===== Z-INDEX SCALE ===== */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+  --z-system: 9999;
+  
+  /* ===== BREAKPOINTS ===== */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  
+  /* ===== EFECTOS ESPECIALES ===== */
+  --backdrop-blur: blur(12px);
+  --backdrop-blur-sm: blur(8px);
+  --backdrop-blur-lg: blur(16px);
+  
+  /* ===== ANIMACIONES ===== */
+  --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --animation-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --animation-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== MODO OSCURO (OPCIONAL) ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --greyLight-1: #2a3441;
+    --greyLight-2: #3a4651;
+    --greyLight-3: #4a5661;
+    --greyDark: #1a2530;
+    --white: #f8fafc;
+    --text-primary: var(--white);
+    --text-secondary: var(--neutral-300);
+    --bg-primary: var(--greyDark);
+    --bg-elevated: var(--greyLight-1);
+  }
+}
+
+/* ===== PREFERENCIAS DE ACCESIBILIDAD ===== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: none;
+    --transition-normal: none;
+    --transition-slow: none;
+    --transition-bounce: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: var(--neutral-700);
+    --text-primary: #000000;
+    --text-secondary: #333333;
+  }
+}
