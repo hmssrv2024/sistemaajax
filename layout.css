@@ -7,7 +7,7 @@
   min-height: 100vh;
   background: var(--bg-primary);
   padding: var(--space-lg);
-  padding-top: 80px;
+  padding-top: 0;
   padding-bottom: 90px;
   max-width: 100%;
   margin: 0 auto;
@@ -27,10 +27,7 @@
 
 /* ===== HEADER NEUROMORPHIC ===== */
 .app-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,8 +36,8 @@
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: var(--shadow-neumorphic-sm);
-  z-index: 1000;
   height: 70px;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -54,6 +51,12 @@
 .header-brand img {
   height: 32px;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
 }
 
 /* ===== NAVEGACIÓN INFERIOR ===== */
@@ -163,6 +166,10 @@
   transition: var(--transition-normal);
   box-shadow: var(--shadow-neumorphic-sm);
   position: relative;
+}
+.header-action-btn svg {
+  width: 22px;
+  height: 22px;
 }
 
 .header-action-btn:hover {

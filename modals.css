@@ -154,29 +154,14 @@
   font-size: 1.25rem;
 }
 
-.service-icon.bills {
-  background: var(--secondary);
-}
-
-.service-icon.dollar {
-  background: var(--success);
-}
-
-.service-icon.zelle {
-  background: var(--info);
-}
-
-.service-icon.exchange {
-  background: var(--accent);
-  color: var(--neutral-900);
-}
-
-.service-icon.reviews {
-  background: var(--warning);
-}
-
+.service-icon.bills,
+.service-icon.dollar,
+.service-icon.zelle,
+.service-icon.exchange,
+.service-icon.reviews,
 .service-icon.chat {
-  background: var(--primary-light);
+  background: var(--primary);
+  color: var(--text-inverse);
 }
 
 .service-name {
@@ -640,20 +625,11 @@
   color: white;
 }
 
-.contact-icon.whatsapp {
-  background: #25D366;
-}
-
-.contact-icon.email {
-  background: var(--primary);
-}
-
-.contact-icon.chat {
-  background: var(--info);
-}
-
+.contact-icon.whatsapp,
+.contact-icon.email,
+.contact-icon.chat,
 .contact-icon.reviews {
-  background: var(--warning);
+  background: var(--primary);
 }
 
 .contact-content {
@@ -1053,20 +1029,11 @@
   box-shadow: var(--shadow-neumorphic-small);
 }
 
-.contact-icon.whatsapp {
-  background: #25D366;
-}
-
-.contact-icon.email {
-  background: var(--primary);
-}
-
-.contact-icon.chat {
-  background: var(--info);
-}
-
+.contact-icon.whatsapp,
+.contact-icon.email,
+.contact-icon.chat,
 .contact-icon.reviews {
-  background: var(--warning);
+  background: var(--primary);
 }
 
 .contact-content {

@@ -3,9 +3,9 @@
    ============================================================================ */
 :root {
   /* ===== PALETA PRINCIPAL NEUROMORPHIC ===== */
-  --primary-light: #8abdff;
-  --primary: #3f31bd;
-  --primary-dark: #03326e;
+  --primary-light: #9eb6ff;
+  --primary: #1a1f71;
+  --primary-dark: #0c145a;
   
   --white: #FFFFFF;
   --greyLight-1: #E4EBF5;
@@ -14,20 +14,20 @@
   --greyDark: #9baacf;
   
   /* ===== COLORES SEMÁNTICOS ===== */
-  --success: #22c55e;
-  --success-light: #4ade80;
-  --success-dark: #16a34a;
-  
-  --warning: #f59e0b;
-  --warning-light: #fbbf24;
-  --warning-dark: #d97706;
-  
-  --danger: #ef4444;
-  --danger-light: #f87171;
-  --danger-dark: #dc2626;
+  --success: var(--primary);
+  --success-light: var(--primary-light);
+  --success-dark: var(--primary-dark);
+
+  --warning: var(--primary);
+  --warning-light: var(--primary-light);
+  --warning-dark: var(--primary-dark);
+
+  --danger: var(--primary);
+  --danger-light: var(--primary-light);
+  --danger-dark: var(--primary-dark);
   
   --info: var(--primary-light);
-  --info-light: #93c5fd;
+  --info-light: var(--primary-light);
   --info-dark: var(--primary);
   
   /* ===== NEUTROS REFINADOS ===== */
@@ -144,7 +144,7 @@
   
   /* ===== TIPOGRAFÍA ===== */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-family-mono: var(--font-family);
   
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;

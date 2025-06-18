@@ -147,7 +147,7 @@
 .country-code {
   font-size: 0.875rem;
   color: #718096;
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-family);
   background: #edf2f7;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;

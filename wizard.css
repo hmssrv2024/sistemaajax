@@ -314,7 +314,7 @@
 }
 
 .card-number {
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-family);
   font-size: 1.25rem;
   font-weight: 600;
   color: white;
@@ -644,7 +644,7 @@
 /* Verification Code Input */
 .verification-code-input {
   text-align: center;
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-family);
   font-size: 1.1rem;
   letter-spacing: 0.1em;
 }

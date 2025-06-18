@@ -1086,69 +1086,6 @@
         </div>
       </div>
     
-      <!-- Vista previa de cuenta personalizada -->
-      <div class="account-preview-card" id="account-preview">
-        <div class="personalized-credit-card" id="personalized-credit-card">
-          <div class="visa-card" id="user-saved-card">
-            <div class="visa-card__top">
-              <span class="card-type">Virtual</span>
-              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiASST8U1GA_fD6sqNKJpsqoOcnsp-fiFEgEz_JZU9ac2czvMFvDuYX1LUvC030mdqIGp6VbxqSYYVvmh6D5_duOTKFlxSdyjURh04-Dmi-Hc6ArZ_f_P7cc87af35w4FJkhDqm-h_u90uVoOrhPxXrUPhLF_ozwsrP4Wnvlbs5EFlf4fSunvwMDugQqtBp/w320-h217/remeexzelle.png" 
-                   alt="RemeExzelle Logo" class="visa-card__logo">
-            </div>
-            <div class="visa-card__bottom">
-              <div class="visa-card__holder">
-                <p>Cardholder</p>
-                <p id="preview-name-realistic">USUARIO</p>
-              </div>
-              <img src="https://assets.codepen.io/14762/visa-virtual.svg" 
-                   alt="Visa Logo" class="visa-card__visa-logo">
-            </div>
-          </div>
-        </div>
-        
-        <div class="card-external-info">
-          <div class="balance-display-main">
-            <div class="balance-currency-flag">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Venezuela.svg" alt="VE">
-            </div>
-            <div class="balance-amount-realistic" id="preview-balance-main">Bs 0,00</div>
-            <div class="balance-label-discrete">Saldo Disponible</div>
-          </div>
-          
-          <div class="external-info-row">
-            <div class="external-info-item">
-              <div class="info-icon usd">
-                <img src="https://flagcdn.com/us.svg" alt="USD">
-              </div>
-              <div class="info-content">
-                <span class="info-value" id="preview-usd-external">$0.00</span>
-                <span class="info-label">Dólares</span>
-              </div>
-            </div>
-            
-            <div class="external-info-item">
-              <div class="info-icon eur">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="EUR">
-              </div>
-              <div class="info-content">
-                <span class="info-value" id="preview-eur-external">€0.00</span>
-                <span class="info-label">Euros</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="external-info-secondary">
-            <div class="exchange-rate-compact">
-              <i class="fas fa-exchange-alt"></i>
-              <span id="preview-rate-external">1 USD = 36.85 Bs</span>
-            </div>
-            <div class="last-update-compact">
-              <i class="far fa-clock"></i>
-              <span id="preview-time-external">Actualizado hace 2 min</span>
-            </div>
-          </div>
-        </div>
-      </div>
       
       <div class="security-badge">
         <div class="security-badge-icon">
@@ -1302,12 +1239,16 @@
       </div>
       
       <button class="header-action-btn" id="notification-btn" aria-label="Notificaciones">
-        <i class="fas fa-bell"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.857 17.453A2.381 2.381 0 0112 19.5a2.381 2.381 0 01-2.857-2.047M18.5 14.25V9a6.5 6.5 0 10-13 0v5.25l-1.5 1.5h17l-1.5-1.5z" />
+        </svg>
         <span class="notification-badge">3</span>
       </button>
-      
+
       <button class="header-action-btn logout-header-btn" id="logout-header-btn" aria-label="Cerrar Sesión">
-        <i class="fas fa-sign-out-alt"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3-3h-9m0 0l3.75 3.75M9 12l3.75-3.75" />
+        </svg>
       </button>
     </div>
   </header>
