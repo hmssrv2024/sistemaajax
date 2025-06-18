@@ -8,7 +8,7 @@
   --card-height: 227px;
   --card-border-radius: 10px;
   --card-shadow: 0 0px 8px rgb(0 0 0 / 12%), 0 2px 16px rgb(0 0 0 / 12%), 0 4px 20px rgb(0 0 0 / 12%), 0 12px 28px rgb(0 0 0 / 12%);
-  --card-font-family: 'AxLLCircular', Helvetica, Arial, sans-serif;
+  --card-font-family: var(--font-family);
   --card-text-color: #1a1d21;
   --card-text-white: #ffffff;
   --frozen-overlay: rgb(0 0 0 / 80%);

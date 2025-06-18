@@ -535,7 +535,7 @@
 .pending-review-reference {
   font-size: 0.8rem;
   color: var(--neutral-600);
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-family);
 }
 
 /* ============================================================================

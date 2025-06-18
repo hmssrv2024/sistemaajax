@@ -7,15 +7,16 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: var(--neutral-200);
-  background-image: linear-gradient(135deg, rgba(26, 31, 113, 0.05) 0%, rgba(26, 31, 113, 0.02) 100%);
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--white) 100%);
 }
 
 .login-card,
 .registration-card {
-  background: var(--neutral-100);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-neumorphic-lg);
   padding: 1.5rem;
   width: 100%;
   max-width: 400px;
@@ -920,6 +921,9 @@
   color: var(--neutral-600);
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
   gap: var(--space-sm);
   z-index: 1;
   transition: var(--transition-base);
@@ -935,6 +939,9 @@
   color: var(--success);
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
   gap: var(--space-sm);
   opacity: 0;
   z-index: 2;

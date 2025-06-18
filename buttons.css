@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-family);
 }
 
 .ultra-buttons-title {
@@ -162,7 +162,7 @@
 .button-inner span {
   position: relative;
   z-index: 4;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-family);
   letter-spacing: -0.05em;
   font-weight: 500;
   color: rgba(0, 0, 0, 0);
