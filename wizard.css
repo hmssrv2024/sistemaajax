@@ -577,9 +577,6 @@
 .limit-label {
   font-size: 0.875rem;
   color: var(--neutral-600);
-  .limit-label {
-  font-size: 0.875rem;
-  color: var(--neutral-600);
   line-height: 1.3;
 }
 

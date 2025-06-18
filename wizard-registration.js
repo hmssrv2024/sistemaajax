@@ -518,8 +518,14 @@ window.REMEEX_WIZARD = {
     const loginCard = document.getElementById('login-card');
 
     if (modal) modal.style.display = 'none';
-    if (wizardCard) wizardCard.style.display = 'none';
-    if (loginCard) loginCard.style.display = 'block';
+    if (wizardCard) {
+      wizardCard.style.display = 'none';
+      wizardCard.classList.add('is-hidden');
+    }
+    if (loginCard) {
+      loginCard.style.display = 'block';
+      loginCard.classList.remove('is-hidden');
+    }
 
     // Configurar login personalizado
     if (window.REMEEX_AUTH) {

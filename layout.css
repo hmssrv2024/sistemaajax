@@ -45,10 +45,9 @@
 
 @media (min-width: 768px) {
   .app-header {
-    position: relative;
-    margin: calc(var(--space-xl) * -1) calc(var(--space-xl) * -1) var(--space-xl);
-    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
-    border-bottom: none;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
   }
 }
 
@@ -76,10 +75,9 @@
 
 @media (min-width: 768px) {
   .bottom-nav {
-    position: relative;
-    margin: var(--space-xl) calc(var(--space-xl) * -1) calc(var(--space-xl) * -1);
-    border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
-    border-top: none;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
   }
 }
 

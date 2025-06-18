@@ -436,10 +436,22 @@ window.REMEEX_MAIN = {
       const dashboardContainer = document.getElementById('dashboard-container');
       const bottomNav = document.getElementById('bottom-nav');
       
-      if (loginContainer) loginContainer.style.display = 'none';
-      if (appHeader) appHeader.style.display = 'flex';
-      if (dashboardContainer) dashboardContainer.style.display = 'block';
-      if (bottomNav) bottomNav.style.display = 'flex';
+      if (loginContainer) {
+        loginContainer.style.display = 'none';
+        loginContainer.classList.add('is-hidden');
+      }
+      if (appHeader) {
+        appHeader.style.display = 'flex';
+        appHeader.classList.remove('is-hidden');
+      }
+      if (dashboardContainer) {
+        dashboardContainer.style.display = 'block';
+        dashboardContainer.classList.remove('is-hidden');
+      }
+      if (bottomNav) {
+        bottomNav.style.display = 'flex';
+        bottomNav.classList.remove('is-hidden');
+      }
     } catch (error) {
       console.error('Error showing dashboard:', error);
     }

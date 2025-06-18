@@ -56,11 +56,15 @@ window.REMEEX_AUTH = {
       
       if (this.checkRegistrationStatus()) {
         wizardCard.style.display = 'none';
+        wizardCard.classList.add('is-hidden');
         loginCard.style.display = 'block';
+        loginCard.classList.remove('is-hidden');
         this.setupPersonalizedLogin();
       } else {
         wizardCard.style.display = 'block';
+        wizardCard.classList.remove('is-hidden');
         loginCard.style.display = 'none';
+        loginCard.classList.add('is-hidden');
         
         // Inicializar wizard si no está inicializado
         if (window.REMEEX_WIZARD) {
@@ -589,16 +593,28 @@ showLoadingScreen() {
       if (loadingOverlay) loadingOverlay.style.display = 'none';
       
       const loginContainer = document.getElementById('login-container');
-      if (loginContainer) loginContainer.style.display = 'none';
-      
+      if (loginContainer) {
+        loginContainer.style.display = 'none';
+        loginContainer.classList.add('is-hidden');
+      }
+
       const appHeader = document.getElementById('app-header');
-      if (appHeader) appHeader.style.display = 'flex';
-      
+      if (appHeader) {
+        appHeader.style.display = 'flex';
+        appHeader.classList.remove('is-hidden');
+      }
+
       const dashboardContainer = document.getElementById('dashboard-container');
-      if (dashboardContainer) dashboardContainer.style.display = 'block';
-      
+      if (dashboardContainer) {
+        dashboardContainer.style.display = 'block';
+        dashboardContainer.classList.remove('is-hidden');
+      }
+
       const bottomNav = document.getElementById('bottom-nav');
-      if (bottomNav) bottomNav.style.display = 'flex';
+      if (bottomNav) {
+        bottomNav.style.display = 'flex';
+        bottomNav.classList.remove('is-hidden');
+      }
       
       if (window.REMEEX_UI) {
         window.REMEEX_UI.updateUserUI();
