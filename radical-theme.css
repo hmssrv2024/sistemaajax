@@ -1,0 +1,53 @@
+/* Radical white-blue theme override */
+:root {
+  --primary-light: #6699ff;
+  --primary: #0055ff;
+  --primary-dark: #003399;
+
+  --greyLight-1: #ffffff;
+  --greyLight-2: #ffffff;
+  --greyLight-3: #ffffff;
+  --greyDark: #0055ff;
+
+  --neutral-50: #ffffff;
+  --neutral-100: #ffffff;
+  --neutral-200: #ffffff;
+  --neutral-300: #ffffff;
+  --neutral-400: #ffffff;
+  --neutral-500: #0055ff;
+  --neutral-600: #003399;
+  --neutral-700: #003399;
+  --neutral-800: #003399;
+  --neutral-900: #003399;
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-sunken: #ffffff;
+  --bg-card: #ffffff;
+  --bg-overlay: rgba(255, 255, 255, 0.9);
+
+  --text-primary: var(--primary-dark);
+  --text-secondary: var(--primary);
+  --text-muted: var(--primary-light);
+  --text-inverse: #ffffff;
+  --text-link: var(--primary);
+  --border-color: var(--primary);
+}
+
+/* Apply white background and blue text universally */
+body, .app-container, .card, .login-container, .modal, .wizard-container, header, footer, nav {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+* {
+  background-image: none !important;
+  color: var(--text-primary) !important;
+}
+
+a, button {
+  color: var(--primary) !important;
+}
+
