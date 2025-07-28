@@ -26,11 +26,13 @@
             max-width: 8.5in;
             margin: 0 auto;
             padding: 3cm 2.5cm 2.5cm 4cm;
+            counter-reset: page;
         }
         
         .page-break {
             page-break-before: always;
             break-before: page;
+            position: relative;
         }
         
         .no-break {
@@ -91,6 +93,7 @@
         .portada {
             text-align: center;
             margin-top: 2cm;
+            position: relative;
         }
         
         .portada h1 {
@@ -177,7 +180,7 @@
         
         /* Estilos para numeración de páginas */
         .page-number {
-            position: fixed;
+            position: absolute;
             bottom: 2cm;
             right: 2.5cm;
             font-size: 11pt;
@@ -1613,6 +1616,20 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pages = [
+                document.querySelector('.portada'),
+                ...document.querySelectorAll('.page-break')
+            ];
+            pages.forEach((page, index) => {
+                const num = document.createElement('div');
+                num.className = 'page-number';
+                num.textContent = index + 1;
+                page.appendChild(num);
+            });
+        });
+    </script>
 </body>
 <!-- Línea adicional para mantener la legibilidad del documento -->
 <!-- Línea adicional para mantener la legibilidad del documento -->
