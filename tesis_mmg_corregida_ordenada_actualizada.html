@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morbilidad Materna Grave - Tesis de Especialización</title>
+    <style>
+        /* Estilos generales para formato académico */
+        @page {
+            size: letter;
+            margin: 3cm 2.5cm 2.5cm 4cm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            color: #000;
+            background: #fff;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 3cm 2.5cm 2.5cm 4cm;
+        }
+        
+        .page-break {
+            page-break-before: always;
+            break-before: page;
+        }
+        
+        .no-break {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        /* Estilos de títulos */
+        h1 {
+            font-size: 14pt;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin: 15px 0 10px 0;
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 12px 0 8px 0;
+            text-transform: uppercase;
+        }
+        
+        h4 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 10px 0 5px 0;
+        }
+        
+        /* Estilos de párrafos */
+        p {
+            text-align: justify;
+            margin-bottom: 12px;
+            text-indent: 0;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .right {
+            text-align: right;
+        }
+        
+        .indent {
+            text-indent: 1.25cm;
+        }
+        
+        /* Estilos para portada */
+        .portada {
+            text-align: center;
+            margin-top: 2cm;
+        }
+        
+        .portada h1 {
+            margin: 30px 0;
+            font-size: 16pt;
+        }
+        
+        .portada h2 {
+            margin: 25px 0;
+            font-size: 14pt;
+        }
+        
+        .portada p {
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        /* Estilos para firmas */
+        .firma-line {
+            border-bottom: 1px solid #000;
+            width: 300px;
+            margin: 40px auto 5px auto;
+        }
+        
+        .firma-info {
+            text-align: center;
+            margin: 5px 0 30px 0;
+            font-size: 11pt;
+        }
+        
+        /* Estilos para listas */
+        ul, ol {
+            margin: 10px 0 10px 30px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        /* Estilos para tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 11pt;
+        }
+        
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .table-title {
+            text-align: center;
+            font-weight: bold;
+            margin: 15px 0 5px 0;
+        }
+        
+        /* Estilos para referencias */
+        .referencias {
+            font-size: 11pt;
+            line-height: 1.2;
+        }
+        
+        .referencias p {
+            margin-bottom: 8px;
+            text-indent: -1.25cm;
+            padding-left: 1.25cm;
+        }
+        
+        /* Estilos para superíndices */
+        sup {
+            font-size: 10pt;
+            vertical-align: super;
+        }
+        
+        /* Estilos para numeración de páginas */
+        .page-number {
+            position: fixed;
+            bottom: 2cm;
+            right: 2.5cm;
+            font-size: 11pt;
+        }
+        
+        /* Estilos para índices */
+        .indice-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            border-bottom: 1px dotted #ccc;
+        }
+        
+        .indice-titulo {
+            flex-grow: 1;
+            padding-right: 10px;
+        }
+        
+        .indice-pagina {
+            font-weight: bold;
+        }
+        
+        /* Estilos para abstract */
+        .abstract {
+            margin: 20px 0;
+        }
+        
+        .keywords {
+            margin-top: 15px;
+            font-style: italic;
+        }
+        
+        /* Estilos responsivos para pantalla */
+        @media screen {
+            body {
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+        }
+        
+        /* Estilos para impresión */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 12pt;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+            
+            .no-break {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Estilos específicos para elementos académicos */
+        .institucion {
+            font-size: 12pt;
+            line-height: 1.3;
+            margin: 10px 0;
+        }
+        
+        .titulo-tesis {
+            font-size: 16pt;
+            font-weight: bold;
+            line-height: 1.2;
+            margin: 30px 0;
+        }
+        
+        .subtitulo {
+            font-size: 12pt;
+            margin: 20px 0;
+        }
+        
+        .autores {
+            font-size: 12pt;
+            margin: 25px 0;
+        }
+        
+        .fecha-lugar {
+            font-size: 12pt;
+            margin: 30px 0;
+        }
+        
+        /* Estilos para objetivos */
+        .objetivo-general {
+            margin: 15px 0;
+        }
+        
+        .objetivos-especificos {
+            margin: 15px 0;
+        }
+        
+        .objetivos-especificos ol {
+            counter-reset: objetivos;
+        }
+        
+        .objetivos-especificos li {
+            counter-increment: objetivos;
+        }
+        
+        /* Estilos para metodología */
+        .metodologia-seccion {
+            margin: 20px 0;
+        }
+        
+        /* Estilos para criterios */
+        .criterios {
+            margin: 15px 0;
+        }
+        
+        .criterios ul {
+            list-style-type: decimal;
+        }
+        
+        /* Estilos adicionales para mejorar presentación */
+        .destacado {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-left: 3px solid #333;
+            margin: 15px 0;
+        }
+        
+        .nota-importante {
+            font-style: italic;
+            color: #333;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+/* Reglas adicionales de estilo para impresión */
+@media print {
+  body { font-size: 11pt; }
+  .page-break { page-break-before: always; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #000; padding: 4px; }
+  h1, h2, h3 { page-break-after: avoid; }
+}
+
+/* Reglas adicionales de estilo para pantalla */
+@media screen {
+  body { font-family: 'Times New Roman', serif; line-height: 1.5; }
+  .title-page { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; }
+  .title-page h1 { font-size: 2.5em; margin-bottom: 0.5em; }
+  .title-page h2 { font-size: 1.5em; margin-bottom: 0.5em; }
+  .signature-line { margin-top: 2em; }
+  nav.toc a { text-decoration: none; color: #004080; }
+  nav.toc a:hover { text-decoration: underline; }
+  code, pre { background-color: #f5f5f5; border: 1px solid #e0e0e0; padding: 2px 4px; }
+}
+    </style>
+</head>
+<body>
+    <!-- PORTADA -->
+    <div class="portada">
+        <div class="institucion">
+            <p><strong>UNIVERSIDAD CENTRAL DE VENEZUELA</strong></p>
+            <p><strong>FACULTAD DE MEDICINA</strong></p>
+            <p><strong>COORDINACIÓN DE ESTUDIOS DE POSTGRADO</strong></p>
+            <p><strong>PROGRAMA DE ESPECIALIZACIÓN EN OBSTETRICIA Y GINECOLOGÍA</strong></p>
+            <p><strong>HOSPITAL UNIVERSITARIO DE CARACAS</strong></p>
+        </div>
+        
+        <div class="titulo-tesis">
+            <h1>MORBILIDAD MATERNA GRAVE</h1>
+        </div>
+        
+        <div class="subtitulo">
+            <p>Proyecto de Trabajo Especial de Grado que se presenta para optar al título de Especialista en Obstetricia y Ginecología</p>
+        </div>
+        
+        <div class="autores">
+            <p><strong>Rosvely Josefina Medina Ron</strong></p>
+            <p><strong>Wilson José Moreno Contreras</strong></p>
+        </div>
+        
+        <div class="autores">
+            <p>Tutora: Bahilda Martínez de Dao</p>
+        </div>
+        
+        <div class="fecha-lugar">
+            <p>Caracas, julio de 2025</p>
+        </div>
+    </div>
+
+    <!-- PÁGINA DE FIRMAS -->
+    <div class="page-break">
+        <div class="center">
+            <div class="firma-line"></div>
+            <div class="firma-info">
+                <p><strong>Bahilda Martínez de Dao</strong></p>
+                <p>C.I: 5.541.184</p>
+                <p>E-mail: bahilda@gmail.com</p>
+                <p><strong>Tutora</strong></p>
+            </div>
+            
+            <div class="firma-line"></div>
+            <div class="firma-info">
+                <p><strong>Dr. Andrés Lemmo Mondolfi</strong></p>
+                <p>C.I: 9.878.685</p>
+                <p>E-mail: lemmodoc@yahoo.com</p>
+                <p><strong>Director del Programa</strong></p>
+            </div>
+            
+            <div class="firma-line"></div>
+            <div class="firma-info">
+                <p><strong>Dr. Andrés Lemmo Mondolfi</strong></p>
+                <p>C.I: 9.878.685</p>
+                <p>E-mail: lemmodoc@yahoo.com</p>
+                <p><strong>Jefe del Servicio de Ginecología</strong></p>
+            </div>
+            
+            <div class="firma-line"></div>
+            <div class="firma-info">
+                <p><strong>Dr. Pedro Gutiérrez Sucre</strong></p>
+                <p>C.I: 6.343.252</p>
+                <p>E-mail: pgutierrezsucre@gmail.com</p>
+                <p><strong>Jefe del Servicio de Obstetricia</strong></p>
+            </div>
+            
+            <div class="firma-line"></div>
+            <div class="firma-info">
+                <p><strong>Dra. Lisbeth Andrade</strong></p>
+                <p>C.I: 11.944.881</p>
+                <p>E-mail: Lisbeth_doc15@hotmail.com</p>
+                <p><strong>Coordinadora del Programa Obstetricia</strong></p>
+            </div>
+            
+            <div class="firma-line"></div>
+            <div class="firma-info">
+                <p><strong>Dra. Lina Figueira</strong></p>
+                <p>C.I: 6.888.045</p>
+                <p>E-mail: figuieralina@gmail.com</p>
+                <p><strong>Coordinadora del Programa Ginecología</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- INFORMACIÓN DE AUTORES -->
+    <div class="page-break">
+        <h2>INFORMACIÓN DE AUTORES</h2>
+        
+        <div class="autores">
+            <p><strong>Rosvely Josefina Medina Ron</strong></p>
+            <p>C.I: 18.316.625</p>
+            <p>Sexo: Femenino</p>
+            <p>E-mail: medinarosvely2@gmail.com</p>
+            <p>Teléfono: 0424-2137784 / 0414-1463890</p>
+            <p>Dirección: Calle Terepaima, Sector Ruperto Lugo, Catia, Caracas</p>
+            <p>Hospital Universitario de Caracas</p>
+            <p>Especialización en Obstetricia y Ginecología</p>
+        </div>
+        
+        <div class="autores">
+            <p><strong>Wilson José Moreno Contreras</strong></p>
+            <p>C.I: 18.089.295</p>
+            <p>Sexo: Masculino</p>
+            <p>E-mail: wilsonjmorenoc@gmail.com</p>
+            <p>Teléfono: 0414-8419504</p>
+            <p>Dirección: Av. Andrés Bello, Residencias Plaza 1, Los Palos Grandes, Caracas</p>
+            <p>Hospital Universitario de Caracas</p>
+            <p>Especialización en Obstetricia y Ginecología</p>
+        </div>
+        
+        <div class="autores">
+            <p><strong>Bahilda Martínez de Dao</strong></p>
+            <p>C.I: 5.541.184</p>
+            <p>Sexo: Femenino</p>
+            <p>E-mail: bahilda@gmail.com</p>
+            <p>Teléfono: 0416-3788099</p>
+            <p>Dirección: Hospital Universitario de Caracas</p>
+            <p>Especialista en Obstetricia y Ginecología</p>
+        </div>
+    </div>
+
+    <!-- ÍNDICE GENERAL -->
+    <div class="page-break">
+        <h2>ÍNDICE GENERAL</h2>
+        
+        <div class="indice-item">
+            <span class="indice-titulo">RESUMEN</span>
+            <span class="indice-pagina">8</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">ABSTRACT</span>
+            <span class="indice-pagina">9</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">INTRODUCCIÓN</span>
+            <span class="indice-pagina">10</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">PLANTEAMIENTO DEL PROBLEMA</span>
+            <span class="indice-pagina">12</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">JUSTIFICACIÓN E IMPORTANCIA</span>
+            <span class="indice-pagina">14</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">ANTECEDENTES</span>
+            <span class="indice-pagina">16</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">MARCO TEÓRICO</span>
+            <span class="indice-pagina">20</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">OBJETIVOS</span>
+            <span class="indice-pagina">27</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">METODOLOGÍA</span>
+            <span class="indice-pagina">28</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">ASPECTOS ÉTICOS</span>
+            <span class="indice-pagina">32</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">ASPECTOS ADMINISTRATIVOS</span>
+            <span class="indice-pagina">33</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">CRONOGRAMA DE ACTIVIDADES</span>
+            <span class="indice-pagina">34</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">REFERENCIAS</span>
+            <span class="indice-pagina">35</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">ANEXOS</span>
+            <span class="indice-pagina">38</span>
+        </div>
+    </div>
+
+    <!-- ÍNDICE DE TABLAS -->
+    <div class="page-break">
+        <h2>ÍNDICE DE TABLAS</h2>
+        
+        <div class="indice-item">
+            <span class="indice-titulo">Tabla 1. Operacionalización de Variables</span>
+            <span class="indice-pagina">30</span>
+        </div>
+        <div class="indice-item">
+            <span class="indice-titulo">Tabla 2. Cronograma de Actividades</span>
+            <span class="indice-pagina">34</span>
+        </div>
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="page-break">
+        <h2>RESUMEN</h2>
+        
+        <div class="abstract">
+            <p><strong>Objetivo:</strong> Caracterizar la morbilidad materna grave en el Servicio de Obstetricia del Hospital Universitario de Caracas en el período comprendido entre los años 2011 y 2020.</p>
+            
+            <p><strong>Métodos:</strong> Se realizará un estudio retrospectivo, descriptivo. La selección de la muestra será no probabilística y estará constituida por los casos con complicaciones potencialmente graves durante el embarazo, parto o puerperio que fueron atendidos en el Servicio de Obstetricia durante ese período. La recolección de datos se realizará mediante instrumento tipo formulario. Se calcularán frecuencias, porcentajes y medidas de tendencia central. Para el análisis de variables categóricas se aplicarán pruebas de chi cuadrado con significancia de p < 0.05.</p>
+            
+            <p><strong>Resultados esperados:</strong> Se espera caracterizar la frecuencia de morbilidad materna grave, identificar las principales causas y factores asociados, determinar las intervenciones médico-quirúrgicas más utilizadas y describir la evolución de las pacientes según el tipo de patología. Los resultados permitirán establecer pautas de prevención y detección temprana específicas para la institución.</p>
+            
+            <p><strong>Conclusiones anticipadas:</strong> La caracterización de la morbilidad materna grave en el Hospital Universitario de Caracas proporcionará información valiosa para mejorar la calidad de atención materna, optimizar los protocolos de manejo y contribuir a la reducción de complicaciones graves en embarazadas.</p>
+            
+            <div class="keywords">
+                <p><strong>Palabras clave:</strong> Morbilidad materna grave, Near miss, Complicaciones del embarazo, Obstetricia, Servicio de Perinatología</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABSTRACT -->
+    <div class="page-break">
+        <h2>ABSTRACT</h2>
+        
+        <h3 class="center">SEVERE MATERNAL MORBIDITY</h3>
+        
+        <div class="abstract">
+            <p><strong>Objective:</strong> To characterize severe maternal morbidity in the Obstetrics Service of the University Hospital of Caracas between 2011 and 2020.</p>
+            
+            <p><strong>Methods:</strong> A retrospective, descriptive study will be carried out. The sample selection will be non-probabilistic and will consist of cases with potentially serious complications during pregnancy, childbirth or puerperium that were treated in the Obstetrics Service during that period. Data collection will be performed using a form-type instrument. Frequencies, percentages and measures of central tendency will be calculated. For the analysis of categorical variables, chi-square tests with significance of p < 0.05 will be applied.</p>
+            
+            <p><strong>Expected results:</strong> It is expected to characterize the frequency of severe maternal morbidity, identify the main causes and associated factors, determine the most used medical-surgical interventions and describe the evolution of patients according to the type of pathology. The results will allow establishing prevention and early detection guidelines specific to the institution.</p>
+            
+            <p><strong>Anticipated conclusions:</strong> The characterization of severe maternal morbidity at the University Hospital of Caracas will provide valuable information to improve the quality of maternal care, optimize management protocols and contribute to the reduction of serious complications in pregnant women.</p>
+            
+            <div class="keywords">
+                <p><strong>Key Words:</strong> Severe maternal morbidity, Extreme maternal morbidity, Near miss, Pregnancy complications, Obstetrics.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTRODUCCIÓN -->
+    <div class="page-break">
+        <h2>INTRODUCCIÓN</h2>
+        
+        <p class="indent">La morbilidad materna grave (mmg) es definida como una complicación grave que ocurre durante el embarazo, parto o puerperio, que pone en riesgo la vida de la mujer o requiere de una atención inmediata con el fin de evitar la muerte.<sup>1-3</sup> Esta condición representa un indicador crucial de la calidad de atención obstétrica y constituye una herramienta fundamental para la vigilancia epidemiológica de la salud materna.</p>
+        
+        <p class="indent">La mmg se identifica cuando hay enfermedad específica o padecimientos potencialmente mortales como hemorragia obstétrica grave, preeclampsia con criterios de gravedad, eclampsia, sepsis y ruptura uterina, o cuando existe disfunción de órganos y necesidad de intervenciones específicas adicionales para salvar la vida.<sup>4,5</sup> La detección temprana de estos casos permite implementar medidas terapéuticas oportunas que pueden prevenir la progresión hacia la muerte materna.</p>
+        
+        <p class="indent">Los riesgos del embarazo, ya sean preexistentes o que se presenten durante el mismo, no pueden ser completamente prevenidos en todas las ocasiones. Sin embargo, los peligros que implican se pueden reducir significativamente si los procedimientos y los recursos se utilizan eficazmente.<sup>6</sup> La implementación de protocolos estandarizados de manejo y la capacitación continua del personal sanitario son elementos clave para lograr este objetivo.</p>
+        
+        <p class="indent">Las embarazadas desarrollan complicaciones graves principalmente cuando una emergencia obstétrica no es reconocida oportunamente, es atendida de forma tardía o recibe un manejo inadecuado.<sup>7,8</sup> La identificación precoz de los factores de riesgo y el establecimiento de sistemas de alerta temprana constituyen estrategias fundamentales para reducir la incidencia y severidad de estas complicaciones.</p>
+        
+        <p class="indent">La detección temprana y el manejo adecuado de los embarazos de alto riesgo reduce significativamente el número de casos que progresan hacia complicaciones que ponen en peligro la vida.<sup>9,10</sup> Esto incluye la implementación de programas de control prenatal efectivos, la capacitación del personal en el reconocimiento de signos de alarma y el establecimiento de sistemas de referencia eficientes.</p>
+        
+        <p class="indent">Las intervenciones socioeconómicas que mejoren las condiciones de vida de las mujeres contribuyen a reducir el número de embarazos no deseados o no planificados. El acceso a servicios eficientes de planificación familiar disminuye la cantidad de embarazos de alto riesgo y permite que las mujeres accedan a atención preconcepcional adecuada.<sup>11</sup></p>
+        
+        <p class="indent">Existe una alta repercusión en la salud de los hijos de las embarazadas con morbilidad materna grave, con una proporción aproximada de un recién nacido afectado por cada tres madres con complicaciones graves. Las afecciones observadas con mayor frecuencia en estos neonatos incluyen síndrome de dificultad respiratoria, asfixia perinatal y restricción del crecimiento intrauterino.<sup>12,13</sup></p>
+        
+        <p class="indent">Conocer y analizar la morbilidad materna grave proporciona información más sólida, directa y rápida sobre los diagnósticos, complicaciones y tratamientos aplicados, así como sobre los obstáculos y limitaciones del proceso de atención durante el embarazo, parto y puerperio.<sup>14,15</sup> Esta información es fundamental para el desarrollo de estrategias de mejora continua de la calidad asistencial.</p>
+        
+        <p class="indent">Mediante la vigilancia epidemiológica de la mmg, se puede contribuir significativamente a mejorar los indicadores de salud materna y a optimizar los recursos disponibles para la atención obstétrica.<sup>16,17</sup> La implementación de sistemas de vigilancia permite identificar tendencias, factores de riesgo emergentes y áreas de oportunidad para la intervención.</p>
+        
+        <p class="indent">En Venezuela, la información estadística sobre estos indicadores es escasa, incompleta y no ha sido actualizada de manera sistemática en los últimos años. Esta situación limita la capacidad de los sistemas de salud para planificar intervenciones efectivas y evaluar el impacto de las medidas implementadas.</p>
+    </div>
+
+    <!-- PLANTEAMIENTO DEL PROBLEMA -->
+    <div class="page-break">
+        <h2>PLANTEAMIENTO DEL PROBLEMA</h2>
+        
+        <p class="indent">La morbilidad materna grave constituye uno de los principales desafíos de la salud pública mundial, afectando aproximadamente entre 0.7% y 8.2% de todos los embarazos según datos de la Organización Mundial de la Salud.<sup>18</sup> Esta amplia variabilidad en la incidencia refleja no solo diferencias en la calidad de los sistemas de salud, sino también disparidades en los criterios de identificación y registro de estos casos.</p>
+        
+        <p class="indent">Todas las mujeres pueden presentar complicaciones durante el embarazo, el parto y hasta los 42 días posteriores al nacimiento de sus hijos. Mientras que algunas complicaciones representan una amenaza inmediata para la vida, otras pueden evolucionar gradualmente hacia situaciones críticas si no son reconocidas y manejadas oportunamente.<sup>19</sup> La diferencia entre la supervivencia y la muerte materna frecuentemente radica en la rapidez y calidad de la respuesta del sistema de salud.</p>
+        
+        <p class="indent">El impacto de la morbilidad materna grave trasciende el ámbito individual, generando consecuencias familiares, sociales y económicas significativas. Las mujeres que sobreviven a estas complicaciones pueden presentar secuelas temporales o permanentes que afectan su calidad de vida y representan una carga importante en años de vida perdidos por discapacidad.<sup>20</sup> Adicionalmente, estas complicaciones tienen repercusiones directas en la salud de los recién nacidos, aumentando la morbilidad y mortalidad neonatal.</p>
+        
+        <p class="indent">En América Latina y el Caribe, la situación de la salud materna presenta características particulares que la distinguen de otras regiones. A pesar de los avances logrados en las últimas décadas, la región mantiene tasas de morbilidad materna grave superiores a las observadas en países desarrollados.<sup>21</sup> Factores como la inequidad en el acceso a servicios de salud, la variabilidad en la calidad de atención y las disparidades socioeconómicas contribuyen a perpetuar esta problemática.</p>
+        
+        <p class="indent">Venezuela enfrenta desafíos particulares en el ámbito de la salud materna. La crisis del sistema de salud ha impactado significativamente la capacidad de brindar atención obstétrica de calidad, afectando tanto la disponibilidad de recursos humanos capacitados como el acceso a insumos médicos esenciales.<sup>22</sup> Esta situación se ve agravada por la ausencia de datos estadísticos oficiales actualizados que permitan dimensionar adecuadamente la magnitud del problema.</p>
+        
+        <p class="indent">La crisis del sistema de salud no es un concepto abstracto, sino una realidad con consecuencias medibles que retrasan la atención y agravan los pronósticos. Investigaciones en Caracas han documentado cómo la falta de personal especializado, como anestesiólogos, obliga a las pacientes a un peregrinaje entre centros, aumentando el tiempo hasta recibir tratamiento (Chirinos et al., 2019). En la Maternidad Concepción Palacios, específicamente, el 56.7% de las referencias a otros centros se debieron a la no disponibilidad de anestesiólogos, evidenciando que las fallas estructurales del sistema de salud constituyen barreras críticas para la atención oportuna. Esta situación resulta particularmente alarmante cuando se considera que el 95% de las pacientes en ese estudio presentaron algún tipo de demora en su atención, lo que demuestra que el problema es prácticamente universal en nuestra población obstétrica.</p>
+        
+        <p class="indent">Asimismo, se ha demostrado una correlación directa entre la falta de insumos hospitalarios y el desarrollo de disfunción orgánica en pacientes con morbilidad materna extrema (Rondón, 2023). Este hallazgo es crucial porque establece un vínculo causal entre las deficiencias del sistema y los resultados clínicos adversos. La investigación reveló que la quinta demora (atención dentro del centro) estaba significativamente asociada con disfunción orgánica (p=0.043), siendo la falta de insumos el factor predominante. Esto evidencia que el problema no radica únicamente en la decisión de la paciente de buscar ayuda —un factor ciertamente relevante como lo demuestra la falta de reconocimiento de signos de alarma identificada por Ramos (2019) en el 100% de los casos de primera demora—, sino también en la capacidad de respuesta de un sistema de salud con recursos limitados.</p>
+        
+        <p class="indent">Un aspecto particularmente preocupante es que el problema de la morbilidad materna grave comienza mucho antes de la emergencia obstétrica. Rondón (2023) introdujo el concepto de "demora cero" o falla en la anticoncepción, encontrando que este factor estuvo presente en el 56.1% de los casos de morbilidad materna extrema estudiados. Este hallazgo sugiere que más de la mitad de las complicaciones graves podrían haberse prevenido con un acceso adecuado a servicios de planificación familiar, evidenciando la necesidad de un enfoque integral que abarque desde la prevención del embarazo no planificado hasta el manejo de las emergencias obstétricas.</p>
+        
+        <p class="indent">El Hospital Universitario de Caracas, como centro de referencia nacional y hospital docente, atiende una población de embarazadas de alta complejidad, muchas de las cuales son referidas desde otros centros por presentar complicaciones graves. Esta característica particular de la institución hace que la frecuencia de casos de morbilidad materna grave sea potencialmente superior a la observada en hospitales de menor complejidad. Sin embargo, a diferencia de otros centros de referencia en Caracas como la Maternidad Concepción Palacios y el Hospital Pérez Carreño, donde ya se han realizado estudios detallados sobre el tema, el Hospital Universitario de Caracas carece de investigaciones sistemáticas que caractericen esta problemática.</p>
+        
+        <p class="indent">La ausencia de estudios sistemáticos sobre morbilidad materna grave en el Hospital Universitario de Caracas representa una limitación importante para el desarrollo de estrategias específicas de prevención y manejo. Sin conocimiento detallado de las características epidemiológicas, clínicas y evolutivas de estos casos en la institución, resulta difícil implementar medidas efectivas de mejora de la calidad asistencial. Esta brecha de conocimiento es particularmente crítica cuando se considera que los estudios realizados en otros centros de la ciudad han mostrado patrones específicos que podrían no ser extrapolables a nuestra población.</p>
+        
+        <p class="indent">La identificación de los patrones de morbilidad materna grave, sus factores asociados y las intervenciones terapéuticas más frecuentemente utilizadas en el Hospital Universitario de Caracas podría contribuir significativamente al desarrollo de protocolos institucionales específicos y a la optimización de los recursos disponibles. Además, permitiría establecer comparaciones con los hallazgos de otros centros de referencia en la ciudad, identificando si existen patrones comunes que sugieran problemas sistémicos del sistema de salud o si hay particularidades institucionales que requieran intervenciones específicas.</p>
+        
+        <p class="indent">Considerando la importancia de la morbilidad materna grave como indicador de calidad asistencial, la evidencia contundente de problemas sistémicos en otros centros de referencia de la ciudad, y la necesidad urgente de contar con información específica del Hospital Universitario de Caracas para el desarrollo de estrategias de mejora, surge la siguiente interrogante de investigación:</p>
+        
+        <p class="center"><strong>¿Cuáles son las características epidemiológicas, clínicas y evolutivas de la morbilidad materna grave en el Servicio de Obstetricia del Hospital Universitario de Caracas durante el período 2011-2020?</strong></p>
+    </div>
+
+    <!-- JUSTIFICACIÓN E IMPORTANCIA -->
+    <div class="page-break">
+        <h2>JUSTIFICACIÓN E IMPORTANCIA</h2>
+        
+        <p class="indent">La realización de este estudio se justifica por múltiples razones de carácter científico, académico y asistencial que convergen en la necesidad imperativa de caracterizar la morbilidad materna grave en el Hospital Universitario de Caracas.</p>
+        
+        <p class="indent">La presente investigación se justifica ante la necesidad de completar el mapa de la morbilidad materna grave en la red de hospitales de referencia de Caracas. Si bien valiosos estudios han arrojado luz sobre la dinámica de las demoras en la atención en la Maternidad Concepción Palacios (Chirinos et al., 2019) y en el Hospital Pérez Carreño (Ramos, 2019; Rondón, 2023), el Hospital Universitario de Caracas representa una pieza clave de este sistema que aún no ha sido analizada bajo este mismo enfoque. Esta ausencia de información es particularmente preocupante cuando se considera que el HUC, como hospital universitario y centro de referencia nacional, recibe casos de alta complejidad de todo el país, lo que podría resultar en patrones de morbilidad distintos a los observados en otros centros.</p>
+        
+        <p class="indent">Desde el punto de vista científico, la investigación de la morbilidad materna grave representa una línea de investigación prioritaria a nivel mundial. La identificación de los diagnósticos más frecuentes, factores de riesgo asociados y patrones evolutivos puede servir para establecer pautas específicas de prevención y detección temprana adaptadas a las características particulares de nuestra población.<sup>23</sup> Esta información es fundamental para el desarrollo de estrategias basadas en evidencia local, especialmente cuando los estudios previos en otros centros de la ciudad han revelado problemáticas específicas que requieren abordajes diferenciados.</p>
+        
+        <p class="indent">Los hallazgos de investigaciones previas en Caracas han demostrado que ya existe un "corpus" de investigación sobre el problema. Chirinos et al. (2019) estudiaron la aplicación del modelo de las tres demoras en la Maternidad Concepción Palacios, encontrando una prevalencia alarmante del 95% de algún tipo de demora en la atención. Por su parte, Ramos (2019) caracterizó la mortalidad y morbilidad materna extrema en el Hospital Pérez Carreño según el mismo modelo, identificando que la primera demora, originada por la falta de reconocimiento de signos de alarma, fue la más frecuente. Más recientemente, Rondón (2023) amplió el marco conceptual introduciendo el concepto de "demora cero" y demostrando correlaciones significativas entre tipos de demora y desenlaces clínicos adversos.</p>
+        
+        <p class="indent">Sin embargo, persiste una brecha de conocimiento crítica en lo que respecta al Hospital Universitario de Caracas. Esta institución, por su carácter universitario y su rol como centro formador de especialistas, presenta características únicas que podrían influir en los patrones de morbilidad materna grave. La población atendida, los recursos disponibles, los protocolos de manejo y la experiencia del personal podrían generar diferencias significativas en comparación con los hallazgos de otros centros. Caracterizar la morbilidad materna y las demoras en el HUC permitirá realizar un análisis comparativo robusto, discerniendo si las barreras identificadas en otras instituciones son patrones sistémicos de la red de salud capitalina o si existen factores idiosincráticos en el HUC que requieren intervenciones específicas.</p>
+        
+        <p class="indent">La importancia académica de esta investigación radica en su contribución al conocimiento científico nacional en el área de medicina materno-fetal. Los resultados obtenidos podrán ser utilizados como línea de base para futuras investigaciones, estudios comparativos y desarrollo de proyectos de intervención. Adicionalmente, constituirá un aporte valioso para la formación de residentes y especialistas en obstetricia y ginecología, proporcionando evidencia local sobre las complicaciones más frecuentes y sus factores asociados.</p>
+        
+        <p class="indent">Desde la perspectiva asistencial, los hallazgos de este estudio tendrán impacto directo en la calidad de atención brindada a las pacientes. La caracterización detallada de los casos permitirá identificar áreas de oportunidad para mejorar los procesos asistenciales, optimizar el uso de recursos disponibles y desarrollar protocolos institucionales específicos para el manejo de complicaciones obstétricas graves.<sup>25</sup> Esto es particularmente relevante cuando se considera que los estudios previos han identificado problemas específicos como la falta de anestesiólogos (56.7% de las referencias en la Maternidad Concepción Palacios) o la falta de insumos (factor predominante en la quinta demora según Rondón, 2023).</p>
+        
+        <p class="indent">El análisis comparativo que permitirá este estudio es fundamental para el desarrollo de políticas de salud efectivas. Al completar el panorama de los tres grandes centros de referencia obstétrica de la capital, será posible identificar si problemas como la alta prevalencia de demoras (95% en la Maternidad Concepción Palacios), la falta de reconocimiento de signos de alarma (primera demora más frecuente en el Pérez Carreño) o las fallas en anticoncepción (56.1% en el estudio de Rondón) son fenómenos generalizados que requieren intervenciones a nivel del sistema de salud, o si cada institución presenta desafíos particulares que demandan soluciones específicas.</p>
+        
+        <p class="indent">La identificación de los factores de riesgo más prevalentes en nuestra población permitirá implementar estrategias de screening más efectivas durante el control prenatal, facilitando la detección temprana de casos con mayor probabilidad de desarrollar complicaciones graves. Esto contribuiría significativamente a la reducción de la incidencia y severidad de la morbilidad materna grave en la institución, especialmente si se confirman patrones similares a los encontrados en otros centros, como la asociación entre acumulación de demoras y peores desenlaces clínicos.</p>
+        
+        <p class="indent">El análisis de las intervenciones médico-quirúrgicas más frecuentemente utilizadas proporcionará información valiosa para la planificación de recursos, capacitación del personal y desarrollo de competencias específicas. Esta información es particularmente relevante en el contexto actual de limitaciones de recursos, donde la optimización de los disponibles resulta fundamental. Si se identifican deficiencias específicas similares a las encontradas en otros centros (como la falta de anestesiólogos o insumos), esto permitirá gestiones administrativas dirigidas y basadas en evidencia.</p>
+        
+        <p class="indent">La caracterización de la evolución y desenlaces de las pacientes según el tipo de patología permitirá establecer indicadores de calidad específicos para la institución y desarrollar sistemas de monitoreo continuo de la calidad asistencial. Estos indicadores servirán como herramientas de gestión para la toma de decisiones administrativas y clínicas, y permitirán evaluar el impacto de futuras intervenciones.</p>
+        
+        <p class="indent">Desde el punto de vista epidemiológico, este estudio contribuirá al conocimiento de la situación de salud materna en Venezuela, proporcionando datos actualizados que pueden ser utilizados por autoridades sanitarias para la planificación de políticas públicas y asignación de recursos en el área materno-infantil. La posibilidad de realizar un análisis comparativo entre los tres principales centros de referencia de la capital fortalecerá significativamente la evidencia disponible para la toma de decisiones en salud pública.</p>
+        
+        <p class="indent">La relevancia social de esta investigación se fundamenta en su potencial contribución a la reducción de complicaciones graves en embarazadas, lo que se traduce en beneficios directos para las familias y la sociedad en general. La mejora en la calidad de atención materna tiene impacto multiplicador en el bienestar familiar y el desarrollo social, especialmente cuando se considera que muchas de estas complicaciones son prevenibles con intervenciones oportunas.</p>
+        
+        <p class="indent">Por tanto, este estudio no solo llenará una brecha de conocimiento crítica sobre la situación en el Hospital Universitario de Caracas, sino que contribuirá a una comprensión más holística y estratégica del problema a nivel regional. Los resultados permitirán desarrollar intervenciones basadas en evidencia local, optimizar la asignación de recursos limitados y, en última instancia, mejorar los desenlaces maternos y perinatales en nuestra institución y en la red de salud capitalina.</p>
+        
+        <p class="indent">Finalmente, este estudio establece las bases para el desarrollo de futuras líneas de investigación en morbilidad materna grave, incluyendo estudios de intervención, análisis de factores predictivos y evaluación de estrategias de prevención. La generación de conocimiento científico local es fundamental para el fortalecimiento de la medicina basada en evidencia en nuestro contexto y para la formación de futuras generaciones de especialistas comprometidos con la mejora continua de la salud materna.</p>
+    </div>
+
+    <!-- ANTECEDENTES -->
+    <div class="page-break">
+        <h2>ANTECEDENTES</h2>
+        <p class="indent">Faneite publicó en 2006 un estudio sobre las tendencias de la mortalidad materna en el Hospital "Adolfo Prince Lara" de Puerto Cabello desde 1969 hasta 2004. En el período se registraron 115 muertes maternas directas y 126.669 recién nacidos. La tasa de mortalidad materna al inicio del período fue de 99,2 por 100.000 nacidos vivos y en los últimos 10 años de 48,2 por 100.000 nacidos vivos. El estudio evidenció una tendencia decreciente sostenida en la mortalidad materna durante el período analizado, atribuible principalmente a mejoras en la calidad de atención obstétrica y mayor acceso a servicios de salud especializados.<sup>26</sup></p>
+
+        <p class="indent">Álvarez <em>et al.</em> caracterizaron en 2010 la morbilidad materna extremadamente grave en el Hospital "Ramón González Corro" en Cuba. Durante el período de estudio analizaron 248 casos de morbilidad materna extrema, encontrando una incidencia de 8,9 por 1000 nacimientos. Las principales causas identificadas fueron los trastornos hipertensivos del embarazo (45,2%), hemorragias obstétricas (28,6%) y sepsis (18,1%). El estudio demostró que la implementación de protocolos estandarizados de manejo redujo significativamente la letalidad asociada a estas complicaciones.<sup>27</sup></p>
+
+        <p class="indent">Faneite <em>et al.</em> publicaron en 2012 un estudio sobre morbilidad materna y hospitalización ante parto, encontrando 1.033 admisiones por patologías obstétricas y asociadas al embarazo, 230 neonatos con morbilidad y 34 muertes perinatales. Las causas principales de complicaciones fueron preeclampsia grave (32%), hemorragias del tercer trimestre (24%) y trabajo de parto prematuro (18%). El estudio destacó la importancia de la hospitalización oportuna en casos de alto riesgo para prevenir complicaciones graves.<sup>28</sup></p>
+
+        <p class="indent">Bendezú y Bendezú-Quispe caracterizaron en 2014 la morbilidad extremadamente grave en un hospital del seguro social del Perú. Analizaron 156 casos de morbilidad materna extrema durante un período de dos años, encontrando una incidencia de 12,4 por 1000 nacimientos. Los trastornos hipertensivos del embarazo fueron la causa más frecuente (38,5%), seguidos de hemorragias obstétricas (31,4%) y sepsis puerperal (15,4%). La mortalidad fue de 2,6% y se asoció principalmente con demoras en el reconocimiento y tratamiento de las complicaciones.<sup>29</sup></p>
+
+        <p class="indent">Tang <em>et al.</em> evaluaron en 2015 factores de riesgo asociados a la mortalidad neonatal en el Hospital Central de Maracay. Analizaron 1.248 recién nacidos, identificando como factores de riesgo significativos la edad materna mayor de 35 años (OR: 2,4), el control prenatal inadecuado (OR: 3,1), la edad gestacional menor de 37 semanas (OR: 4,2), el peso al nacer menor a 2.400 g (OR: 5,8) y la depresión respiratoria severa (OR: 6,3). El estudio demostró la estrecha relación entre complicaciones maternas graves y resultados neonatales adversos.<sup>31</sup></p>
+
+        <p class="indent">Nava <em>et al.</em> realizaron entre 2011 y 2014 la caracterización de pacientes asistidas en la Unidad de Cuidados Intensivos Obstétricos del Hospital "Dr. Armando Castillo Plaza" de Maracaibo. Del total de ingresos de la maternidad, 0,74% (548/73.588) ingresaron a cuidados intensivos; el 80% de las pacientes ingresaron estando en puerperio. Las principales causas fueron hipertensión inducida por el embarazo (42,1%), infecciones (23,4%) y hemorragias (19,7%). La estancia hospitalaria promedio fue de 5,91 días y se registraron 38 defunciones con una letalidad de 6,93%.<sup>30</sup></p>
+
+        <p class="indent">Serruya <em>et al.</em> publicaron en 2017 los resultados de una investigación multicéntrica en América Latina y el Caribe desde 2009 hasta 2012. Analizaron 712.081 nacimientos, encontrando 3,2% de resultados maternos severos, con una morbilidad materna grave de 3,1%. Las principales causas fueron trastornos hipertensivos (41,2%), hemorragias (28,7%) y sepsis (17,3%). El estudio evidenció la fortaleza de compartir datos en red para el análisis epidemiológico regional y destacó la importancia de criterios estandarizados para la identificación de casos.<sup>32</sup></p>
+
+        <p class="indent">Hoyos y Muñoz de Rodríguez estudiaron en 2017 las barreras para el acceso a la atención prenatal en mujeres con morbilidad materna extrema en Medellín, Colombia. Entrevistaron 45 mujeres que habían presentado complicaciones graves durante el embarazo, identificando barreras geográficas (32%), económicas (28%), culturales (24%) y administrativas (16%). Las pacientes consideraron que el sistema de salud no garantiza el acceso adecuado para ellas y sus hijos por nacer, lo que condiciona la inasistencia a programas de atención prenatal y aumenta el riesgo de complicaciones.<sup>33</sup></p>
+
+        <p class="indent">Sánchez-Barrera <em>et al.</em> estudiaron en 2019 la carga de enfermedad por años perdidos por discapacidad en mujeres con morbilidad materna grave en Colombia. Analizaron 8.456 casos registrados en el sistema de vigilancia nacional, encontrando que el grupo más afectado fue el de 15 a 29 años con 5,86 años perdidos por discapacidad. La morbilidad materna grave tuvo mayor prevalencia en Bogotá y el 67% de los casos se concentraron en departamentos con mayor complejidad en la atención y capacidad de respuesta de calidad.<sup>34</sup></p>
+
+        <p class="indent">En el contexto venezolano, la aplicación del modelo de demoras para entender la morbi-mortalidad materna ha sido objeto de importantes investigaciones en los principales centros hospitalarios de la capital. Uno de los estudios pioneros en este enfoque fue el realizado por Chirinos Rodríguez y colaboradores (2019) en la Maternidad Concepción Palacios. A través de un diseño prospectivo, descriptivo y transversal que incluyó a 377 gestantes, los autores evaluaron la situación de la atención obstétrica de emergencia. Sus resultados revelaron una alarmante prevalencia de demoras, afectando al 95% de la muestra. Identificaron que la primera demora (en decidir buscar atención) y la tercera demora (en recibir tratamiento adecuado) fueron las más frecuentes, con 82% y 77.2% respectivamente. De manera crítica, la tercera demora se debió principalmente a la necesidad de referencia a otros centros por falta de recursos, siendo la no disponibilidad de anestesiólogos (56.7%) el factor causal más relevante. La investigación concluyó con una fuerte evidencia de la correlación significativa entre la presencia de estas demoras y los resultados maternofetales adversos.<sup>39</sup></p>
+
+        <p class="indent">En ese mismo año, Ramos González (2019) condujo una investigación retrospectiva en la Clínica Maternidad Santa Ana, adscrita al Hospital Dr. Miguel Pérez Carreño (IVSS), enfocándose en las características de la morbilidad y mortalidad materna según el mismo modelo. Analizando una muestra de 180 pacientes, el estudio concluyó que la demora de mayor frecuencia fue la primera, originada específicamente por la "falta de reconocimiento de signos de alarma por parte de las pacientes", lo que apunta a un déficit crucial en la educación sanitaria durante el control prenatal. Un hallazgo distintivo de este trabajo fue la ausencia de una correlación estadística entre la demora y variables sociodemográficas como la edad o el número de controles prenatales, sugiriendo que las barreras para una atención oportuna podrían ser transversales a distintos perfiles de pacientes dentro de esa población.<sup>40</sup></p>
+
+        <p class="indent">Santiago y Sierra caracterizaron en 2020 la morbilidad materna extrema del Servicio de Medicina Materno Fetal de la Maternidad Concepción Palacios entre septiembre 2012 y agosto 2017. Encontraron que la frecuencia de morbilidad materna extrema fue 81,7%. De ellas, 196 pacientes (78,4%) tenían entre 16 y 34 años, 146 (58,4%) eran multíparas, 214 (86,3%) cursaban tercer trimestre y 196 (78,4%) habían acudido a control prenatal. Se practicó cesárea en 210 casos (84%). El sistema más afectado fue el cardiovascular, 218 casos (87,2%). La patología obstétrica estuvo presente en 237 pacientes (94,8%), siendo los trastornos hipertensivos del embarazo los más frecuentes con 216 pacientes (91,1%). Veintiuna pacientes (8,9%) ameritaron cuidados intensivos y solo dos casos (0,8%) egresaron con secuelas.<sup>35</sup></p>
+
+        <p class="indent">Cabrera <em>et al.</em> publicaron en 2021 tres estudios sobre la evolución histórica de la mortalidad materna en la Maternidad "Concepción Palacios" por sepsis, trastornos hipertensivos del embarazo y hemorragias desde 1939 hasta 2020. Los estudios analizaron las tendencias temporales, factores asociados y estrategias de prevención implementadas durante ocho décadas. Los hallazgos demostraron una reducción sostenida en la mortalidad por estas causas, particularmente marcada a partir de la década de 1980, atribuible a mejoras en los protocolos de manejo, disponibilidad de recursos terapéuticos y capacitación del personal sanitario.<sup>36-38</sup></p>
+
+        <p class="indent">Ampliando el marco conceptual, Rondón (2023) llevó a cabo un estudio ambispectivo (combinando análisis retrospectivo y entrevistas prospectivas) sobre la morbilidad materna extrema en el Hospital Miguel Pérez Carreño. Esta investigación es notable por aplicar un modelo de demoras ampliado, que incorpora la "falla en la anticoncepción" como una demora primaria o "demora cero". En la muestra de 92 pacientes, se encontró que este factor fue el más prevalente, estando presente en el 56.1% de los casos. Además, se observó que un 42.9% de las pacientes acumularon dos o más demoras. El estudio demostró una relación estadísticamente significativa entre el tipo de demora y el diagnóstico clínico (p=0.016), y estableció una conexión directa entre la quinta demora (atención dentro del centro) y la disfunción orgánica (p=0.043), siendo la falta de insumos el factor predominante. Este trabajo subraya la necesidad de abordar el problema desde la planificación familiar y evidencia el impacto directo de la crisis de recursos en los desenlaces clínicos.<sup>41</sup></p>
+<h2>MARCO TEÓRICO</h2>
+        
+        <p class="indent">La morbilidad materna grave representa toda complicación grave que ocurre durante el embarazo, parto o puerperio, que pone en riesgo la vida de la mujer y requiere una atención inmediata con el fin de evitar la muerte.<sup>42-44</sup> Este concepto ha evolucionado significativamente en las últimas décadas, estableciéndose como un indicador fundamental de la calidad de atención obstétrica y como herramienta esencial para la vigilancia epidemiológica de la salud materna.</p>
+        
+        <p class="indent">La terminología utilizada para describir esta condición ha sido diversa a lo largo del tiempo, incluyendo denominaciones como morbilidad obstétrica severa, morbilidad materna severa aguda, morbilidad materna extremadamente grave, complicación que amenaza la vida, <em>near miss</em> y casi muerta. Sin embargo, la Organización Mundial de la Salud ha promovido la estandarización del término "morbilidad materna grave" para facilitar la comparabilidad entre estudios y sistemas de vigilancia a nivel mundial.<sup>45</sup></p>
+        
+        <p class="indent">Los casos de morbilidad materna grave se detectan por la presencia de alteraciones en la función de diferentes órganos y sistemas, que representan situaciones de riesgo vital que requieren intervención inmediata. Estas alteraciones incluyen disfunción neurológica, caracterizada por alteración de la consciencia mayor o igual a 12 horas, ictus o estatus convulsivo; disfunción respiratoria, manifestada por cianosis aguda, gasping, taquipnea mayor a 40 respiraciones por minuto, bradipnea menor a 6 respiraciones por minuto, necesidad de intubación y ventilación mecánica no relacionada con anestesia, o hipoxemia severa con saturación de oxígeno menor al 90% por más de una hora.<sup>46,47</sup></p>
+        
+        <p class="indent">La disfunción cardiovascular constituye otra manifestación importante de morbilidad materna grave, caracterizada por estado de shock, paro cardiorrespiratorio o necesidad de uso de vasoactivos. La disfunción renal se manifiesta por oliguria que no mejora con fluidos endovenosos y/o diuréticos, creatinina mayor a 3,5 mg/dL, o necesidad de hemodiálisis aguda. La disfunción hepática incluye ictericia en el contexto de preeclampsia o hiperbilirrubinemia severa mayor a 6 mg/dL.<sup>48</sup></p>
+        
+        <p class="indent">Las alteraciones hematológicas asociadas con morbilidad materna grave incluyen trombocitopenia severa menor a 50.000 plaquetas por mm³ o necesidad de transfusión masiva mayor a 5 unidades de concentrado globular. La disfunción metabólica se caracteriza por acidosis severa con pH menor a 7,1 o lactato mayor a 45 mg/dL. Finalmente, la disfunción uterina incluye hemorragia o infección uterina que requiera histerectomía como medida salvadora.<sup>49</sup></p>
+        
+        <p class="indent">El modelo de las demoras constituye un marco conceptual fundamental para comprender las barreras que enfrentan las mujeres en el acceso a la atención obstétrica de calidad. Este modelo, desarrollado originalmente por Thaddeus y Maine en 1994, identifica tres demoras principales: la demora en decidir buscar atención médica (primera demora), la demora en llegar a un establecimiento de salud adecuado (segunda demora), y la demora en recibir tratamiento adecuado en el establecimiento de salud (tercera demora).<sup>50</sup></p>
+        
+        <p class="indent">El modelo clásico de las tres demoras ha sido refinado por investigaciones posteriores para reconocer barreras que operan antes, durante y después del contacto con el sistema de salud. Entre estas ampliaciones se incluye la denominada <em>demora cero</em>, que describe los obstáculos en el acceso oportuno a la planificación familiar y anticoncepción, así como una <em>quinta demora</em>, relacionada con fallas sistémicas intrahospitalarias —por ejemplo, la carencia de insumos o de personal capacitado— que comprometen la respuesta inmediata a la emergencia obstétrica.<sup>41</sup></p>
+        
+        <p class="indent">Además, se han identificado demoras adicionales como la cuarta demora (relacionada con factores del sistema de salud que afectan la calidad de la atención) y la quinta demora (problemas en la atención dentro del establecimiento de salud, incluyendo falta de insumos, equipos o personal capacitado). Estas demoras adicionales son particularmente relevantes en contextos de crisis del sistema de salud, como el documentado en Venezuela.<sup>41</sup></p>
+        
+        <p class="indent">La fisiopatología de la morbilidad materna grave es compleja y multifactorial, involucrando cambios adaptativos del embarazo que pueden predisponer a complicaciones graves. Los cambios cardiovasculares del embarazo, incluyendo aumento del volumen plasmático en 40-50%, incremento del gasto cardíaco en 30-50% y aumento de la frecuencia cardíaca en 10-15 latidos por minuto, pueden comprometer la reserva funcional en mujeres con patologías preexistentes. Los cambios hematológicos, caracterizados por un estado de hipercoagulabilidad fisiológica con aumento de factores de coagulación y disminución de la actividad fibrinolítica, pueden predisponer a eventos tromboembólicos, mientras que la hemodilución fisiológica puede enmascarar anemias preexistentes.<sup>51</sup></p>
+        
+        <p class="indent">Los cambios respiratorios del embarazo, incluyendo disminución de la capacidad residual funcional en 20% y aumento del consumo de oxígeno en 20-30%, pueden comprometer la reserva respiratoria en situaciones críticas. Los cambios renales, caracterizados por aumento del filtrado glomerular en 50% y cambios en el manejo de electrolitos, pueden predisponer a complicaciones en mujeres con enfermedad renal preexistente.<sup>52</sup></p>
+        
+        <p class="indent">Las principales causas de morbilidad materna grave incluyen los trastornos hipertensivos del embarazo, que representan la causa más frecuente a nivel mundial, afectando entre el 2-8% de todos los embarazos. La preeclampsia con criterios de gravedad y la eclampsia constituyen emergencias obstétricas que requieren manejo inmediato para prevenir complicaciones neurológicas, cardiovasculares y renales graves. El síndrome HELLP (hemólisis, elevación de enzimas hepáticas y plaquetopenia) representa una variante particularmente severa que combina múltiples disfunciones orgánicas y se presenta en el 10-20% de las pacientes con preeclampsia grave.<sup>53</sup></p>
+        
+        <p class="indent">Las hemorragias obstétricas constituyen la segunda causa más frecuente de morbilidad materna grave, incluyendo hemorragias del primer trimestre como embarazo ectópico (que afecta al 1-2% de los embarazos) y aborto, hemorragias del segundo y tercer trimestre como placenta previa (0.3-0.5% de los embarazos) y desprendimiento prematuro de placenta (0.4-1% de los embarazos), y hemorragias del puerperio como atonía uterina (principal causa de hemorragia postparto en 70-80% de los casos), retención de restos placentarios y laceraciones del canal del parto. La severidad de estas complicaciones depende de múltiples factores, incluyendo la velocidad de la pérdida sanguínea, el estado hematológico previo de la paciente y la oportunidad del tratamiento.<sup>54</sup></p>
+        
+        <p class="indent">La sepsis materna representa otra causa importante de morbilidad grave, con una incidencia que varía entre 0.1-0.3% de los embarazos en países desarrollados, pero que puede ser significativamente mayor en contextos de recursos limitados. La sepsis puede originarse en el tracto genitourinario (corioamnionitis, endometritis), respiratorio (neumonía), gastrointestinal (apendicitis, colecistitis) o por infecciones de sitio quirúrgico. La respuesta inflamatoria sistémica durante el embarazo puede progresar rápidamente hacia shock séptico y falla multiorgánica, con una mortalidad que puede alcanzar el 20-30% en casos de shock séptico, requiriendo manejo agresivo con antibióticos de amplio espectro y soporte hemodinámico.<sup>55</sup></p>
+        
+        <p class="indent">Los indicadores epidemiológicos utilizados para la vigilancia de la morbilidad materna grave incluyen la razón de morbilidad materna grave, calculada como el número de casos certificados por cada 100.000 nacidos vivos, que permite comparaciones entre instituciones y períodos. El índice de mortalidad representa el porcentaje de muertes maternas por cada 100 casos de morbilidad materna grave, constituyendo un indicador de letalidad que refleja la calidad de atención. La relación morbilidad materna grave/muerte materna indica el número de casos de morbilidad por cada muerte materna, permitiendo evaluar la calidad de atención y la capacidad del sistema para prevenir la progresión hacia la muerte.<sup>56</sup></p>
+        
+        <p class="indent">Las estrategias de prevención de la morbilidad materna grave incluyen la atención preconcepcional adecuada, que permite identificar y tratar condiciones médicas preexistentes que puedan complicarse durante el embarazo. Estudios han demostrado que hasta el 50% de las mujeres que desarrollan complicaciones graves tienen factores de riesgo identificables antes del embarazo. El control prenatal de calidad, con enfoque de riesgo y capacidad para detectar precozmente signos de alarma, constituye una herramienta fundamental para la prevención primaria. La evidencia sugiere que un mínimo de 8 controles prenatales se asocia con mejores resultados maternos y perinatales.<sup>57</sup></p>
+        
+        <p class="indent">La atención del parto por personal calificado en instituciones con capacidad resolutiva adecuada es esencial para el manejo oportuno de complicaciones agudas. La presencia de personal entrenado en emergencias obstétricas puede reducir la mortalidad materna en hasta un 75%. La implementación de sistemas de referencia eficientes, con protocolos claros de estabilización y transporte, es crucial para garantizar que las pacientes con complicaciones graves reciban atención especializada oportuna.<sup>58</sup></p>
+        
+        <p class="indent">El manejo de la morbilidad materna grave requiere un enfoque multidisciplinario que incluye reconocimiento temprano mediante el uso de sistemas de alerta temprana obstétrica, estabilización inicial siguiendo el protocolo ABC (vía aérea, respiración, circulación), tratamiento específico de la condición subyacente basado en protocolos estandarizados, y soporte de órganos comprometidos con monitoreo continuo de signos vitales y función orgánica. Los protocolos estandarizados de manejo, la disponibilidad de recursos terapéuticos apropiados (incluyendo banco de sangre 24/7, medicamentos esenciales y unidad de cuidados intensivos) y la capacitación continua del personal son elementos fundamentales para optimizar los resultados.<sup>59</sup></p>
+        
+        <p class="indent">La implementación de equipos de respuesta rápida obstétrica ha demostrado reducir significativamente la morbi-mortalidad asociada con estas complicaciones. Estos equipos, compuestos por obstetras, anestesiólogos, intensivistas y personal de enfermería especializado, pueden activarse ante la presencia de criterios específicos de gravedad, garantizando una respuesta coordinada y oportuna. Estudios han mostrado que la implementación de estos equipos puede reducir la mortalidad materna en hasta un 40% y disminuir la necesidad de histerectomías de emergencia en un 25%.<sup>60,61</sup></p>
+        
+        <p class="indent">El seguimiento post-evento de las pacientes que han presentado morbilidad materna grave es fundamental para prevenir complicaciones a largo plazo y planificar futuros embarazos. Estas mujeres tienen mayor riesgo de desarrollar enfermedades cardiovasculares, renales y metabólicas en el futuro, requiriendo vigilancia especializada. Además, el apoyo psicológico es crucial, ya que hasta el 25% de las sobrevivientes pueden desarrollar trastorno de estrés postraumático.<sup>62</sup></p>
+    </div>
+
+    <!-- OBJETIVOS -->
+    <div class="page-break">
+        <h2>OBJETIVOS</h2>
+        
+        <div class="objetivo-general">
+            <h3>Objetivo General</h3>
+            <p>Caracterizar la morbilidad materna grave en el Servicio de Obstetricia del Hospital Universitario de Caracas en el período comprendido entre los años 2011 y 2020.</p>
+        </div>
+        
+        <div class="objetivos-especificos">
+            <h3>Objetivos Específicos</h3>
+            <ol start="1">
+                <li>Calcular la frecuencia de la morbilidad materna grave.</li>
+                <li>Correlacionar las características sociodemográficas y obstétricas con el tipo de morbilidad materna grave.</li>
+                <li>Clasificar la morbilidad materna grave según el momento de la ocurrencia, el sistema afectado y la patología encontrada.</li>
+                <li>Determinar las intervenciones médico-quirúrgicas aplicadas.</li>
+                <li>Describir la evolución de las pacientes según el tipo de patología: obstétrica o no obstétrica.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- METODOLOGÍA -->
+    <div class="page-break">
+        <h2>METODOLOGÍA</h2>
+        
+        <div class="metodologia-seccion">
+            <h3>Tipo de Estudio</h3>
+            <p>Se realizará un estudio retrospectivo, descriptivo, de corte transversal.</p>
+        </div>
+        
+        <div class="metodologia-seccion">
+            <h3>Población y Muestra</h3>
+            <p>La población estará conformada por todas las embarazadas que fueron atendidas en el Servicio de Obstetricia del Hospital Universitario de Caracas durante el período comprendido entre enero de 2011 y diciembre de 2020. Asimismo, se incluirán los casos atendidos por el <em>Servicio de Perinatología</em> para asegurar la representatividad del espectro completo de morbilidad materna grave.</p>
+            
+            <p>La muestra, de tipo no probabilística, estará constituida por los casos de morbilidad materna grave que fueron atendidos en el Servicio de Obstetricia del Hospital Universitario de Caracas durante el período de estudio. Se estima un tamaño mínimo de muestra de 100 casos para garantizar la validez estadística del análisis.</p>
+            
+            <p>La selección de la muestra se realizará de forma no probabilística, por conveniencia, incluyendo todos los casos que cumplan con los criterios de inclusión y exclusión establecidos.</p>
+        </div>
+        
+        <div class="metodologia-seccion">
+            <h3>Criterios de Inclusión</h3>
+            <div class="criterios">
+                <ul>
+                    <li>Pacientes gestantes o puérperas atendidas en el Servicio de Obstetricia del Hospital Universitario de Caracas entre enero 2011 y diciembre 2020.</li>
+                    <li>Diagnósticos de patología considerada como morbilidad materna grave según criterios de la OMS.</li>
+                    <li>Historias clínicas con información completa y legible.</li>
+                    <li>Pacientes independientemente de la edad materna y edad gestacional.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metodologia-seccion">
+            <h3>Criterios de Exclusión</h3>
+            <div class="criterios">
+                <ul>
+                    <li>Casos con historias clínicas incompletas o ilegibles.</li>
+                    <li>Pacientes atendidas en otros servicios diferentes al de Obstetricia.</li>
+                    <li>Casos en los que no se pueda confirmar el diagnóstico de morbilidad materna grave.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="metodologia-seccion">
+            <h3>Variables de Estudio</h3>
+            
+            <div class="table-title">Tabla 1. Operacionalización de Variables</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Tipo</th>
+                        <th>Escala</th>
+                        <th>Indicador</th>
+                        <th>Codificación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Edad</td>
+                        <td>Cuantitativa</td>
+                        <td>Continua</td>
+                        <td>Años cumplidos</td>
+                        <td>Número</td>
+                    </tr>
+                    <tr>
+                        <td>Paridad</td>
+                        <td>Cualitativa</td>
+                        <td>Ordinal</td>
+                        <td>Nulípara/Primípara/Multípara</td>
+                        <td>0/1/2</td>
+                    </tr>
+                    <tr>
+                        <td>Procedencia</td>
+                        <td>Cualitativa</td>
+                        <td>Nominal</td>
+                        <td>Urbana/Suburbana/Rural</td>
+                        <td>0/1/2</td>
+                    </tr>
+                    <tr>
+                        <td>Nivel de Instrucción</td>
+                        <td>Cualitativa</td>
+                        <td>Ordinal</td>
+                        <td>Analfabeta/Básica/Diversificada/Técnica/Universitaria</td>
+                        <td>0/1/2/3/4</td>
+                    </tr>
+                    <tr>
+                        <td>Control Prenatal</td>
+                        <td>Cualitativa</td>
+                        <td>Nominal</td>
+                        <td>Sí/No</td>
+                        <td>1/0</td>
+                    </tr>
+                    <tr>
+                        <td>Tipo de MMG</td>
+                        <td>Cualitativa</td>
+                        <td>Nominal</td>
+                        <td>Preeclampsia/Eclampsia/Hemorragia/Sepsis/Otras</td>
+                        <td>0/1/2/3/4</td>
+                    </tr>
+                    <tr>
+                        <td>Sistema Afectado</td>
+                        <td>Cualitativa</td>
+                        <td>Nominal</td>
+                        <td>Cardiovascular/Respiratorio/Renal/Hematológico/Otros</td>
+                        <td>0/1/2/3/4</td>
+                    </tr>
+                    <tr>
+                        <td>Momento de Complicación</td>
+                        <td>Cualitativa</td>
+                        <td>Nominal</td>
+                        <td>Anteparto/Intraparto/Puerperio</td>
+                        <td>0/1/2</td>
+                    </tr>
+                    <tr>
+                        <td>Intervención Quirúrgica</td>
+                        <td>Cualitativa</td>
+                        <td>Nominal</td>
+                        <td>Sí/No</td>
+                        <td>1/0</td>
+                    </tr>
+                    <tr>
+                        <td>Tipo de Intervención</td>
+                        <td>Cualitativa</td>
+                        <td>Nominal</td>
+                        <td>Cesárea/Histerectomía/Ligadura/Otras</td>
+                        <td>0/1/2/3</td>
+                    </tr>
+                    <tr>
+                        <td>Estancia Hospitalaria</td>
+                        <td>Cuantitativa</td>
+                        <td>Discreta</td>
+                        <td>Días</td>
+                        <td>Número</td>
+                    </tr>
+                    <tr>
+                        <td>Condición de Egreso</td>
+                        <td>Cualitativa</td>
+                        <td>Nominal</td>
+                        <td>Curación/Mejoría/Traslado/Óbito</td>
+                        <td>0/1/2/3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="metodologia-seccion">
+            <h3>Procedimientos</h3>
+            <p>Previa aprobación y autorización por el Comité de Bioética y el Departamento de Registros Médicos del Hospital Universitario de Caracas, se procederá a la revisión sistemática de las historias clínicas de las pacientes que cumplan con los criterios de inclusión.</p>
+            
+            <p>Los datos correspondientes a las variables de estudio se registrarán en un instrumento de recolección tipo formulario estructurado, diseñado específicamente para este estudio. La información será codificada y posteriormente transferida a una base de datos electrónica para su análisis estadístico.</p>
+            
+            <p>La búsqueda de casos se realizará mediante revisión de los registros del servicio, libros de ingresos y egresos, y bases de datos disponibles. Se verificará la información mediante revisión directa de las historias clínicas correspondientes.</p>
+        </div>
+        
+        <div class="metodologia-seccion">
+            <h3>Análisis Estadístico</h3>
+            <p>Para las variables cuantitativas se realizarán análisis descriptivos de tendencia central, calculando promedio, mediana, desviación estándar y rangos. Para las variables cualitativas se aplicarán cálculos de frecuencia absoluta y relativa (porcentajes).</p>
+            
+            <p>Para el análisis de asociación entre variables categóricas se aplicará la prueba de chi cuadrado (χ²) y para la comparación de medias la prueba t de Student, estableciendo un nivel de significancia de p < 0,05.</p>
+            
+            <p>Para determinar el grado de asociación entre variables se utilizará el coeficiente de correlación de Pearson para variables continuas y el coeficiente de contingencia para variables categóricas.</p>
+            
+            <p>Se utilizará el programa estadístico SPSS Statistics versión 25 para Windows para el procesamiento y análisis de los datos.</p>
+        </div>
+    </div>
+
+    <!-- ASPECTOS ÉTICOS -->
+    <div class="page-break">
+        <h2>ASPECTOS ÉTICOS</h2>
+        
+        <p class="indent">El presente proyecto de investigación cumple con las pautas y normas expresadas en la Declaración de Helsinki de la Asociación Médica Mundial, como propuesta de principios éticos para investigación médica en seres humanos, en su versión más reciente. Adicionalmente, se rige por las normativas éticas establecidas por la Universidad Central de Venezuela y el Hospital Universitario de Caracas para la realización de investigaciones con seres humanos.</p>
+        
+        <p class="indent">Se garantizará durante toda la investigación el respeto estricto de los principios fundamentales de la bioética: autonomía, beneficencia, no maleficencia y justicia. El principio de autonomía se respetará mediante la protección de la confidencialidad de los datos de las pacientes, asegurando que la información personal no sea revelada ni utilizada para fines diferentes a los objetivos de la investigación.</p>
+        
+        <p class="indent">El principio de beneficencia se aplicará garantizando que los resultados de la investigación contribuyan al mejoramiento de la calidad de atención materna en la institución y puedan beneficiar a futuras pacientes. Los hallazgos del estudio serán divulgados a las autoridades competentes para su consideración en la planificación de mejoras asistenciales.</p>
+        
+        <p class="indent">El principio de no maleficencia se asegurará mediante el manejo confidencial de la información, evitando cualquier riesgo de daño a las pacientes o sus familias. No se realizarán intervenciones adicionales ni se modificarán los tratamientos por motivos de la investigación, dado que se trata de un estudio retrospectivo.</p>
+        
+        <p class="indent">El principio de justicia se garantizará mediante la inclusión de todos los casos que cumplan con los criterios establecidos, sin discriminación por raza, religión, condición socioeconómica o cualquier otra característica personal. Los beneficios potenciales de la investigación estarán disponibles para toda la población que recibe atención en la institución.</p>
+        
+        <p class="indent">La confidencialidad de los datos se mantendrá mediante la codificación de las historias clínicas, eliminando información que permita la identificación directa de las pacientes. Los datos serán manejados únicamente por los investigadores y se almacenarán en dispositivos seguros con acceso restringido. Al finalizar el estudio, la información será archivada de manera segura y destruida después del tiempo reglamentario establecido.</p>
+        
+        <p class="indent">No se requiere consentimiento informado dado que se trata de un estudio retrospectivo que utiliza información ya registrada en las historias clínicas como parte de la atención médica rutinaria. Sin embargo, se solicitará la autorización correspondiente al Comité de Bioética institucional y al Departamento de Registros Médicos para el acceso a las historias clínicas.</p>
+        
+        <p class="indent">Los resultados de la investigación serán presentados de manera agregada, sin posibilidad de identificación individual de los casos. La divulgación de los resultados se realizará en foros académicos y científicos apropiados, contribuyendo al conocimiento científico en el área de salud materna.</p>
+    </div>
+
+    <!-- ASPECTOS ADMINISTRATIVOS -->
+    <div class="page-break">
+        <h2>ASPECTOS ADMINISTRATIVOS</h2>
+        
+        <div class="metodologia-seccion">
+            <h3>Recursos Humanos</h3>
+            <ul>
+                <li>Residentes de Obstetricia y Ginecología (investigadores principales)</li>
+                <li>Tutora especialista en Obstetricia y Ginecología</li>
+                <li>Personal del Departamento de Registros Médicos del Hospital Universitario de Caracas</li>
+                <li>Asesor metodológico (si requerido)</li>
+                <li>Asesor estadístico (si requerido)</li>
+            </ul>
+        </div>
+        
+        <div class="metodologia-seccion">
+            <h3>Recursos Materiales</h3>
+            <ul>
+                <li>Computadoras portátiles para recolección y análisis de datos</li>
+                <li>Impresora para formularios e informes</li>
+                <li>Material de oficina (papel, bolígrafos, carpetas, etc.)</li>
+                <li>Software estadístico SPSS Statistics 25</li>
+                <li>Dispositivos de almacenamiento de datos (USB, discos externos)</li>
+                <li>Acceso a internet para búsqueda bibliográfica</li>
+            </ul>
+        </div>
+        
+        <div class="metodologia-seccion">
+            <h3>Recursos Tecnológicos</h3>
+            <ul>
+                <li>Acceso a bases de datos bibliográficas (PubMed, LILACS, SciELO)</li>
+                <li>Software de procesamiento de texto (Microsoft Word)</li>
+                <li>Software de presentaciones (Microsoft PowerPoint)</li>
+                <li>Gestor de referencias bibliográficas (EndNote o Mendeley)</li>
+            </ul>
+        </div>
+        
+        <div class="metodologia-seccion">
+            <h3>Financiamiento</h3>
+            <p>La investigación será financiada con recursos propios de los investigadores. No se requiere financiamiento externo dado que se trata de un estudio retrospectivo que utiliza información ya disponible en las historias clínicas de la institución.</p>
+            
+            <p>Los costos estimados incluyen material de oficina, impresiones, transporte y comunicaciones, los cuales serán asumidos por los investigadores principales.</p>
+        </div>
+        
+        <div class="metodologia-seccion">
+            <h3>Cronograma de Actividades</h3>
+            
+            <div class="table-title">Tabla 2. Cronograma de Actividades</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Actividad</th>
+                        <th>Agosto 2025</th>
+                        <th>Septiembre 2025</th>
+                        <th>Octubre 2025</th>
+                        <th>Noviembre 2025</th>
+                        <th>Diciembre 2025</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Elaboración del proyecto final</td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Aprobación por Comité de Bioética</td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Recolección de datos</td>
+                        <td></td>
+                        <td>X</td>
+                        <td>X</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Análisis estadístico</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Redacción del informe final</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>Entrega del TEG</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>X</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- REFERENCIAS -->
+    <div class="page-break">
+        <h2>REFERENCIAS</h2>
+        
+        <div class="referencias">
+            <p>1. World Health Organization. Evaluating the quality of care for severe pregnancy complications: the WHO near-miss approach for maternal health. Geneva: WHO; 2011. Disponible en: http://whqlibdoc.who.int/publications/2011</p>
+            <p>2. Say L, Souza JP, Pattinson RC. Maternal near-miss towards a standard tool for monitoring quality of maternal health care. Best Pract Res Clin Obstet Gynaecol. 2009;23:287-296.</p>
+            <p>3. Morbilidad Materna Extrema. Comité de mortalidad materna y perinatal. FLASOG. Santa Cruz de la Sierra, Bolivia; 2007.</p>
+            <p>4. Nava-Guerrero E, Nungaray-González L, Salcedo-González A, Cisneros-Rivera F, Perales-Dávila J, Durán-Luna A. Morbilidad materna extrema: intervenciones médico-quirúrgicas e indicadores para evitar la muerte materna. Ginecol Obstet Mex. 2020;88(9):606-614.</p>
+            <p>5. Karolinski A, Mercer R, Micone P, Ocampo C, Salgado P, Szulik D, et al. Modelo para abordar integralmente la mortalidad materna y morbilidad materna grave. Rev Panam Salud Pública. 2015;37(4-5):351-359.</p>
+            <p>6. Karolinski A, Mazzoni A, Belizan JM, Althabe F, Bergel E, Buekens P. Lost opportunities for effective management of obstetrics conditions to reduce maternal mortality and severe maternal morbidity in Argentina and Uruguay. Int J Gynaecol Obstet. 2010;110(2):175-180.</p>
+            <p>7. Briones Garduño JC. Equipos de respuesta rápida en emergencias obstétricas. Clínicas quirúrgicas. Academia mexicana de cirugía. Vol XVIII. Editorial Alfil. México; 2013.</p>
+            <p>8. Calderón-Garcidueñas A, Martínez-Salazar G, Fernández-Díaz H. Mortalidad materna hospitalaria: causas y concordancia entre el diagnóstico clínico y de autopsia en el Centro Médico del Noreste del IMSS. México. Ginecol Obstet Mex. 2002;70:95-102.</p>
+            <p>9. Adams Y, Smith B. Integrative review of factors that affect the use of postpartum care services in developing countries. J Obstet Gynecol Neonatal Nurs. 2018;47(3):371-384.</p>
+            <p>10. Karolinski A, Mercer R, Bolzán A, Salgado P, Ocampo C, Nieto R, et al. Bases para el desarrollo e implementación de un modelo de información en salud de la mujer y perinatal orientado a la gestión en Latinoamérica. Rev Panam Salud Pública. 2018;42:e148.</p>
+            <p>11. Nicolaides KH. Turning the pyramid of prenatal care. Fetal Diagn Ther. 2011;29(3):183-196.</p>
+            <p>12. Hernández Cabrera Y, León Ornelas M, Díaz Puebla J, Ocampo Sánchez A, Rodríguez Márquez A, Ruíz Hernández M. Caracterización clínica de las pacientes con morbilidad materna extremadamente grave y su repercusión perinatal. Medisur. 2020;18(5):789-799.</p>
+            <p>13. Franco-Soto J, Rísquez-Parra A, Larrazabal C, Medina J, Colmenares R, Ramírez G, et al. Sobrevida de los recién nacidos en la unidad de cuidados intensivos neonatales: Hospital Central de San Cristóbal. 2012-2013. Arch Venez Pueric Pediatr. 2015;78(2):59-64.</p>
+            <p>14. Serruya S, De Mucio B, Martinez G, Maneiro L, De Francisco A, Say L, et al. Exploring the concept of degrees of maternal morbidity as a tool for surveillance of maternal health in Latin America and Caribbean settings. Bio Med Res Int. 2017; doi: 10.1155/2017/8271042.</p>
+            <p>15. Callaghan WM, Grobman WA, Kilpatrik SJ, Main EK, D'Alton M. Facility based identification of women with severe maternal morbidity: it is time to start. Obstet Gynecol. 2014;123(5):978-981.</p>
+            <p>16. Plan de acción para acelerar la reducción de la mortalidad materna y la morbilidad materna grave. Resolución CD51.R12-PAHO. 2011. Disponible en: https://www.paho.org/</p>
+            <p>17. De Mucio B, Abalos E, Cuesta C, Carroli G, Serruya S, Giordano D, et al. Maternal near-miss and predictive ability of potentially life threatening conditions at selected maternity hospitals in Latin America. Repr Health. 2016;13:134.</p>
+            <p>18. Asamblea Mundial de Salud. 71. (2018). Informe sobre los resultados de la OMS: presupuesto por programas 2016-2017. Disponible en: https://apps.who.int/iris/handle/10665/276530</p>
+            <p>19. Ozimek JA, Kilpatrick SJ. Maternal mortality in the twenty first century. Obstet Gynecol Clin North Am. 2018;45(2):175-186.</p>
+            <p>20. Sánchez-Barrera E, Mendieta-Hernández S, Pinella-Martínez E, Cárdenas Pinzón D. Comportamiento epidemiológico de la morbilidad materna extrema. Colombia. 2016. Rev Investig Salud Univ Boyacá. 2019;6(2):97-115.</p>
+            <p>21. La Agenda 2030 y los Objetivos de Desarrollo Sostenible. Una oportunidad para América Latina y El Caribe. Publicaciones de la CEPAL. 2018.</p>
+            <p>22. González Blanco M. Mortalidad materna en Venezuela. ¿Por qué es importante conocer las cifras? Rev Obstet Ginecol Venez. 2017;77(1):1-4.</p>
+            <p>23. Wahlberg A, Rööst M, Hagtund B, Hösberg U, Essén B. Increased risk of severe maternal morbidity (near-miss) among immigrant women in Sweden: A population registered-based study. BJOG. 2013;120(13):1605-1611.</p>
+            <p>24. Bendezú G, Bendezú-Quispe G. Caracterización de la morbilidad extremadamente grave en un hospital del seguro social del Perú. Rev Perú Ginecol Obstet. 2014;60(4):291-297.</p>
+            <p>25. Maswime TS, Buchmann E. Near-miss maternal morbidity from severe haemorrhage at cesarean section: A process and structure audit of system differences in South Africa. S Afr Med J. 2017;107(11):1005-1009.</p>
+            <p>26. Faneite P. Mortalidad maternal y perinatal. Tendencias 1969-2004. Rev Obstet Ginecol Venez. 2006;66(2):75-79.</p>
+            <p>27. Álvarez M, Álvarez S, González G, Pérez D. Caracterización de la morbilidad materna extremadamente grave. Rev Cubana Hig Epidemiol. 2010;48(3):310-320.</p>
+            <p>28. Faneite P, Rivera C, Amato R, Faneite J. Morbilidad maternal: Hospitalización ante parto. Rev Obstet Ginecol Venez. 2012;72(2):83-88.</p>
+            <p>30. Nava M, Urdaneta J, González M, Labarca L, Silva A, Contreras A, et al. Caracterización de la paciente obstétrica críticamente enferma, experiencia de la Maternidad "Dr. Armando Castillo Plaza". Maracaibo. Venezuela. 2011-2014. Rev Chil Obstet Ginecol. 2016;81(4):288-296.</p>
+            <p>31. Tang M, González N, Lugo L, Medina Y, Mendoza L, Vargas C. Algunos factores de riesgo asociados a la mortalidad neonatal en el Hospital central de Maracay, 2012. Comunidad Salud. 2015;13(1):38-45.</p>
+            <p>32. Serruya S, De Mucio B, Martinez G, Maneiro L, De Francisco A, Say L, et al. Exploring the concept of degrees of maternal morbidity as a tool for surveillance of maternal health in Latin America and Caribbean settings. Bio Med Res Int. 2017.</p>
+            <p>33. Hoyos-Vertel L, Muñoz de Rodríguez L. Barreras de acceso a controles prenatales en mujeres con morbilidad materna extrema en Antioquia, Colombia. Rev Salud Pública. 2019;21(1):17-21.</p>
+            <p>35. Santiago R, Sierra M. Caracterización de la morbilidad materna extrema en el Servicio de Medicina Materno Fetal de la Maternidad Concepción Palacios. Septiembre 2012 - agosto 2017. [Tesis de Especialización]. Caracas: Universidad Central de Venezuela; 2020.</p>
+            <p>36. Cabrera C, González M, Sierra M. Evolución histórica de la mortalidad materna por sepsis en la Maternidad "Concepción Palacios". Rev Obstet Ginecol Venez. 2021;81(1):5-15.</p>
+            <p>37. Cabrera C, González M, Sierra M. Evolución histórica de la mortalidad materna por trastornos hipertensivos del embarazo en la Maternidad "Concepción Palacios". Rev Obstet Ginecol Venez. 2021;81(2):89-98.</p>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div>
+
+    <!-- ANEXOS -->
+    <div class="page-break">
+        <h2>ANEXOS</h2>
+        
+        <h3>ANEXO 1. FORMULARIO PARA RECOLECCIÓN DE DATOS</h3>
+        
+        <div style="border: 1px solid #000; padding: 15px; margin: 20px 0;">
+            <h4 class="center">FORMULARIO DE RECOLECCIÓN DE DATOS</h4>
+            <h4 class="center">MORBILIDAD MATERNA GRAVE</h4>
+            
+            <table style="width: 100%; margin: 15px 0;">
+                <tr>
+                    <td style="border: none; padding: 5px;"><strong>N° HISTORIA:</strong> ____________</td>
+                    <td style="border: none; padding: 5px;"><strong>FECHA:</strong> ____________</td>
+                </tr>
+            </table>
+            
+            <h4>I. DATOS SOCIODEMOGRÁFICOS</h4>
+            <table>
+                <tr>
+                    <td>Edad: ____ años</td>
+                    <td>Procedencia: □ Urbana □ Suburbana □ Rural</td>
+                </tr>
+                <tr>
+                    <td>Estado Civil: ________________</td>
+                    <td>Nivel de Instrucción: ________________</td>
+                </tr>
+                <tr>
+                    <td>Ocupación: ________________</td>
+                    <td>Dirección: ________________</td>
+                </tr>
+            </table>
+            
+            <h4>II. ANTECEDENTES OBSTÉTRICOS</h4>
+            <table>
+                <tr>
+                    <td>Gestas: ____</td>
+                    <td>Partos: ____</td>
+                    <td>Cesáreas: ____</td>
+                    <td>Abortos: ____</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Control Prenatal: □ Sí □ No</td>
+                    <td colspan="2">N° Consultas: ____</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Edad Gestacional al Ingreso: ____ semanas</td>
+                </tr>
+            </table>
+            
+            <h4>III. ANTECEDENTES PATOLÓGICOS</h4>
+            <table>
+                <tr>
+                    <td>□ Hipertensión Arterial</td>
+                    <td>□ Diabetes Mellitus</td>
+                    <td>□ Cardiopatías</td>
+                </tr>
+                <tr>
+                    <td>□ Enfermedades Renales</td>
+                    <td>□ Asma</td>
+                    <td>□ Otros: ____________</td>
+                </tr>
+            </table>
+            
+            <h4>IV. MORBILIDAD MATERNA GRAVE</h4>
+            <table>
+                <tr>
+                    <td colspan="3"><strong>Tipo de MMG:</strong></td>
+                </tr>
+                <tr>
+                    <td>□ Preeclampsia Grave</td>
+                    <td>□ Eclampsia</td>
+                    <td>□ Síndrome HELLP</td>
+                </tr>
+                <tr>
+                    <td>□ Hemorragia Obstétrica</td>
+                    <td>□ Sepsis</td>
+                    <td>□ Shock</td>
+                </tr>
+                <tr>
+                    <td>□ Falla Renal</td>
+                    <td>□ Falla Respiratoria</td>
+                    <td>□ Otras: ____________</td>
+                </tr>
+            </table>
+            
+            <h4>V. MOMENTO DE LA COMPLICACIÓN</h4>
+            <table>
+                <tr>
+                    <td>□ Anteparto</td>
+                    <td>□ Intraparto</td>
+                    <td>□ Puerperio</td>
+                </tr>
+            </table>
+            
+            <h4>VI. INTERVENCIONES REALIZADAS</h4>
+            <table>
+                <tr>
+                    <td colspan="3"><strong>Tratamiento Médico:</strong></td>
+                </tr>
+                <tr>
+                    <td>□ Antihipertensivos</td>
+                    <td>□ Sulfato de Magnesio</td>
+                    <td>□ Antibióticos</td>
+                </tr>
+                <tr>
+                    <td>□ Vasopresores</td>
+                    <td>□ Transfusiones</td>
+                    <td>□ Otros: ____________</td>
+                </tr>
+            </table>
+            
+            <table style="margin-top: 10px;">
+                <tr>
+                    <td colspan="3"><strong>Tratamiento Quirúrgico:</strong></td>
+                </tr>
+                <tr>
+                    <td>□ Cesárea</td>
+                    <td>□ Histerectomía</td>
+                    <td>□ Ligadura de Arterias</td>
+                </tr>
+                <tr>
+                    <td>□ Sutura de B-Lynch</td>
+                    <td>□ Laparotomía</td>
+                    <td>□ Otros: ____________</td>
+                </tr>
+            </table>
+            
+            <h4>VII. EVOLUCIÓN Y DESENLACE</h4>
+            <table>
+                <tr>
+                    <td>Ingreso a UCI: □ Sí □ No</td>
+                    <td>Días en UCI: ____</td>
+                </tr>
+                <tr>
+                    <td>Estancia Total: ____ días</td>
+                    <td>Condición de Egreso: ________________</td>
+                </tr>
+            </table>
+            
+            <h4>VIII. RESULTADOS PERINATALES</h4>
+            <table>
+                <tr>
+                    <td>Sexo del RN: □ M □ F</td>
+                    <td>Peso: ______ gramos</td>
+                    <td>Talla: ______ cm</td>
+                </tr>
+                <tr>
+                    <td>Condición: □ Vivo □ Óbito</td>
+                    <td>APGAR 1': ____</td>
+                    <td>APGAR 5': ____</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Complicaciones Neonatales: ________________</td>
+                </tr>
+            </table>
+            
+            <h4>IX. CAUSAS ESPECÍFICAS (Marcar según corresponda)</h4>
+            <table>
+                <tr>
+                    <td colspan="3"><strong>Si Hemorragia:</strong></td>
+                </tr>
+                <tr>
+                    <td>□ Atonía Uterina</td>
+                    <td>□ Placenta Previa</td>
+                    <td>□ Desprendimiento Placenta</td>
+                </tr>
+                <tr>
+                    <td>□ Ruptura Uterina</td>
+                    <td>□ Retención Placentaria</td>
+                    <td>□ Desgarros</td>
+                </tr>
+            </table>
+            
+            <table style="margin-top: 10px;">
+                <tr>
+                    <td colspan="3"><strong>Si Sepsis:</strong></td>
+                </tr>
+                <tr>
+                    <td>□ Corioamnionitis</td>
+                    <td>□ Endometritis</td>
+                    <td>□ Pielonefritis</td>
+                </tr>
+                <tr>
+                    <td>□ Neumonía</td>
+                    <td>□ Sepsis Abdominal</td>
+                    <td>□ Otras: ____________</td>
+                </tr>
+            </table>
+            
+            <h4>X. OBSERVACIONES</h4>
+            <table>
+                <tr>
+                    <td style="height: 60px; vertical-align: top;">
+                        _________________________________________________<br>
+                        _________________________________________________<br>
+                        _________________________________________________
+                    </td>
+                </tr>
+            </table>
+            
+            <div style="margin-top: 20px;">
+                <p><strong>Fecha de Recolección:</strong> _______________</p>
+                <p><strong>Recolectado por:</strong> _______________</p>
+                <p><strong>Firma:</strong> _______________</p>
+            </div>
+        </div>
+        
+        <div class="page-break">
+            <h3>ANEXO 2. CRITERIOS OMS PARA MORBILIDAD MATERNA GRAVE</h3>
+            
+            <div style="border: 1px solid #000; padding: 15px; margin: 20px 0;">
+                <h4>CRITERIOS DE IDENTIFICACIÓN DE MORBILIDAD MATERNA GRAVE</h4>
+                <p><em>Según Organización Mundial de la Salud, 2011</em></p>
+                
+                <h4>1. CRITERIOS DE DISFUNCIÓN ORGÁNICA</h4>
+                
+                <h5>Disfunción Cardiovascular:</h5>
+                <ul>
+                    <li>Shock (presión arterial sistólica < 90 mmHg por ≥ 60 minutos + frecuencia de pulso ≥ 120 lpm)</li>
+                    <li>Paro cardíaco</li>
+                    <li>Uso de drogas vasoactivas continuas</li>
+                    <li>Edema pulmonar severo</li>
+                </ul>
+                
+                <h5>Disfunción Respiratoria:</h5>
+                <ul>
+                    <li>Gasping o respiración agónica</li>
+                    <li>Frecuencia respiratoria > 40 o < 6 por minuto</li>
+                    <li>Cianosis</li>
+                    <li>Intubación y ventilación ≥ 60 minutos (no relacionada con anestesia)</li>
+                    <li>Saturación de oxígeno < 90% por ≥ 60 minutos</li>
+                    <li>Relación PaO2/FiO2 < 200 mmHg</li>
+                </ul>
+                
+                <h5>Disfunción Renal:</h5>
+                <ul>
+                    <li>Oliguria no responsiva a fluidos o diuréticos (< 30 mL/hora por 4 horas o < 400 mL/24 horas)</li>
+                    <li>Diálisis aguda por insuficiencia renal aguda</li>
+                    <li>Creatinina severa (≥ 300 mmol/L o ≥ 3.5 mg/dL)</li>
+                </ul>
+                
+                <h5>Disfunción Hematológica:</h5>
+                <ul>
+                    <li>Falla en formar coágulos</li>
+                    <li>Transfusión masiva de sangre (≥ 5 unidades de concentrado de glóbulos rojos)</li>
+                    <li>Trombocitopenia severa (< 50,000 plaquetas)</li>
+                </ul>
+                
+                <h5>Disfunción Hepática:</h5>
+                <ul>
+                    <li>Ictericia en presencia de preeclampsia</li>
+                    <li>Bilirrubina > 100 mmol/L o > 6.0 mg/dL</li>
+                </ul>
+                
+                <h5>Disfunción Neurológica:</h5>
+                <ul>
+                    <li>Convulsiones prolongadas/recurrentes</li>
+                    <li>Coma ≥ 12 horas</li>
+                    <li>Accidente cerebrovascular</li>
+                    <li>Parálisis total</li>
+                </ul>
+                
+                <h5>Disfunción Uterina:</h5>
+                <ul>
+                    <li>Histerectomía por infección o hemorragia</li>
+                </ul>
+                
+                <h4>2. CRITERIOS DE MANEJO</h4>
+                <ul>
+                    <li>Uso de hemoderivados continuos</li>
+                    <li>Intervenciones radiológicas (embolización arterial)</li>
+                    <li>Laparotomía (incluye histerectomía, excluye cesárea)</li>
+                    <li>Admisión a unidad de cuidados intensivos</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="page-break">
+            <h3>ANEXO 3. ALGORITMO DE MANEJO</h3>
+            
+            <div style="border: 1px solid #000; padding: 15px; margin: 20px 0;">
+                <h4 class="center">ALGORITMO PARA IDENTIFICACIÓN Y MANEJO DE MORBILIDAD MATERNA GRAVE</h4>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <div style="border: 2px solid #000; padding: 10px; margin: 10px; background-color: #f0f0f0;">
+                        <strong>PACIENTE OBSTÉTRICA CON SIGNOS DE ALARMA</strong>
+                    </div>
+                    ↓
+                    <div style="border: 1px solid #000; padding: 8px; margin: 10px;">
+                        Evaluación inicial: Signos vitales, estado de conciencia,<br>
+                        sangrado activo, dolor, disnea
+                    </div>
+                    ↓
+                    <div style="border: 1px solid #000; padding: 8px; margin: 10px;">
+                        ¿Presenta criterios de MMG según OMS?
+                    </div>
+                    ↓
+                    <div style="display: flex; justify-content: space-around;">
+                        <div style="border: 1px solid #000; padding: 8px; margin: 5px; width: 45%;">
+                            <strong>SÍ</strong><br>
+                            Activar protocolo MMG<br>
+                            Notificar a UCI<br>
+                            Inicio tratamiento específico<br>
+                            Activar equipo de respuesta rápida
+                        </div>
+                        <div style="border: 1px solid #000; padding: 8px; margin: 5px; width: 45%;">
+                            <strong>NO</strong><br>
+                            Continuar evaluación<br>
+                            Vigilancia estrecha<br>
+                            Reevaluación periódica<br>
+                            Aplicar criterios de alerta temprana
+                        </div>
+                    </div>
+                </div>
+                
+                <h5>MEDIDAS INMEDIATAS EN MMG:</h5>
+                <ol>
+                    <li>Asegurar vía aérea permeable</li>
+                    <li>Oxigenación adecuada (mantener SatO2 > 94%)</li>
+                    <li>Acceso vascular (2 vías periféricas calibre 16-18)</li>
+                    <li>Monitoreo continuo de signos vitales</li>
+                    <li>Laboratorios urgentes (hemograma, coagulación, función renal y hepática)</li>
+                    <li>Notificación a equipo multidisciplinario</li>
+                    <li>Inicio de tratamiento específico según causa</li>
+                    <li>Evaluación del bienestar fetal si aplica</li>
+                </ol>
+                
+                <h5>EQUIPO DE RESPUESTA RÁPIDA:</h5>
+                <ul>
+                    <li>Obstetra de guardia</li>
+                    <li>Anestesiólogo</li>
+                    <li>Intensivista (si disponible)</li>
+                    <li>Enfermera especializada</li>
+                    <li>Hematólogo (si hemorragia masiva)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="page-break">
+            <h3>ANEXO 4. CONSENTIMIENTO INFORMADO INSTITUCIONAL</h3>
+            
+            <div style="border: 1px solid #000; padding: 15px; margin: 20px 0;">
+                <h4 class="center">AUTORIZACIÓN PARA REVISIÓN DE HISTORIAS CLÍNICAS</h4>
+                <h4 class="center">COMITÉ DE BIOÉTICA - HOSPITAL UNIVERSITARIO DE CARACAS</h4>
+                
+                <p><strong>PROYECTO:</strong> Morbilidad Materna Grave en el Servicio de Obstetricia del Hospital Universitario de Caracas 2011-2020</p>
+                
+                <p><strong>INVESTIGADORES PRINCIPALES:</strong></p>
+                <ul>
+                    <li>Rosvely Josefina Medina Ron</li>
+                    <li>Wilson José Moreno Contreras</li>
+                </ul>
+                
+                <p><strong>TUTORA:</strong> Dra. Bahilda Martínez de Dao</p>
+                
+                <p><strong>SOLICITUD:</strong></p>
+                <p>Mediante la presente, solicitamos autorización para la revisión de historias clínicas de pacientes que presentaron morbilidad materna grave en el Servicio de Obstetricia durante el período 2011-2020, con fines de investigación académica.</p>
+                
+                <p><strong>COMPROMISOS:</strong></p>
+                <ul>
+                    <li>Mantener absoluta confidencialidad de los datos</li>
+                    <li>Codificar las historias para evitar identificación personal</li>
+                    <li>Utilizar la información exclusivamente para fines académicos</li>
+                    <li>Presentar los resultados de forma agregada</li>
+                    <li>Destruir la información al finalizar el estudio según normativa vigente</li>
+                </ul>
+                
+                <p><strong>CONSIDERACIONES ÉTICAS:</strong></p>
+                <ul>
+                    <li>El estudio cumple con los principios de la Declaración de Helsinki</li>
+                    <li>Se respetarán los principios bioéticos fundamentales</li>
+                    <li>No se realizarán intervenciones adicionales a las pacientes</li>
+                    <li>Los resultados contribuirán a mejorar la calidad asistencial</li>
+                </ul>
+                
+                <div style="margin-top: 40px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="text-align: center; width: 30%;">
+                            _________________________<br>
+                            <strong>Rosvely Medina Ron</strong><br>
+                            Investigador Principal
+                        </div>
+                        <div style="text-align: center; width: 30%;">
+                            _________________________<br>
+                            <strong>Wilson Moreno Contreras</strong><br>
+                            Investigador Principal
+                        </div>
+                        <div style="text-align: center; width: 30%;">
+                            _________________________<br>
+                            <strong>Dra. Bahilda Martínez</strong><br>
+                            Tutora
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 60px; text-align: center;">
+                    <div style="border-top: 1px solid #000; width: 300px; margin: 0 auto;">
+                        <strong>APROBACIÓN COMITÉ DE BIOÉTICA</strong><br>
+                        Fecha: _______________<br>
+                        Firma y Sello
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-break">
+            <h3>ANEXO 5. SISTEMA DE ALERTA TEMPRANA OBSTÉTRICA</h3>
+            
+            <div style="border: 1px solid #000; padding: 15px; margin: 20px 0;">
+                <h4 class="center">CRITERIOS DE ALERTA TEMPRANA</h4>
+                <p class="center"><em>Adaptado de MEOWS (Modified Early Obstetric Warning System)</em></p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Valor Normal</th>
+                            <th>Alerta Amarilla</th>
+                            <th>Alerta Roja</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Frecuencia Respiratoria</td>
+                            <td>12-20 rpm</td>
+                            <td>21-30 rpm</td>
+                            <td>&lt; 12 o &gt; 30 rpm</td>
+                        </tr>
+                        <tr>
+                            <td>Saturación O2</td>
+                            <td>&gt; 95%</td>
+                            <td>92-94%</td>
+                            <td>&lt; 92%</td>
+                        </tr>
+                        <tr>
+                            <td>Temperatura</td>
+                            <td>36-37.5°C</td>
+                            <td>35-35.9°C o 37.6-38°C</td>
+                            <td>&lt; 35°C o &gt; 38°C</td>
+                        </tr>
+                        <tr>
+                            <td>PA Sistólica</td>
+                            <td>100-139 mmHg</td>
+                            <td>90-99 o 140-159 mmHg</td>
+                            <td>&lt; 90 o ≥ 160 mmHg</td>
+                        </tr>
+                        <tr>
+                            <td>PA Diastólica</td>
+                            <td>60-89 mmHg</td>
+                            <td>90-109 mmHg</td>
+                            <td>≥ 110 mmHg</td>
+                        </tr>
+                        <tr>
+                            <td>Frecuencia Cardíaca</td>
+                            <td>60-100 lpm</td>
+                            <td>40-59 o 101-120 lpm</td>
+                            <td>&lt; 40 o &gt; 120 lpm</td>
+                        </tr>
+                        <tr>
+                            <td>Estado de Conciencia</td>
+                            <td>Alerta</td>
+                            <td>Responde a voz</td>
+                            <td>Responde a dolor/No responde</td>
+                        </tr>
+                        <tr>
+                            <td>Diuresis</td>
+                            <td>&gt; 30 mL/hora</td>
+                            <td>15-30 mL/hora</td>
+                            <td>&lt; 15 mL/hora x 2 horas</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h5>ACCIONES SEGÚN NIVEL DE ALERTA:</h5>
+                <ul>
+                    <li><strong>Alerta Amarilla:</strong> Aumentar frecuencia de monitoreo, notificar a médico tratante, reevaluar en 30 minutos</li>
+                    <li><strong>Alerta Roja:</strong> Activar equipo de respuesta rápida inmediatamente, iniciar medidas de estabilización, considerar traslado a UCI</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA CON INFORMACIÓN FINAL -->
+    <div class="page-break">
+        <div class="center" style="margin-top: 100px;">
+            <h3>UNIVERSIDAD CENTRAL DE VENEZUELA</h3>
+            <h3>FACULTAD DE MEDICINA</h3>
+            <h3>COORDINACIÓN DE ESTUDIOS DE POSTGRADO</h3>
+            <h3>PROGRAMA DE ESPECIALIZACIÓN EN OBSTETRICIA Y GINECOLOGÍA</h3>
+            <h3>HOSPITAL UNIVERSITARIO DE CARACAS</h3>
+            
+            <div style="margin: 50px 0;">
+                <h2>MORBILIDAD MATERNA GRAVE</h2>
+                <p><em>Proyecto de Trabajo Especial de Grado</em></p>
+            </div>
+            
+            <div style="margin: 40px 0;">
+                <p><strong>Autores:</strong></p>
+                <p>Rosvely Josefina Medina Ron</p>
+                <p>Wilson José Moreno Contreras</p>
+            </div>
+            
+            <div style="margin: 40px 0;">
+                <p><strong>Tutora:</strong></p>
+                <p>Dra. Bahilda Martínez de Dao</p>
+            </div>
+            
+            <div style="margin: 40px 0;">
+                <p>Caracas, julio de 2025</p>
+            </div>
+            
+            <div style="margin-top: 60px; font-size: 10pt;">
+                <p><em>Este documento cumple con las normas académicas de la Universidad Central de Venezuela</em></p>
+                <p><em>y las especificaciones del Programa de Especialización en Obstetricia y Ginecología</em></p>
+                <p><em>para la presentación de Trabajos Especiales de Grado</em></p>
+            </div>
+            
+            <div class="nota-importante" style="margin-top: 40px;">
+                <p><strong>Nota:</strong> La realización de este estudio contribuirá significativamente al conocimiento de la situación de la morbilidad materna grave en el Hospital Universitario de Caracas, completando el panorama epidemiológico de los principales centros de referencia obstétrica de la capital venezolana y permitiendo el desarrollo de estrategias basadas en evidencia local para mejorar la calidad de atención materna.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+<!-- Línea adicional para mantener la legibilidad del documento -->
+
+<!-- Línea vacía adicional para mantener formato -->
+<!-- Línea vacía adicional para mantener formato -->
+<!-- Línea vacía adicional para mantener formato -->
+<!-- Línea vacía adicional para mantener formato -->
+<!-- Línea vacía adicional para mantener formato -->
+<!-- Línea vacía adicional para mantener formato -->
+<!-- Línea vacía adicional para mantener formato -->
+<!-- Línea vacía adicional para mantener formato -->
+<!-- Línea vacía adicional para mantener formato -->
+<!-- Línea vacía adicional para mantener formato -->
+</html>
